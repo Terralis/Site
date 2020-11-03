@@ -1,0 +1,285 @@
+body{
+	font-family: 'Montserrat', sans-serif;	
+}
+
+
+*{
+  margin: 0;
+  padding: 0;
+}
+.logo-inicio{
+	margin: 20px 0 0 75px;
+}
+.logo-inicio img{
+	width: 275px;
+	height: 73px;
+}
+.divisao{
+	width: 50%;
+	height: 100%;
+	position: fixed;
+	background-color: #55aba0;
+}
+.reta{
+	margin-left: -47px;
+}
+.menu{
+	margin-top: 15px;
+	
+	display: inline;
+	float: right;
+}
+.menu li{
+	padding: 0 10px 10px 10px;
+	margin: 0 30px 0 30px;
+}
+.menu ul{
+	margin-right: 60px;
+	list-style: none;
+	position: relative;
+	display: inline-block;
+}
+.menu ul li{
+	position: relative;
+	display: inline-block;
+	float: none;
+}
+.menu a{
+	color: #000000;
+	text-decoration: none;
+}
+
+.video{
+	margin: -400px 0 0 350px;
+}
+.inicio-desc{
+	margin: 150px 0 5px 100px;
+	width: 200px;
+	font-size: 35px;
+	z-index: 9999;
+	position: relative;
+}
+.sombra{
+	text-shadow: 0.1em 0.1em 0.2em #262626;
+}
+.texto{
+	margin-left: 100px;
+	position: relative;
+	width: 275px;
+	font-size: 15px;
+}
+.bt-inicio{
+	width: 100px;
+	text-align: center;
+	list-style: none;
+	background: #262626;
+	padding: 10px;
+	border-radius: 30px;
+
+	
+	margin: 20px 0 0 150px;
+}
+.bt-inicio a{
+	color: #ffffff;
+	font-size: 12px;
+	text-decoration: none;
+}
+
+/*
+.menu a{
+	display: block;
+}
+
+.menu ul{
+	list-style: none;
+	position: relative;
+	font-size: 20px;
+}
+.menu ul li{
+	float: left;
+}
+.menu ul ul{
+	position: relative;
+	visibility: hidden;
+	text-align: center;
+	align-items: center;
+	padding: 0;
+}
+.menu ul li:hover ul{
+	visibility: visible;
+}
+.menu ul ul li{
+	float: none;
+	margin: 0;
+}
+*/
+
+.logo-contato{
+	margin: 275px 0 0 150px;
+}
+.contato{
+	float: right;
+	position: absolute;
+	margin: 80px 0 0 750px;
+
+}
+.contato h2{
+	margin-bottom: 30px;
+	color: #346b60;
+	font-size: 30px;
+	letter-spacing: 1.5px;
+}
+.contato label{
+	display: block;
+	color: #346b60;
+	font-size: 16px;
+	font-weight: 300;
+}
+.contato input, .contato textarea{
+	display: block;
+	margin-bottom: 30px;
+	padding: 5px 2%;
+	width: 99%;
+}
+
+.contato input[type="text"], .contato input[type="email"], .contato textarea{
+	border: none;
+	border-bottom: 1px solid black;
+	background: transparent;
+	outline: none;
+	height: 40px;
+	color: black;
+	font-size: 16px;
+}
+
+.contato textarea{
+	width: 530px;
+	height: 30px;
+	margin-top: 10px;
+}
+
+.contato input[type="submit"]{
+	border: none;
+	outline: none;
+	height: 35px;
+	width: 200px;
+	margin-left: 175px;
+	background: #346b60;
+	color: #ffffff;
+	border-radius: 20px;
+	transition: 0.2s;
+}
+.contato input[type="submit"]:hover{
+	cursor: pointer;
+	background: #ffffff;
+	border: 1px solid #346b60;
+	transition: 0.2s;
+	color: #346b60;
+}
+
+
+/*.inverso{
+	background-image: url(img/fundo.jpeg);
+}
+*/
+.form-login{
+	margin: 80px 0 0 65px;
+	position: absolute;
+	float: left;
+}
+.form-login h2{
+	margin-bottom: 30px;
+	color: #ffffff;
+	font-size: 30px;
+	letter-spacing: 1.5px;
+}
+.form-login h3{
+	font-weight: 200;
+	color: #ffffff;
+	font-size: 30px;
+	letter-spacing: 1.5px;
+	text-align: center;
+}
+.form-login hr{
+	width: 250px;
+	margin: 3px 0 75px 140px;
+	height: 2px;
+	border: 1px solid #346b60;
+	background: #346b60;
+}
+.form-login input[type="email"], .form-login input[type="password"]{
+	border: none;
+	border-bottom: 1px solid #346b60;
+	background: transparent;
+	outline: none;
+	height: 40px;
+	color: #346b60;
+	font-size: 16px;
+}
+.form-login label{
+	display: block;
+	color: #ffffff;
+	font-size: 16px;
+	font-weight: 300;
+	width: 530px;
+}
+.form-login input{
+	display: block;
+	margin-bottom: 30px;
+	padding: 5px 2%;
+	width: 99%;
+}
+.form-login input[type="submit"]{
+	border: none;
+	outline: none;
+	height: 35px;
+	width: 200px;
+	margin-left: 175px;
+	background: #346b60;
+	color: #ffffff;
+	border-radius: 20px;
+	transition: 0.2s;
+}
+.form-login input[type="submit"]:hover{
+	cursor: pointer;
+	background: #ffffff;
+	border: 1px solid #346b60;
+	transition: 0.2s;
+	color: #346b60;
+}
+.form-login li{
+	list-style: none;
+}
+.form-login li a{
+	text-decoration: none;
+	margin-left: 195px;
+	color: #ffffff;
+	font-size: 15px;
+}
+.form-login li a:hover{
+	text-decoration: underline;
+}
+.menu-login li{
+	list-style: none;
+}
+.menu-login li a{
+	text-decoration: none;
+	color: #346b60;
+	float: right;
+	margin: 15px 50px 0 0;
+}
+.botao-meio{
+	float: right;
+	margin: 15px 440px 0 0;
+	list-style: none;
+}
+.botao-meio a{
+	text-decoration: none;
+	color: #ffffff;
+	padding: 15px 20px;
+	background: #346b60;
+}
+.logo-branco{
+	float: right;
+	margin: 275px -530px 0 0;
+}
