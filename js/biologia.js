@@ -1,58 +1,29 @@
-var questao1 = document.getElementById('questao1').innerHTML;
-
-var myQuestions = [
-
+// Array of Objects
+const quiz = [
 	{
-		question: questao1,
-		answers: {
-			a: 'alternativa a <br />',
-			b: 'alternativa b <br />',
-			c: 'alternativa c <br />',
-			d: 'alternativa d <br /><br />',
-		},
-		correctAnswer: 'b'
+		q: 'Sei o que estou fazendo?',
+		options:['Não', 'Sim', 'Talvez', 'Óbvio que não'],
+		answer: 3
+	},
+	{
+		q: 'Vai dar bom?',
+		options:['Não', 'Espero que sim', 'Talvez', 'Óbvio que não'],
+		answer: 1
+	},
+	{
+		q: 'Tenho tempo sobrando?',
+		options:['Talvez', 'Sim', 'Não', 'Óbvio que não'],
+		answer: 2
+	},
+	{
+		q: 'Preciso de um estágio?',
+		options:[ 'Com certeza', 'Sim', 'Pra que?', 'Não'],
+		answer: 0
+	},
+	{
+		q: 'Como vou fazer isso?',
+		options:[ 'Assim', 'Pois é', 'Quem sabe?', 'Não sei'],
+		answer: 3
 	}
-
-];
-
-var quizContainer = document.getElementById('quiz');
-var resultsContainer = document.getElementById('results');
-var submitButton = document.getElementById('submit');
-
-generateQuiz(myQuestions, quizContainer, resultsContainer, submitButton);
-
-function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
-
-	function showQuestions(questions, quizContainer){
-
-		var outputs = [];
-		var answers;
-
-		for (var i = 0; i < questions.length; i++) {
-			answers = [];
-
-			for(letter in questions[i].answers){
-
-				answers.push(
-
-					'<label>'
-					+ '<input type="radio" name"question'+i+'" value="'+letter+'">'
-
-					+questions[i].answers[letter]
-
-					+ '</label>'
-
-				);
-			}
-		}
-
-		output.push(
-				'<div class="question">' + questions[i].question + '</div>'
-				+ '<div class="respostas">' + answers.join('') + '</div>'
-			);
-
-showQuestions(questions, quizContainer);
-
-	}
-
-}
+]
+// pra testar console.log('quiz')
