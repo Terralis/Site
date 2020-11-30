@@ -520,13 +520,29 @@ body{
 	
 }
 
+
+.media{
+	display: flex;
+	width: 100px;
+}
+
+
 /*novo sobre teste*/
+.sobre-site{
+	width: 500px;
+	
+	float: right;
+	
+	margin: 0 100px 0 300px;	
+}
 .sobre-site img{
 	transform: scale(0.1, 0.1);
 }
 .sobre-site ul{
-	display: flex;
 	flex-direction: column;
+	width: 400px;
+	text-decoration: none;
+	list-style: none;
 }
 
 
