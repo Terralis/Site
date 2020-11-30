@@ -7,6 +7,8 @@
     <meta name="author" content="">
     <link rel="icon" href="file:///C:/Users/pvicc/favicon.ico">
 
+<!-- t e s t e -->
+
     <title>Template para o carousel Bootstrap</title>
 
     <!-- Principal CSS do Bootstrap -->
