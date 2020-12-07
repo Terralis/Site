@@ -456,16 +456,29 @@ body{
 	transform: rotate(14deg);
 	overflow: hidden;
 }
+.division{
+	width: 1920px;
+	height: 100%;
+	margin: -145px 0 0 -150px;
+	background-color: #55aba0;
+	transform: rotate(14deg);
+	overflow: hidden;
+	margin-top: 15rem;
+}
 .logo-sobre img{
 	width: 275px;
 	height: 73px;
 	margin: 20px 0 0 75px;
 }
+.third-slide{
+	background-color: blue;
+}
 .elementos{
 	text-align: center;
-	transform: rotate(0);
+	/*transform: rotate(-14deg);*/
 	position: relative;
 	z-index: 999;
+	background-image: url('../img/fundo sobre.png');
 }
 .descricao h2{
 	font-weight: 400;
@@ -1113,4 +1126,11 @@ display: none;
 }
 .quiz-box .answers-indicator div.wrong{
 	background-color: red;
+}
+
+
+.logo-sobre img{
+	width: 275px;
+	height: 73px;
+	margin-bottom: 1rem;
 }

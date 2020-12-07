@@ -6,6 +6,19 @@
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/estilo.css">
 	<title>Terrális</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
+
+    <!-- Principal CSS do Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Estilos customizados para esse template -->
+    <link href="css/carousel.css" rel="stylesheet">
+
+
 </head>
 <body>
 	<!-- teste do kleb -->
@@ -20,87 +33,65 @@
 			</nav>
 			<hr class="reta"/>
 	</div>
+	<div class="logo-sobre">
+		<img src="img/logo fundo branco.jpeg">
+	</div>
+	
 		
 <!-- qualquer coisa apaga daqui pra baixo -->
 
+ <main role="main">
 
-<div class="media">
-  <img src="..." class="align-self-start mr-3" alt="...">
-  <div class="media-body">
-    <h5 class="mt-0">Top-aligned media</h5>
-    <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
-    <p>Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-  </div>
-</div>
-
-		<div class="sobre-site">
-			<ul>
-				<li class="media">
-					<img src="img/check.png">
-					<div>
-						<h6>Aprenda mais</h6>
-						<p>Nosso site disponibiliza conteúdos sobre as Ciências da Natureza, onde você pode revisar as disciplinas de Biologia, Física e Química com a ajuda de textos e vídeos. Além de poder realizar testes e acompanhar o seu desempenho, assim como a sua performance.</p>
-					</div>
-				</li>
-
-				<li>
-					<img src="img/check.png">
-					<div>
-						<h6>Faça testes</h6>
-						<p>Responda à questionários de verdadeiro ou falso, múltipla escolha, preenchimento de lacuna ou somatória. Praticando e exercitando seus conhecimentos, bem como, avaliando sua aprendizagem.</p>
-					</div>
-				</li>
-
-				<li>
-					<img src="img/check.png">
-					<div>
-						<h6>Treine seus conhecimentos</h6>
-						<p>Respodendo aos questionários e relembrando os conteúdos, você pode se preparar para os vestibulares, provas da sua escola ou testar os seus conhecimentos.</p>
-					</div>
-				</li>
-			</ul>
-		</div>
-
-
-	<!--	<div class="sobre-site">
-			<div class="topico">
-				<img src="img/check.png">
-				<div>
-					<h6>Aprenda mais</h6>
-					<p>Nosso site disponibiliza conteúdos sobre as Ciências da Natureza, onde você pode revisar as disciplinas de Biologia, Física e Química com a ajuda de textos e vídeos. Além de poder realizar testes e acompanhar o seu desempenho, assim como a sua performance.</p>
-				</div>
-			
-
-			
-				<img src="img/check.png">
-				<div>
-					<h6>Faça testes</h6>
-					<p>Responda à questionários de verdadeiro ou falso, múltipla escolha, preenchimento de lacuna ou somatória. Praticando e exercitando seus conhecimentos, bem como, avaliando sua aprendizagem.</p>
-				</div>
-			
-
-			
-				<img src="img/check.png">
-				<div>
-					<h6>Treine seus conhecimentos</h6>
-					<p>Respodendo aos questionários e relembrando os conteúdos, você pode se preparar para os vestibulares, provas da sua escola ou testar os seus conhecimentos.</p>
-				</div>
-			</div>
-
-		</div>
-	-->
-		
-		<div class="divisao">
-			
-			<div class="logo-contato">
-				<img src="img/logo cor principal.jpeg">
-			</div>
-
-			<!-- da um jeito -->
-
-		</div>
-
+      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+     	<ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="first-slide" src="img/fundo vermelho.png" alt="First slide">
+            <div class="container">
+              <div class="carousel-caption text-left">
+                <h1>Treine seus conhecimentos</h1>
+                <p>Você pode revisar os conteúdos das Ciências da Natureza do primeiro ano do Ensino Médio com textos e videoaulas, realizar testes e acompanhar seu desempenho.</p>
+                <p><a class="btn btn-lg btn-primary-vermelho" href="#" role="button">Cadastre-se</a></p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img class="second-slide" src="img/fundo laranja.png" alt="Second slide">
+            <div class="container">
+              <div class="carousel-caption">
+                <h1>Faça testes</h1>
+                <p>Conte com questionários de múltipla escolha, somatória, verdadeiro ou falso e preenchimento de lacuna para testar seu aprendizado.</p>
+                <p><a class="btn btn-lg btn-primary-laranja" href="#" role="button">Cadastre-se</a></p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img class="third-slide" src="img/fundo rosa.png" alt="Third slide">
+            <div class="container">
+              <div class="carousel-caption text-right">
+                <h1>Conteúdo especializado</h1>
+                <p>Reunimos conteúdos sobre Biologia, Física e Química do primeiro ano do Ensino Médio para você se preparar para as provas de sua escola ou vestibulares.</p>
+                <p><a class="btn btn-lg btn-primary-rosa" href="#" role="button">Cadastre-se</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Voltar</span>
+        </a>
+        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Avançar</span>
+        </a>
+      </div>
+	</main> 
 <!-- qualquer coisa apaga daqui pra cima -->
+<!-- <div class="division"></div> -->
 
 		<div class="elementos">
 			<div class="descricao">
@@ -133,8 +124,18 @@
 
 		</div>
 
-	<div class="divisao-sobre">
-		
-	</div>
+	<div class="divisao-sobre"></div>
+
+<!-- qualquer coisa apaga daqui pra baixo -->
+
+	<script src="js/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <!-- <script src="js/popper.min.js"></script> -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Só faz o nossos placeholders de imagens funcionarem. Não precisar copiar a próxima linha! -->
+    <!-- <script src="js/holder.min.js"></script> -->
+<!-- qualquer coisa apaga daqui pra cima -->
+
+
 </body>
 </html>
