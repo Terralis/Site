@@ -24,7 +24,8 @@ function setAvailableQuestions(){
 // set questions number and question ans options
 function getNewQuestion(){
 	// set question number
-	questionNumber.innerHTML = "Questions " + (questionCounter + 1) + " of " + quiz.length;
+	//questionNumber.innerHTML = "Questions " + (questionCounter + 1) + " of " + quiz.length;
+	questionNumber.innerHTML = (questionCounter + 1);
 
 	// set question text
 	// get random question

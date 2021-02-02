@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/estilo.css">
+	<title>Login</title>
+</head>
+<body>
+	<div class="login">
+        <div class="content first-content">
+            <div class="first-column">
+               <!--  <h2 class="title title-primary">welcome back!</h2>
+                <p class="description description-primary">To keep connected with us</p>
+                <p class="description description-primary">please login with your personal info</p>
+                <button id="signin" class="botao btn-primary">sign in</button> -->
+                <button id="signin" class="botao btn-primary">Cadastre-se</button>
+                <div class="logo-cadastro">
+					<img src="img/logo fundo branco.jpeg">
+				</div>
+            </div>    
+            <div class="second-column">
+               <!--  <h2 class="title title-second">create account</h2> -->
+                <!-- <div class="social-media">
+                    <ul class="list-social-media">
+                        <a class="link-social-media" href="#">
+                            <li class="item-social-media">
+                                <i class="fab fa-facebook-f"></i>        
+                            </li>
+                        </a>
+                        <a class="link-social-media" href="#">
+                            <li class="item-social-media">
+                                <i class="fab fa-google-plus-g"></i>
+                            </li>
+                        </a>
+                        <a class="link-social-media" href="#">
+                            <li class="item-social-media">
+                                <i class="fab fa-linkedin-in"></i>
+                            </li>
+                        </a>
+                    </ul>
+                </div> social media -->
+
+                <!-- <p class="description description-second">or use your email for registration:</p>
+                <form class="form">
+                    <label class="label-input" for="">
+                        <i class="far fa-user icon-modify"></i>
+                        <input type="text" placeholder="Name">
+                    </label>
+                    
+                    <label class="label-input" for="">
+                        <i class="far fa-envelope icon-modify"></i>
+                        <input type="email" placeholder="Email">
+                    </label>
+                    
+                    <label class="label-input" for="">
+                        <i class="fas fa-lock icon-modify"></i>
+                        <input type="password" placeholder="Password">
+                    </label>
+                    
+                    
+                    <button class="botao btn-second">sign up</button>        
+                </form> -->
+                <div class="coluna col7 form-login">
+					<h2>Conecte-se</h2>
+					<h3>Olá, Estudante!</h3>
+					<hr/>
+					<form name="form" method="post" action="email.php">
+
+						<!-- <input type="hidden" name="recipient" value="contato@portoricodecor.com"> -->
+
+						<label for="email">Email:</label>
+						<input type="email" name="email" id="email" required="required" placeholder="Insira seu email" />
+						<label for="senha">Senha</label>
+						<input type="password" name="senha" id="senha" required="required" placeholder="Insira o assunto" />
+
+						<input type="submit" class="botao" name="entrar" value="Entrar" />
+						<li><a href="#">Esqueceu sua senha?</a></li>
+					</form>
+				</div>
+            </div><!-- second column -->
+        </div><!-- first content -->
+        <div class="content second-content">
+            <div class="first-column">
+                <!-- <h2 class="title title-primary">hello, friend!</h2>
+                <p class="description description-primary">Enter your personal details</p>
+                <p class="description description-primary">and start journey with us</p>
+                <button id="signup" class="botao btn-primary">sign up</button> -->
+                <button id="signup" class="botao btn-primary">Conecte-se</button>
+                <div class="logo-cadastro">
+					<img src="img/logo fundo branco.jpeg">
+				</div>
+            </div>
+            <div class="second-column">
+                <!-- <h2 class="title title-second">sign in to developer</h2>
+                <div class="social-media">
+                    <ul class="list-social-media">
+                        <a class="link-social-media" href="#">
+                            <li class="item-social-media">
+                                <i class="fab fa-facebook-f"></i>
+                            </li>
+                        </a>
+                        <a class="link-social-media" href="#">
+                            <li class="item-social-media">
+                                <i class="fab fa-google-plus-g"></i>
+                            </li>
+                        </a>
+                        <a class="link-social-media" href="#">
+                            <li class="item-social-media">
+                                <i class="fab fa-linkedin-in"></i>
+                            </li>
+                        </a>
+                    </ul>
+                </div> --><!-- social media -->
+                <!-- <p class="description description-second">or use your email account:</p>
+                <form class="form">
+                
+                    <label class="label-input" for="">
+                        <i class="far fa-envelope icon-modify"></i>
+                        <input type="email" placeholder="Email">
+                    </label>
+                
+                    <label class="label-input" for="">
+                        <i class="fas fa-lock icon-modify"></i>
+                        <input type="password" placeholder="Password">
+                    </label>
+                
+                    <a class="password" href="#">forgot your password?</a>
+                    <button class="botao btn-second">sign in</button>
+                </form> -->
+                <div class="coluna col7 form-cadastro">
+					<h2>Cadastre-se</h2>
+
+									<!-- <input type="hidden" name="recipient" value="contato@portoricodecor.com"> -->
+					<form>
+						<label for="nome">Nome:</label>
+						<input type="text" name="nome" id="nome" required="required" placeholder="Insira seu nome" />
+						<label for="sobrenome">Sobrenome:</label>
+						<input type="text" name="sobrenome" id="sobrenome" required="required" placeholder="Insira seu sobrenome" />
+						<label for="datanascimento">Data de nascimento:</label>
+						<input type="date" name="datanascimento" id="datanascimento" required="required" placeholder="Insira sua data de nascimento" />
+						<label for="email">Email:</label>
+						<input type="email" name="email" id="email" required="required" placeholder="Insira seu email" />
+						<label for="senha">Senha</label>
+						<input type="password" name="senha" id="senha" required="required" placeholder="Insira uma senha" />
+						<label for="confirmarsenha">Confirmar senha</label>
+						<input type="password" name="confirmarsenha" id="confirmarsenha" required="required" placeholder="Confirme sua senha" />
+
+						<input type="submit" class="botao" name="cadastrar" value="Cadastrar" />
+					</form>
+				</div>
+            </div><!-- second column -->
+        </div><!-- second-content -->
+    </div>
+    <script src="js/login.js"></script>
+</body>
+</html>
