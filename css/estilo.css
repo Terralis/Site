@@ -620,7 +620,7 @@ footer span{
 	background-color: #55aba0;
 	width: 20%;
 	height: 100%;
-	position: absolute;
+	position: fixed;
 	text-align: center;
 	z-index: 9999;
 }
@@ -957,58 +957,6 @@ footer span{
 .alinhar-quimica h2{
 	margin-left: 425px;
 }
-
-.ajuda{
-	width: 1000px;
-	margin: 75px 0 0 315px;
-	position: absolute;
-	text-align: center;
-}
-.ajuda h2{
-	font-weight: 300;
-	font-size: 35px;
-	color: #346b60;
-}
-.ajuda h4{
-	height: 50px;
-	width: 50px;
-	border: 2px solid #346b60;
-	text-align: center;
-	vertical-align: middle;
-	display: table-cell;
-	color: #346b60;
-	font-size: 20px;
-	font-weight: 500;
-}
-.numero {
-	display: table;
-}
-.duvidas{
-	display: flex;
-	margin: 25px 0 0 20px;
-	position: absolute;
-}
-.duvida{
-	width: 900px;
-	margin: 0 0 0 25px;
-	text-align: left;
-	line-height: 20px;
-}
-.duvida h3{
-	font-weight: 500;
-	line-height: 25px;
-}
-/*
-#continuacao{
-  visibility: hidden;
-  overflow: hidden;
-  display: none;
-}
-#continuacao:target{
-  visibility: visible;
-  display: block;
-}
-*/
 
 .formulario{
 	width: 1000px;
@@ -1889,6 +1837,63 @@ input:-webkit-autofill
 .menu-auto{
 	height: 125%;
 }
-[type:line]{
-	z-index: 5;
+/*final desempenho*/
+
+#mais1, #mais2, #mais3, #mais4, #mais5{
+	display: none;
 }
+#btnLeiaMais1, #btnLeiaMais2, #btnLeiaMais3, #btnLeiaMais4, #btnLeiaMais5{
+	text-decoration: underline;
+}
+.ajuda{
+	width: 1000px;
+	margin: 75px 0 0 315px;
+	position: absolute;
+	text-align: center;
+}
+.ajuda h2{
+	font-weight: 300;
+	font-size: 35px;
+	color: #346b60;
+}
+.ajuda h4{
+	height: 50px;
+	width: 50px;
+	border: 2px solid #346b60;
+	text-align: center;
+	vertical-align: middle;
+	display: table-cell;
+	color: #346b60;
+	font-size: 20px;
+	font-weight: 500;
+}
+/*.numero {
+	display: table;
+}*/
+.duvidas{
+	/*display: flex;*/
+	margin: 25px 0 0 20px;
+	position: absolute;
+}
+.duvida{
+	width: 900px;
+	margin: 0 0 0 25px;
+	text-align: left;
+	line-height: 20px;
+}
+.duvida h3{
+	font-weight: 500;
+	line-height: 25px;
+}
+.bloco-duvida{
+	display: flex;
+	margin: 5px 5px 15px;
+}
+.menu-ajuda{
+	display: flex;
+	height: 100vh;
+	position: fixed;
+	width: 20%;
+	background: #55aba0;
+}
+
