@@ -3,37 +3,35 @@
 <head>
 	<meta charset="utf-8">
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="css/normalize.css">
-	<link rel="stylesheet" href="css/estilo.css">
+	<link rel="stylesheet" href="../../../../css/normalize.css">
+	<link rel="stylesheet" href="../../../../css/estilo.css">
 	<title>Terrális</title>
 </head>
 <body id="biologia">
-	
 	<div class="divisao-menu divisao-menu-biologia divisao-menu-materia">
-		<img src="img/logo interno laranja.jpeg">
-		<div class="menu-interno">
+		<img src="../../../../img/logo interno laranja.jpeg">
+		<div class="menu-interno atual-interno">
 			<nav>
 				<ul>
+					<li><a href="../../../inicio.html">Início</a></li>
 					<li><a href="">Disciplinas &dtri;</a>
 						<ul>
-							<li><a href="biologia.html">Biologia</a></li>
-							<li><a href="fisica.html">Física</a></li>
-							<li><a href="quimica.html">Química</a></li>
+							<li class="pagina-atual-laranja"><a href="../../biologia.html">Biologia</a></li>
+							<li><a href="../../fisica.html">Física</a></li>
+							<li><a href="../../quimica.html">Química</a></li>
 						</ul>
 					</li>
-					<li><a href="desempenho.html">Desempenho</a></li>
+					<li><a href="../../../desempenho.html">Desempenho</a></li>
 					<li><a href="ajuda.html">Ajuda?</a></li>
 				</ul>
 			</nav>
 		</div>
 	</div>
-
 	<div class="divisao-superior divisao-superior-biologia">
 		<img src="img/usuario.png">
-
 		<div>
-			<p>Usuário</p>
-			<img src="img/escrita laranja.jpeg" id="escrita">
+			<p><a href="../../../perfil.html">Usuário</a></p>
+			<img src="../../../../img/escrita laranja.jpeg" id="escrita">
 		</div>
 		<div class="pesquisa">
 			<form action=" " method="post">
@@ -45,16 +43,13 @@
 			</form>			
 		</div>
 	</div>	
-
 	<div class="escolha conteudo">
 		<h2>RELEMBRE</h2>
 		<h3><b>Origem da vida</b></h3>
 		<div class="conteudo">
 			<div class="opcoes">
-				<li><a href="conteudo1.html#resumo">Resumo</a></li>
-				<li><a href="conteudo1.html#video">Videoaula</a></li>
-				<!-- <hr>
-				<p>Relembre o conteúdo antes de tentar responder ao questionário</p> -->
+				<li><a href="conteudo.html#resumo">Resumo</a></li>
+				<li><a href="conteudo.html#video">Videoaula</a></li>
 				<div class="wrapper">
 					<div class="wrapper-child">
 						<div class="tab" name="resumo" id="resumo">
@@ -79,17 +74,5 @@
 			</div>
 		</div>
 	</div>
-
-	<script language="Javascript">
-  function ShowHide(id) {
-     var state = document.getElementById(id).style.display; // podes usar também document.getElementById(id).style.visibility
-        if (state == 'block') { // podes usar também if (state == 'visible') {
-           document.getElementById(id).style.display = 'none'; // podes usar também document.getElementById(id).style.visibility = 'hidden'
-        } else {
-           document.getElementById(id).style.display = 'block'; // podes usar também document.getElementById(id).style.visibility = 'visible'
-        }
-     }
-</script>
-
 </body>
 </html>

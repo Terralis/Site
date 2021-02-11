@@ -3,25 +3,26 @@
 <head>
 	<meta charset="utf-8">
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="css/normalize.css">
-	<link rel="stylesheet" href="css/estilo.css">
+	<link rel="stylesheet" href="../css/normalize.css">
+	<link rel="stylesheet" href="../css/estilo.css">
 	<title>Terrális</title>
 </head>
 <body>
 	
 	<div class="divisao-menu menu-auto">
-		<img src="img/logo interno cor principal.jpeg">
+		<img src="../img/logo interno cor principal.jpeg">
 		<div class="menu-interno">
 			<nav>
 				<ul>
+					<li><a href="inicio.html">Início</a></li>
 					<li><a href="">Disciplinas &dtri;</a>
 						<ul>
-							<li><a href="biologia.html">Biologia</a></li>
-							<li><a href="fisica.html">Física</a></li>
-							<li><a href="quimica.html">Química</a></li>
+							<li><a href="disciplinas/biologia.html">Biologia</a></li>
+							<li><a href="disciplinas/fisica.html">Física</a></li>
+							<li><a href="disciplinas/quimica.html">Química</a></li>
 						</ul>
 					</li>
-					<li><a href="desempenho.html">Desempenho</a></li>
+					<li class="pagina-atual-verde"><a href="desempenho.html">Desempenho</a></li>
 					<li><a href="ajuda.html">Ajuda?</a></li>
 				</ul>
 			</nav>
@@ -29,11 +30,11 @@
 	</div>
 
 	<div class="divisao-superior">
-		<img src="img/usuario.png">
+		<img src="../img/usuario.png">
 
 		<div>
-			<p>Usuário</p>
-			<img src="img/escrita cor principal.jpeg" id="escrita">
+			<p><a href="perfil.html">Usuário</a></p>
+			<img src="../img/escrita cor principal.jpeg" id="escrita">
 		</div>
 		<div class="pesquisa">
 			<form action=" " method="post">
@@ -73,28 +74,7 @@
 	</div>
 
 	<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-	<script src="js/graphics.js"></script>
-	<!-- <script>
-		var ctx = document.getElementById('bio').getContext('2d');
-		var chart = new Chart(ctx, {
-	    // The type of chart we want to create
-	    type: 'doughnut',
-
-	    // The data for our dataset
-	    data: {
-	        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-	        datasets: [{
-	            label: 'My First dataset',
-	            backgroundColor: '',
-	            borderColor: 'rgb(255, 99, 132)',
-	            data: [0, 10, 5, 2, 20, 30, 45]
-	        }]
-	    },
-
-	    // Configuration options go here
-	    options: {}
-	});
-	</script> -->
+	<script src="../js/desempenho/graphics.js"></script>
 
 </body>
 </html>

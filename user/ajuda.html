@@ -3,17 +3,16 @@
 <head>
 	<meta charset="utf-8">
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="css/normalize.css">
-	<link rel="stylesheet" href="css/estilo.css">
+	<link rel="stylesheet" href="../css/normalize.css">
+	<link rel="stylesheet" href="../css/estilo.css">
 	<title>Terrális</title>
 </head>
 <body>
 	<div class="divisao-superior">
-		<img src="img/usuario.png">
-
+		<img src="../img/usuario.png">
 		<div>
-			<p>Usuário</p>
-			<img src="img/escrita cor principal.jpeg" id="escrita">
+			<p><a href="perfil.html">Usuário</a></p>
+			<img src="../img/escrita cor principal.jpeg" id="escrita">
 		</div>
 		<div class="pesquisa">
 			<form action=" " method="post">
@@ -26,26 +25,24 @@
 		</div>
 	</div>
 	<div class="divisao-menu">
-		<img src="img/logo interno cor principal.jpeg">
+		<img src="../img/logo interno cor principal.jpeg">
 		<div class="menu-interno">
 			<nav>
 				<ul>
+					<li><a href="inicio.html">Início</a></li>
 					<li><a href="">Disciplinas &dtri;</a>
 						<ul>
-							<li><a href="biologia.html">Biologia</a></li>
-							<li><a href="fisica.html">Física</a></li>
-							<li><a href="quimica.html">Química</a></li>
+							<li><a href="disciplinas/biologia.html">Biologia</a></li>
+							<li><a href="disciplinas/fisica.html">Física</a></li>
+							<li><a href="disciplinas/quimica.html">Química</a></li>
 						</ul>
 					</li>
 					<li><a href="desempenho.html">Desempenho</a></li>
-					<li><a href="ajuda.html">Ajuda?</a></li>
+					<li class="pagina-atual-verde"><a href="ajuda.html">Ajuda?</a></li>
 				</ul>
 			</nav>
 		</div>
 	</div>
-
-	
-
 	<div class="ajuda">
 		<h2>Dúvidas frequentes</h2>
 		<div class="duvidas">
@@ -147,7 +144,7 @@
 		</div>
 	</div>		
 	
-	<script src="js/leiamais.js"></script>
+	<script src="../js/ajuda/leiamais.js"></script>
 
 </body>
 </html>

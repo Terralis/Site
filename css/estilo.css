@@ -2,7 +2,6 @@ body{
 	font-family: 'Montserrat', sans-serif;	
 }
 
-
 *{
   margin: 0;
   padding: 0;
@@ -636,16 +635,33 @@ footer span{
 	display: block;
 }
 .menu-interno li{
-	margin: 20px 0;
+	margin: 10px 0;
+	padding: 10px 0;
 }
 .menu-interno ul ul{
   position: absolute;
   visibility: hidden;
   text-align: center;
 }
-.menu-interno ul li:hover ul{
+.menu-interno ul li:hover ul, .atual-interno ul li ul{
   visibility: visible;
   position: relative;
+}
+.pagina-atual-verde{
+	background-color: #80c0b8;
+	padding: 10px 0;
+}
+.pagina-atual-laranja{
+	background-color: #fbc194;
+	padding: 10px 0;
+}
+.pagina-atual-rosa{
+	background-color: #eec8cf;
+	padding: 10px 0;
+}
+.pagina-atual-vermelho{
+	background-color: #f3ada2;
+	padding: 10px 0;
 }
 
 .divisao-superior{
@@ -654,6 +670,10 @@ footer span{
 	width: 100%;
 	height: 50px;
 	overflow: hidden;
+}
+.divisao-superior a{
+	text-decoration: none;
+	color: #fff;
 }
 .divisao-superior img{
 	transform: scale(0.1, 0.1);
@@ -817,6 +837,10 @@ footer span{
 	margin: 150px 0 0 300px;
 	position: absolute;
 }
+.topicos-inicio a{
+	text-decoration: none;
+	color: #000;
+}
 .topicos-inicio img{
 	transform: scale(0.1,0.1);
 	margin: 0 0 -150px -67px;
@@ -860,8 +884,18 @@ footer span{
 	height: 500px;
 	padding: 25px;
 	text-align: center;
-	
 }
+/*.materia-apoio{
+	display: flex;
+	margin: 50px 0 0 300px;
+	width: 1000px;
+	height: 500px;
+	padding: 25px;
+	text-align: center;
+}*/
+/*.apoio{
+	position: absolute;
+}*/
 #biologia{
 	overflow-x: hidden;
 }
@@ -928,6 +962,30 @@ footer span{
 	position: absolute;
 	margin: 400px 0 0 0;
 }
+.materia4{
+	position: absolute;
+	margin: 600px 0 0 0;
+}
+.materia5{
+	position: absolute;
+	margin: 800px 0 0 0;
+}
+.materia6{
+	position: absolute;
+	margin: 1000px 0 0 0;
+}
+.materia7{
+	position: absolute;
+	margin: 1200px 0 0 0;
+}
+.materia8{
+	position: absolute;
+	margin: 1400px 0 0 0;
+}
+.materia9{
+	position: absolute;
+	margin: 1600px 0 0 0;
+}
 .materia3 h2{
 	margin-left: 420px;
 }
@@ -956,6 +1014,13 @@ footer span{
 }
 .alinhar-quimica h2{
 	margin-left: 425px;
+}
+
+.bola-geral{
+	background-color: #55aba0;
+}
+.capsula-geral{
+	background-color: #55aba0;
 }
 
 .formulario{
@@ -1897,3 +1962,85 @@ input:-webkit-autofill
 	background: #55aba0;
 }
 
+.select{
+	background-color: #f2f2f2;
+}
+.selecionado{
+	background-color: #c2c2c2;
+}
+#correct{
+	background-color: green;
+}
+
+.perfil h2{
+	color: #262626;
+	font-size: 28px;
+	font-weight: 300;
+	text-align: center;
+	text-decoration: underline;
+	text-decoration-color: #346b60;
+	padding: 5px;
+	text-underline-position: under;
+}
+.infos{
+	display: inline;
+}
+/*.form-perfil{
+	float: right;
+	position: absolute;
+	margin: 80px 0 0 750px;
+}*/
+.perfil1{
+	text-align: right;
+}
+.form-perfil{
+	width: 500px;
+	position: absolute;
+}
+.form-perfil h3{
+	font-weight: 500;
+	font-size: 20px;
+	color: #fff;
+	padding: 10px;
+	background-color: #346b60;
+	margin: 25px auto;
+	border-radius: 5px;
+}
+.form-perfil div{
+	margin-top: 15px;
+}
+.form-perfil p{
+	margin: 25px 0;
+}
+.form-perfil label{
+	color: #262626;
+	font-size: 18px;
+	font-weight: 400;
+	padding: 10px;
+}
+.form-perfil input{
+	padding: 5px 2%;
+	width: 53%;
+	padding: 10px;
+	border: 0.5px solid #346b60;
+	border-radius: 3px;
+
+}
+.perfil2{
+	margin-left: 500px;
+	text-align: center;
+}
+.perfil2 h3{
+	font-weight: 500;
+	font-size: 20px;
+	color: #346b60;
+	padding: 10px;
+	background-color: transparent;
+	margin: 25px auto;
+	border-radius: 5px;
+}
+
+.atual-externo{
+	border-bottom: 3px solid #474747;
+	border-radius: 3px;
+}
