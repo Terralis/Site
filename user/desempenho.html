@@ -1,80 +1,77 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8">
-	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="../css/normalize.css">
-	<link rel="stylesheet" href="../css/estilo.css">
-	<title>Terrális</title>
-</head>
-<body>
-	
-	<div class="divisao-menu menu-auto">
-		<img src="../img/logo interno cor principal.jpeg">
-		<div class="menu-interno">
-			<nav>
-				<ul>
-					<li><a href="inicio.html">Início</a></li>
-					<li><a href="">Disciplinas &dtri;</a>
-						<ul>
-							<li><a href="disciplinas/biologia.html">Biologia</a></li>
-							<li><a href="disciplinas/fisica.html">Física</a></li>
-							<li><a href="disciplinas/quimica.html">Química</a></li>
-						</ul>
-					</li>
-					<li class="pagina-atual-verde"><a href="desempenho.html">Desempenho</a></li>
-					<li><a href="ajuda.html">Ajuda?</a></li>
-				</ul>
-			</nav>
+	<head>
+		<meta charset="utf-8">
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="../css/normalize.css">
+		<link rel="stylesheet" href="../css/estilo.css">
+		<title>Terrális</title>
+	</head>
+	<body>
+		<div class="divisao-menu menu-auto">
+			<img src="../img/logo interno cor principal.jpeg">
+			<div class="menu-interno">
+				<nav>
+					<ul>
+						<li><a href="inicio.html">Início</a></li>
+						<li><a href="">Disciplinas &dtri;</a>
+							<ul>
+								<li><a href="disciplinas/biologia.html">Biologia</a></li>
+								<li><a href="disciplinas/fisica.html">Física</a></li>
+								<li><a href="disciplinas/quimica.html">Química</a></li>
+							</ul>
+						</li>
+						<li class="pagina-atual-verde"><a href="desempenho.html">Desempenho</a></li>
+						<li><a href="ajuda.html">Ajuda?</a></li>
+					</ul>
+				</nav>
+			</div>
 		</div>
-	</div>
-
-	<div class="divisao-superior">
-		<img src="../img/usuario.png">
-
-		<div>
-			<p><a href="perfil.html">Usuário</a></p>
-			<img src="../img/escrita cor principal.jpeg" id="escrita">
+		<div class="divisao-superior">
+			<img src="../img/usuario.png">
+			<div>
+				<p><a href="perfil.html">Usuário</a></p>
+				<img src="../img/escrita cor principal.jpeg" id="escrita">
+			</div>
+			<div class="pesquisa">
+				<form action=" " method="post">
+					<label for="busca">Buscar</label>
+					<div class="container">
+						<button type="submit">&#8981;</button>  
+						<input type="search" id="busca" name="q">
+					</div>
+				</form>			
+			</div>
 		</div>
-		<div class="pesquisa">
-			<form action=" " method="post">
-				<label for="busca">Buscar</label>
-				<div class="container">
-					<button type="submit">&#8981;</button>  
-					<input type="search" id="busca" name="q">
+		<div class="graphics">
+			<h3>Monitoramento de desempenho</h3>
+			<div class="graphic-general">
+				<canvas class="bar-line" id="myChart"></canvas>
+			</div>
+			<h4>Desempenho por componente curricular</h4>
+			<div class="individual">
+				<div class="graphic-individual">
+					<legend>Biologia</legend>
+					<canvas class="donut" id="bio"></canvas>
 				</div>
-			</form>			
-		</div>
-	</div>
-
-	<!-- <div class="graphic-individual">
-		<canvas class="donut" id="myChart"></canvas>
-	</div> -->
-
-	<div class="graphics">
-		<h3>Monitoramento de desempenho</h3>
-		<div class="graphic-general">
-			<canvas class="bar-line" id="myChart"></canvas>
-		</div>
-		<h4>Desempenho por componente curricular</h4>
-		<div class="individual">
-			<div class="graphic-individual">
-				<legend>Biologia</legend>
-				<canvas class="donut" id="bio"></canvas>
+				<div class="graphic-individual">
+					<legend>Física</legend>
+					<canvas class="donut" id="fis"></canvas>
+				</div>
+				<div class="graphic-individual">
+					<legend>Química</legend>
+					<canvas class="donut" id="qui"></canvas>
+				</div>
 			</div>
-			<div class="graphic-individual">
-				<legend>Física</legend>
-				<canvas class="donut" id="fis"></canvas>
-			</div>
-			<div class="graphic-individual">
-				<legend>Química</legend>
-				<canvas class="donut" id="qui"></canvas>
+			<div class="footer footer-size footer-desempenho">
+				<footer>
+					<span>&copy; 2021 - Terrális</span>
+				</footer>
 			</div>
 		</div>
-	</div>
 
-	<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-	<script src="../js/desempenho/graphics.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+		<script src="../js/desempenho/graphics.js"></script>
 
-</body>
+	</body>
 </html>

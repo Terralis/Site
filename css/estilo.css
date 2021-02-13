@@ -160,7 +160,7 @@ body{
 	text-transform: uppercase;
 	text-shadow: 0.1em 0.1em 0.2em #262626;
 }
-.feet{
+/*.feet{
 	font-size: 18px;
 	font-weight: 500;
 	color: #d4f704;
@@ -168,17 +168,54 @@ body{
 	margin: 5px 0;
 	text-align: center;
 	display: flex;
-	background-color: #000;
+	background-color: #fff;
+}*/
+.footer-contato{
+	margin-top: 220px;
+}
+.footer-login{
+	margin-top: 597px;
+}
+.footer-logon{
+	margin-left: -750px;
+}
+.footer-interno{
+	margin-top: 152px;
+	margin-left: 273px;
+}
+.footer-size footer span{
+	width: 1093px;
+}
+.footer-desempenho{
+	margin-top: 25px;
+	margin-left: -50px;
+}
+.footer-ajuda{
+	margin-top: 25px;
+	margin-left: -70px;
+}
+.footer-materia{
+	margin-top: 25px;
+	margin-left: -55px;
+}
+.footer-escolha{
+	margin-top: 25px;
+	margin-left: -50px;
+}
+.footer-questionario{
+	margin-top: 31px;
+	margin-left: -42px;
 }
 footer span{
-	font-size: 18px;
-	font-weight: 500;
-	color: #d4f704;
-	width: 1349px;
-	margin: 5px 0;
+	font-size: 16px;
+	font-weight: 400;
+	color: #fff;
+	width: 1358px;
 	text-align: center;
-	display: flex;
-	background-color: #000;
+	display: table;
+	background-color: #262626;
+	position: absolute;
+	padding: 5px 0;
 }
 
 /*
@@ -810,7 +847,7 @@ footer span{
 .caixa{
 	width: 900px;
 	height: 100px;
-	margin: 85px 0 0 300px;
+	margin: 85px 0 0 315px;
 	padding: 35px 50px 50px 50px;
 	position: absolute;
 	background-color: #9acc93;
@@ -834,7 +871,7 @@ footer span{
 	display: flex;
 	width: 900px;
 	text-align: center;
-	margin: 150px 0 0 300px;
+	margin: 150px 0 0 315px;
 	position: absolute;
 }
 .topicos-inicio a{
