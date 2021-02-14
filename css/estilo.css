@@ -180,7 +180,7 @@ body{
 	margin-left: -750px;
 }
 .footer-interno{
-	margin-top: 152px;
+	margin-top: 170px;
 	margin-left: 273px;
 }
 .footer-size footer span{
@@ -711,6 +711,7 @@ footer span{
 .divisao-superior a{
 	text-decoration: none;
 	color: #fff;
+	cursor: default;
 }
 .divisao-superior img{
 	transform: scale(0.1, 0.1);
@@ -732,12 +733,65 @@ footer span{
 	margin-top: -53px;
 }
 
+#opcaoPerfil{
+	display: none;
+}
+#opcaoPerfil{
+	position: absolute;
+	margin: 50px 0 0 300px;
+	z-index: 999;
+	padding: 10px;
+	width: 150px;
+	background-color: #262626;
+	border-bottom-right-radius: 7px;
+	border-bottom-left-radius: 7px;
+}
+#opcaoPerfil li{
+	list-style: none;
+	padding: 1.5px 0;
+}
+#opcaoPerfil li:hover{
+	background-color: #4e4e4e;
+}
+#opcaoPerfil li a{
+	text-decoration: none;
+	line-height: 1.1;
+	color: #f5f5f5;
+	font-weight: 300;
+	font-size: 14px;
+}
 /*estilo caixa de pesquisa*/
 .pesquisa{
 	margin: -680px 20px 0 0;
 	float: right;
 }
-
+#pesquisa-materias{
+	display: none;
+}
+.pesquisa-materias{
+	position: absolute;
+	margin: 50px 0 0 1100px;
+	z-index: 999;
+	padding: 10px;
+	width: 200px;
+	background-color: #262626;
+	border-bottom-right-radius: 7px;
+	border-bottom-left-radius: 7px;
+}
+.pesquisa-materias li{
+	list-style: none;
+	padding: 1.5px 0;
+}
+.pesquisa-materias li:hover{
+	background-color: #4e4e4e;
+}
+.pesquisa-materias li a{
+	text-decoration: none;
+	line-height: 1.1;
+	color: #f5f5f5;
+	font-weight: 300;
+	font-size: 14px;
+}
 */
 
 .container {
