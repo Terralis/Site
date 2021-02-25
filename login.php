@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 	<html>
 	<head>
@@ -11,7 +14,7 @@
 		<div class="menu-login">
 			<li><a href="index.html">Início</a></li>
 		</div>
-		<li class="botao-meio"><a href="cadastro.html">Cadastre-se &rtrif;</a></li>
+		<li class="botao-meio"><a href="cadastro.php">Cadastre-se &rtrif;</a></li>
 		<div>
 			<img class="logo-branco" src="img/logo fundo branco.jpeg">
 		</div>
@@ -21,7 +24,18 @@
 					<h2>Conecte-se</h2>
 					<h3>Olá, Estudante!</h3>
 					<hr/>
-					<form name="form" method="post" action="email.php">
+					<?php 
+						if (isset($_SESSION['nao_autenticado'])):
+					?>
+					<div class="erro-login">
+						<p>Erro ao tentar efetuar o login.</p>
+						<p>Email ou senha incorretos. Tente novamente.</p>
+					</div>
+					<?php
+						endif;
+						unset($_SESSION['nao_autenticado']);
+					?>
+					<form name="form" method="post" action="entrar.php">
 						<label for="email">Email:</label>
 						<input type="email" name="email" id="email" required="required" placeholder="Insira seu email" />
 						<label for="senha">Senha</label>

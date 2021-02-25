@@ -28,7 +28,7 @@
 			</div>
 		</div>
 		<div class="divisao-superior divisao-superior-biologia">
-			<img src="../../../../img/usuario.png">
+			<<img src="../../../../img/usuario.png">
 			<div>
 				<p><a onclick="opcaoPerfil()">Usuário</a></p>
 				<img src="../../../../img/escrita laranja.jpeg" id="escrita">
@@ -70,34 +70,40 @@
 				<li><a href="disciplinas/quimica/quimicaorganica/escolha.html">Química orgânica</a></li>
 				<li><a href="disciplinas/quimica/estequiometria/escolha.html">Estequiometria</a></li>
 			</ul>
-		</div>	
-		<div class="escolha conteudo">
-			<h2>RELEMBRE</h2>
-			<h3><b>Origem da vida</b></h3>
-			<div class="conteudo">
-				<div class="opcoes">
-					<li><button class="btn-opcoes" onclick="esquerda()">Resumo</button></li>
-					<li><button class="btn-opcoes" onclick="direita()">Videoaula</button></li>
-					<div class="wrapper" id="wrapper">
-						<div class="wrapper-child" >
-							<div class="tab" name="resumo" id="resumo">
-								<div class="material-texto">
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-									</p>
-								</div>
-							</div>
-							<div class="tab" name="video" id="video">
-								<div class="material-video">
-									<iframe width="600" height="337" src="https://www.youtube.com/embed/DVNey_bnbHA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-								</div>
-							</div>
+		</div>
+		<div class="escolha">
+			<h2>Escolha uma opção:</h2>
+			<div class="relembre">
+				<div class="lado lado1">
+					<div class="alinhamento">
+						<h4><b>Relembrar</b></h4>
+						<h6>Vídeos</h6>
+						<p>Relembre o conteúdo com a ajuda de videoaulas para realizar os questionários com mais facilidade.</p>
+						<div class="lado2">
+							<a onclick="direita()" href="conteudo.html#video">&ltrif;</a>
 						</div>
 					</div>
-					<div class="bt-bio">
-						<a  href="origemdavida.php">Responder ao questionário</a>
+				</div>
+				<div class="marcador"></div>
+				<div class="marcador marcador2"></div>
+				<div class="marcador marcador3"></div>
+				<hr>
+				<div class="lado lado2">
+					<div>
+						<h4><b>Relembrar</b></h4>
+						<h6>Textos</h6>
+						<p>Relembre o conteúdo com a ajuda de resumos para realizar os questionários com mais facilidade.</p>
+						<div class="lado1">
+							<a href="conteudo.html">&rtrif;</a>
+						</div>
+					</div>
+					<div class="alinhamento">
+						<h4><b>Testar seus conhecimentos</b></h4>
+						<h6>Questionário</h6>
+						<p>Responda ao questionário para assimilar o conteúdo, testar seu conhecimento e se preparar.</p>
+						<div class="lado1">
+							<a href="niveisdeorganizacaodosseresvivos.php">&rtrif;</a>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -110,6 +116,6 @@
 
 		<script src="../../../../js/scroll-conteudo.js"></script>
 		<script src="../../../../js/pesquisa.js"></script>
-		
+
 	</body>
 </html>

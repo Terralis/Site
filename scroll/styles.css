@@ -1,0 +1,41 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #eee;
+}
+
+.scroll {
+  margin-top: 50px;
+  max-height: 200px;
+  background-color: #ffff;
+  border-radius: 10px;
+  border: 1px solid gray;
+  display: flex;
+  overflow-x: auto;
+}
+
+ .box { 
+  min-width: 110px;
+  height: 110px;
+  line-height: 110px;
+  background-color:teal;
+  margin-right: 10px;
+}
+
+::-webkit-scrollbar { /* Propriedades da ScrollBar */
+  width: 12px;
+  height: 16px;
+}
+
+::-webkit-scrollbar-track { /* Estilo do caminho da ScrollBar */
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+  border-radius: 10px;
+  background-color: springgreen
+}
+
+::-webkit-scrollbar-thumb { /* Estilo do botão da ScrollBar */
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+  background-color:tomato
+}

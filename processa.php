@@ -1,30 +1,40 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <title></title>
-    </head>
-    <body>
-        <?php
-		$nome = $_POST['nome'];
-		$email = $_POST['email'];
-		$mensagem = $_POST['mensagem'];
-		
-        require 'vendor/autoload.php';
+<?php
+session_start();
+include_once("conexao.php");
+echo "teste";
+$nome = filter_input(INPUT_POST, 'nome');
+$nome = trim($nome);
+$sobrenome = filter_input(INPUT_POST, 'sobrenome');
+$sobrenome = trim($sobrenome);
+$datanascimento = filter_input(INPUT_POST, 'datanascimento');
+$email = filter_input(INPUT_POST, 'email');
+$email = trim($email);
+$senha = filter_input(INPUT_POST, 'senha');
+$senha = trim(md5($senha));
 
-        $from = new SendGrid\Mail\Mail("paam.vic19@gmail.com");
-        $subject = "Mensagem de contato";
-        $to = new SendGrid\Mail\Mail("paam.vic19@gmail.com");
-        $content = new SendGrid\Mail\Content("text/html", "Olá Pâmela, <br><br>Nova mensagem de contato<br><br>Nome: $nome<br>Email: $email <br>Mensagem: $mensagem");
-        $mail = new SendGrid\Mail\From($from, $subject, $to, $content);
-        
-        //Necessário inserir a chave
-        $apiKey = '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';
-        $sg = new \SendGrid($apiKey);
+$validar = "SELECT COUNT(*) AS total FROM usuario WHERE email = '$email'";
+$result = mysqli_query($conexao, $validar);
+$row = mysqli_fetch_assoc($result);
+$_SESSION['usuario_existe'] = false;
+$_SESSION['status_cadastro'] = false;
+if($row['total'] == 1){
+	$_SESSION['usuario_existe'] = true;
+	header('Location: cadastro.php');
+	exit;
+}
 
-        $response = $sg->client->mail()->send()->post($mail);
-        echo "Mensagem enviada com sucesso";
-		
-        ?>
-    </body>
-</html>
+$sql = "INSERT INTO usuario (nome, sobrenome, data_nascimento, email, senha) VALUES ('$nome', '$sobrenome', '$datanascimento', '$email', '$senha')";
+
+if($conexao->query($sql) === true){
+	$_SESSION['status_cadastro'] = true;
+}
+
+$conexao->close();
+header('Location: cadastro.php');
+exit;
+
+// $cadastrar = mysqli_query($conexao, $sql);
+
+// mysqli_close($conexao);
+
+?>
