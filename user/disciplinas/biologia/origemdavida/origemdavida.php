@@ -171,7 +171,18 @@ include_once("../../../../conexao.php");
 				<!-- questão 1 -->
 				<div class="whole-question active" id="1">
 					<div class="answers-indicator">
-					
+						<div class="atual"></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
 					</div>
 					<div class="question-box">
 						<div class="question-number">
@@ -238,7 +249,7 @@ include_once("../../../../conexao.php");
 							<br>
 							<div class="btn-box">
 								<div class="confirm-question-btn">
-									<button type="submit" class="btn btn-bio" onclick="next()">Confirmar resposta</button>
+									<button type="submit" class="btn btn-bio" id="bt-q1">Confirmar resposta</button>
 								</div>
 								<div class="next-question-btn">
 									<button type="button" class="btn btn-bio" onclick="toQuestion2()">Próxima questão &rtrif;</button>
@@ -249,36 +260,95 @@ include_once("../../../../conexao.php");
 							$escolha = filter_input(INPUT_POST, 'questao1');
 							if(isset($escolha)){
 								if($escolha == $correta){
-								echo '<style type/css>
-								#alternativa4{
-									border: 2px solid green;
-									background-color: transparent;
+									echo '<style type/css>
+									#alternativa4{
+										border: 2px solid green;
+										background-color: #d2e8cf;
+									}
+									</style>';
 								}
-								</style>';
-								}
-								else{ ?>
-									<!-- // echo '<style type/css>
-									// #alternativa4{
-									// 	border: 2px solid yellow;
-									// 	background-color: transparent;
-									// 	}
-									// </style>'; -->
-									<script type="text/javascript">
-										var alt1 = document.getElementById("alternativa5").checked;
-										console.log(alt1);
-										
-									</script>
-									<?php ;
+								else{ 
+									echo '<style type/css>
+									#alternativa4{
+										border: 2px solid green;
+										background-color: #d2e8cf;
+									}
+									</style>';
+									switch ($escolha) {
+										case $alternativa1:
+											echo '<style type/css>
+												#alternativa1{
+													border: 2px solid red;
+													background-color: #ff6347;
+												}
+												</style>';
+											break;
+										case $alternativa2:
+											echo '<style type/css>
+												#alternativa2{
+													border: 2px solid red;
+													background-color:  #ff6347;
+												}
+												</style>';
+											break;
+										case $alternativa3:
+											echo '<style type/css>
+												#alternativa3{
+													border: 2px solid red;
+													background-color:  #ff6347;
+												}
+												</style>';
+											break;
+										case $alternativa4:
+											echo '<style type/css>
+												#alternativa4{
+													border: 2px solid red;
+													background-color:  #ff6347;
+												}
+												</style>';
+											break;
+										case $alternativa5:
+											echo '<style type/css>
+												#alternativa5{
+													border: 2px solid red;
+													background-color:  #ff6347;
+												}
+												</style>';
+											break;
+									}
 								}
 							}
 						?>
-						<!-- <script>
-							$aux = $_POST['questao1'].attr("id");
-						</script> -->
+						<script >
+							var bt_q1 = document.getElementById("bt-q1");
+						</script>
+						<?php
+							if(isset($escolha)){
+						?>
+						<script>
+							bt_q1.style.display = "none";
+						</script>
+						<?php
+							}
+						?>
 					</div>
 				</div>
 				<!-- questão 2 -->
 				<div class="whole-question" id="2">
+					<div class="answers-indicator">
+						<div></div>
+						<div class="atual"></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+					</div>
 					<div class="question-box">
 						<div class="question-number">
 							<?php
@@ -293,6 +363,7 @@ include_once("../../../../conexao.php");
 							<?php
 								while ($row_questao = mysqli_fetch_assoc($questao2)) {
 								echo $row_questao['enunciado'];
+								echo "<img id=margin src=../../../../img/img-id2.png>";
 								}
 							?>		
 						</div>
@@ -329,26 +400,26 @@ include_once("../../../../conexao.php");
 								}
 							?>
 							<input type="radio" name="questao2" id="alternativa1q2" value="<?php echo $alternativa1q2 ?>">
-							<label for="alternativa1q2"><?php echo $alternativa1q2 ?></label>
+							<label for="alternativa1q2" id="alternativa1q2"><?php echo $alternativa1q2 ?></label>
 							<br>
 							<input type="radio" name="questao2" id="alternativa2q2" value="<?php echo $alternativa2q2 ?>">
-							<label for="alternativa2q2"><?php echo $alternativa2q2 ?></label>
+							<label for="alternativa2q2" id="alternativa2q2"><?php echo $alternativa2q2 ?></label>
 							<br>
 							<input type="radio" name="questao2" id="alternativa3q2" value="<?php echo $alternativa3q2 ?>">
-							<label for="alternativa3q2"><?php echo $alternativa3q2 ?></label>
+							<label for="alternativa3q2" id="alternativa3q2"><?php echo $alternativa3q2 ?></label>
 							<br>
 							<input type="radio" name="questao2" id="alternativa4q2" value="<?php echo $alternativa4q2 ?>">
-							<label for="alternativa4q2"><?php echo $alternativa4q2 ?></label>
+							<label for="alternativa4q2" id="alternativa4q2"><?php echo $alternativa4q2 ?></label>
 							<br>
 							<input type="radio" name="questao2" id="alternativa5q2" value="<?php echo $alternativa5q2 ?>">
-							<label for="alternativa5q2"><?php echo $alternativa5q2 ?></label>
+							<label for="alternativa5q2" id="alternativa5q2"><?php echo $alternativa5q2 ?></label>
 							<br>
 							<div class="btn-box">
 								<div class="previous-question-btn">
 									<button type="button" class="btn btn-bio" onclick="backQuestion1()">&ltrif; Questão anterior</button>
 								</div>
 								<div class="confirm-question-btn">
-									<button type="submit" class="btn btn-bio" onclick="here2()">Confirmar resposta</button>
+									<button type="submit" class="btn btn-bio" id="bt-q2" onclick="here2()">Confirmar resposta</button>
 								</div>
 								<div class="next-question-btn">
 									<button type="button" class="btn btn-bio" onclick="toQuestion3()">Próxima questão &rtrif;</button>
@@ -357,17 +428,78 @@ include_once("../../../../conexao.php");
 						</form>
 						<?php
 							$escolha2 = filter_input(INPUT_POST, 'questao2');
-							?>
+							if(isset($escolha2)){
+								if($escolha2 == $corretaQ2){
+									echo '<style type/css>
+									#alternativa5q2{
+										border: 2px solid green;
+										background-color: #d2e8cf;
+									}
+									</style>';
+								}
+								else{ 
+									echo '<style type/css>
+									#alternativa5q2{
+										border: 2px solid green;
+										background-color: #d2e8cf;
+									}
+									</style>';
+									switch ($escolha2) {
+										case $alternativa1q2:
+											echo '<style type/css>
+												#alternativa1q2{
+													border: 2px solid red;
+													background-color: #ff6347;
+												}
+												</style>';
+											break;
+										case $alternativa2q2:
+											echo '<style type/css>
+												#alternativa2q2{
+													border: 2px solid red;
+													background-color:  #ff6347;
+												}
+												</style>';
+											break;
+										case $alternativa3q2:
+											echo '<style type/css>
+												#alternativa3q2{
+													border: 2px solid red;
+													background-color:  #ff6347;
+												}
+												</style>';
+											break;
+										case $alternativa4q2:
+											echo '<style type/css>
+												#alternativa4q2{
+													border: 2px solid red;
+													background-color:  #ff6347;
+												}
+												</style>';
+											break;
+										case $alternativa5q2:
+											echo '<style type/css>
+												#alternativa5q2{
+													border: 2px solid red;
+													background-color:  #ff6347;
+												}
+												</style>';
+											break;
+									}
+								}
+							}
+						?>
 							<script >
 								var atual2 = false;
+								var bt_q2 = document.getElementById("bt-q2");
 							</script>
 							<?php
 							if(isset($escolha2)){
 								if($escolha2 == $corretaQ2){
-									echo "foi";
 									?>
 									<script>
 										atual2 = true;
+										bt_q2.style.display = "none";
 									</script>
 									<?php
 								}
@@ -375,6 +507,7 @@ include_once("../../../../conexao.php");
 									?>
 									<script>
 										atual2 = true;
+										bt_q2.style.display = "none";
 									</script>
 									<?php
 								}
@@ -384,6 +517,20 @@ include_once("../../../../conexao.php");
 				</div>
 				<!-- questão 3 -->
 				<div class="whole-question" id="3">
+					<div class="answers-indicator">
+						<div></div>
+						<div></div>
+						<div class="atual"></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+					</div>
 					<div class="question-box">
 						<div class="question-number">
 							<?php
@@ -398,6 +545,7 @@ include_once("../../../../conexao.php");
 							<?php
 								while ($row_questao = mysqli_fetch_assoc($questao3)) {
 								echo $row_questao['enunciado'];
+								echo "<img id=margin src=../../../../img/img-id3.png>";
 								}
 							?>		
 						</div>
@@ -433,26 +581,26 @@ include_once("../../../../conexao.php");
 								}
 							?>
 							<input type="radio" name="questao3" id="alternativa1q3" value="<?php echo $alternativa1q3 ?>">
-							<label for="alternativa1q3"><?php echo $alternativa1q3 ?></label>
+							<label for="alternativa1q3" id="alternativa1q3"><?php echo $alternativa1q3 ?></label>
 							<br>
 							<input type="radio" name="questao3" id="alternativa2q3" value="<?php echo $alternativa2q3 ?>">
-							<label for="alternativa2q3"><?php echo $alternativa2q3 ?></label>
+							<label for="alternativa2q3" id="alternativa2q3"><?php echo $alternativa2q3 ?></label>
 							<br>
 							<input type="radio" name="questao3" id="alternativa3q3" value="<?php echo $alternativa3q3 ?>">
-							<label for="alternativa3q3"><?php echo $alternativa3q3 ?></label>
+							<label for="alternativa3q3" id="alternativa3q3"><?php echo $alternativa3q3 ?></label>
 							<br>
 							<input type="radio" name="questao3" id="alternativa4q3" value="<?php echo $alternativa4q3 ?>">
-							<label for="alternativa4q3"><?php echo $alternativa4q3 ?></label>
+							<label for="alternativa4q3" id="alternativa4q3"><?php echo $alternativa4q3 ?></label>
 							<br>
 							<input type="radio" name="questao3" id="alternativa5q3" value="<?php echo $alternativa5q3 ?>">
-							<label for="alternativa5q3"><?php echo $alternativa5q3 ?></label>
+							<label for="alternativa5q3" id="alternativa5q3"><?php echo $alternativa5q3 ?></label>
 							<br>
 							<div class="btn-box">
 								<div class="previous-question-btn">
 									<button type="button" class="btn btn-bio" onclick="backQuestion2()">&ltrif; Questão anterior</button>
 								</div>
 								<div class="confirm-question-btn">
-									<button type="submit" class="btn btn-bio" onclick="next()">Confirmar resposta</button>
+									<button type="submit" class="btn btn-bio" id="bt-q3" onclick="here3()">Confirmar resposta</button>
 								</div>
 								<div class="next-question-btn">
 									<button type="button" class="btn btn-bio" onclick="toQuestion4()">Próxima questão &rtrif;</button>
@@ -461,17 +609,78 @@ include_once("../../../../conexao.php");
 						</form>
 						<?php
 							$escolha3 = filter_input(INPUT_POST, 'questao3');
-							?>
+							if(isset($escolha3)){
+								if($escolha3 == $corretaQ3){
+									echo '<style type/css>
+									#alternativa1q3{
+										border: 2px solid green;
+										background-color: #d2e8cf;
+									}
+									</style>';
+								}
+								else{ 
+									echo '<style type/css>
+									#alternativa1q3{
+										border: 2px solid green;
+										background-color: #d2e8cf;
+									}
+									</style>';
+									switch ($escolha3) {
+										case $alternativa1q3:
+											echo '<style type/css>
+												#alternativa1q3{
+													border: 2px solid red;
+													background-color: #ff6347;
+												}
+												</style>';
+											break;
+										case $alternativa2q3:
+											echo '<style type/css>
+												#alternativa2q3{
+													border: 2px solid red;
+													background-color:  #ff6347;
+												}
+												</style>';
+											break;
+										case $alternativa3q3:
+											echo '<style type/css>
+												#alternativa3q3{
+													border: 2px solid red;
+													background-color:  #ff6347;
+												}
+												</style>';
+											break;
+										case $alternativa4q3:
+											echo '<style type/css>
+												#alternativa4q3{
+													border: 2px solid red;
+													background-color:  #ff6347;
+												}
+												</style>';
+											break;
+										case $alternativa5q3:
+											echo '<style type/css>
+												#alternativa5q3{
+													border: 2px solid red;
+													background-color:  #ff6347;
+												}
+												</style>';
+											break;
+									}
+								}
+							}
+						?>
 							<script >
 								var atual3 = false;
+								var bt_q3 = document.getElementById("bt-q3");
 							</script>
 							<?php
 							if(isset($escolha3)){
 								if($escolha3 == $corretaQ3){
-									echo "foi";
 									?>
 									<script>
 										atual3 = true;
+										bt_q3.style.display = "none";
 									</script>
 									<?php
 								}
@@ -479,6 +688,7 @@ include_once("../../../../conexao.php");
 									?>
 									<script>
 										atual3 = true;
+										bt_q3.style.display = "none";
 									</script>
 									<?php
 								}
@@ -488,6 +698,20 @@ include_once("../../../../conexao.php");
 				</div>
 				<!-- questão 4 -->
 				<div class="whole-question" id="4">
+					<div class="answers-indicator">
+						<div></div>
+						<div></div>
+						<div></div>
+						<div class="atual"></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+					</div>
 					<div class="question-box">
 						<div class="question-number">
 							<?php
@@ -525,17 +749,17 @@ include_once("../../../../conexao.php");
 								}
 							?>
 							<input type="radio" name="questao4" id="alternativa1q4" value="<?php echo $alternativa1q4 ?>">
-							<label for="alternativa1q4"><?php echo $alternativa1q4 ?></label>
+							<label for="alternativa1q4" id="alternativa1q4"><?php echo $alternativa1q4 ?></label>
 							<br>
 							<input type="radio" name="questao4" id="alternativa2q4" value="<?php echo $alternativa2q4 ?>">
-							<label for="alternativa2q4"><?php echo $alternativa2q4 ?></label>
+							<label for="alternativa2q4" id="alternativa2q4"><?php echo $alternativa2q4 ?></label>
 							<br>
 							<div class="btn-box">
 								<div class="previous-question-btn">
 									<button type="button" class="btn btn-bio" onclick="backQuestion3()">&ltrif; Questão anterior</button>
 								</div>
 								<div class="confirm-question-btn">
-									<button type="submit" class="btn btn-bio" onclick="next()">Confirmar resposta</button>
+									<button type="submit" class="btn btn-bio" id="bt-q4" onclick="here4()">Confirmar resposta</button>
 								</div>
 								<div class="next-question-btn">
 									<button type="button" class="btn btn-bio" onclick="toQuestion5()">Próxima questão &rtrif;</button>
@@ -544,14 +768,85 @@ include_once("../../../../conexao.php");
 						</form>
 						<?php
 							$escolha4 = filter_input(INPUT_POST, 'questao4');
-							if($escolha4 == $corretaQ4){
-								echo "foi";
+							if(isset($escolha4)){
+								if($escolha4 == $corretaQ4){
+									echo '<style type/css>
+									#alternativa1q4{
+										border: 2px solid green;
+										background-color: #d2e8cf;
+									}
+									</style>';
+								}
+								else{ 
+									echo '<style type/css>
+									#alternativa1q4{
+										border: 2px solid green;
+										background-color: #d2e8cf;
+									}
+									</style>';
+									switch ($escolha4) {
+										case $alternativa1q4:
+											echo '<style type/css>
+												#alternativa1q4{
+													border: 2px solid red;
+													background-color: #ff6347;
+												}
+												</style>';
+											break;
+										case $alternativa2q4:
+											echo '<style type/css>
+												#alternativa2q4{
+													border: 2px solid red;
+													background-color:  #ff6347;
+												}
+												</style>';
+											break;
+									}
+								}
+							}
+						?>
+							<script >
+								var atual4 = false;
+								var bt_q4 = document.getElementById("bt-q4");
+							</script>
+							<?php
+							if(isset($escolha4)){
+								if($escolha4 == $corretaQ4){
+									?>
+									<script>
+										atual4 = true;
+										bt_q4.style.display = "none";
+									</script>
+									<?php
+								}
+								else{
+									?>
+									<script>
+										atual4 = true;
+										bt_q4.style.display = "none";
+									</script>
+									<?php
+								}
 							}
 						?>
 					</div>
 				</div>
 				<!-- questão 5 -->
 				<div class="whole-question" id="5">
+					<div class="answers-indicator">
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div class="atual"></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+					</div>
 					<div class="question-box">
 						<div class="question-number">
 							<?php
@@ -602,26 +897,26 @@ include_once("../../../../conexao.php");
 								}
 							?>
 							<input type="radio" name="questao5" id="alternativa1q5" value="<?php echo $alternativa1q5 ?>">
-							<label for="alternativa1q5"><?php echo $alternativa1q5 ?></label>
+							<label for="alternativa1q5" id="alternativa1q5"><?php echo $alternativa1q5 ?></label>
 							<br>
 							<input type="radio" name="questao5" id="alternativa2q5" value="<?php echo $alternativa2q5 ?>">
-							<label for="alternativa2q5"><?php echo $alternativa2q5 ?></label>
+							<label for="alternativa2q5" id="alternativa2q5"><?php echo $alternativa2q5 ?></label>
 							<br>
 							<input type="radio" name="questao5" id="alternativa3q5" value="<?php echo $alternativa3q5 ?>">
-							<label for="alternativa3q5"><?php echo $alternativa3q5 ?></label>
+							<label for="alternativa3q5" id="alternativa3q5"><?php echo $alternativa3q5 ?></label>
 							<br>
 							<input type="radio" name="questao5" id="alternativa4q5" value="<?php echo $alternativa4q5 ?>">
-							<label for="alternativa4q5"><?php echo $alternativa4q5 ?></label>
+							<label for="alternativa4q5" id="alternativa4q5"><?php echo $alternativa4q5 ?></label>
 							<br>
 							<input type="radio" name="questao5" id="alternativa5q5" value="<?php echo $alternativa5q5 ?>">
-							<label for="alternativa5q5"><?php echo $alternativa5q5 ?></label>
+							<label for="alternativa5q5" id="alternativa5q5"><?php echo $alternativa5q5 ?></label>
 							<br>
 							<div class="btn-box">
 								<div class="previous-question-btn">
 									<button type="button" class="btn btn-bio" onclick="backQuestion4()">&ltrif; Questão anterior</button>
 								</div>
 								<div class="confirm-question-btn">
-									<button type="submit" class="btn btn-bio" onclick="next()">Confirmar resposta</button>
+										<button type="submit" class="btn btn-bio" id="bt-q5" onclick="here5()">Confirmar resposta</button>
 								</div>
 								<div class="next-question-btn">
 									<button type="button" class="btn btn-bio" onclick="toQuestion6()">Próxima questão &rtrif;</button>
@@ -630,14 +925,109 @@ include_once("../../../../conexao.php");
 						</form>
 						<?php
 							$escolha5 = filter_input(INPUT_POST, 'questao5');
-							if($escolha5 == $corretaQ5){
-								echo "foi";
+							if(isset($escolha5)){
+								if($escolha5 == $corretaQ5){
+									echo '<style type/css>
+									#alternativa5q5{
+										border: 2px solid green;
+										background-color: #d2e8cf;
+									}
+									</style>';
+								}
+								else{ 
+									echo '<style type/css>
+									#alternativa5q5{
+										border: 2px solid green;
+										background-color: #d2e8cf;
+									}
+									</style>';
+									switch ($escolha5) {
+										case $alternativa1q5:
+											echo '<style type/css>
+												#alternativa1q5{
+													border: 2px solid red;
+													background-color: #ff6347;
+												}
+												</style>';
+											break;
+										case $alternativa2q5:
+											echo '<style type/css>
+												#alternativa2q5{
+													border: 2px solid red;
+													background-color:  #ff6347;
+												}
+												</style>';
+											break;
+										case $alternativa3q5:
+											echo '<style type/css>
+												#alternativa3q5{
+													border: 2px solid red;
+													background-color:  #ff6347;
+												}
+												</style>';
+											break;
+										case $alternativa4q5:
+											echo '<style type/css>
+												#alternativa4q5{
+													border: 2px solid red;
+													background-color:  #ff6347;
+												}
+												</style>';
+											break;
+										case $alternativa5q5:
+											echo '<style type/css>
+												#alternativa5q5{
+													border: 2px solid red;
+													background-color:  #ff6347;
+												}
+												</style>';
+											break;
+									}
+								}
+							}
+						?>
+							<script >
+								var atual5 = false;
+								var bt_q5 = document.getElementById("bt-q5");
+							</script>
+							<?php
+							if(isset($escolha5)){
+								if($escolha5 == $corretaQ5){
+									?>
+									<script>
+										atual5 = true;
+										bt_q5.style.display = "none";
+									</script>
+									<?php
+								}
+								else{
+									?>
+									<script>
+										atual5 = true;
+										bt_q5.style.display = "none";
+									</script>
+									<?php
+								}
 							}
 						?>
 					</div>
 				</div>
 				<!-- questão 6 -->
 				<div class="whole-question" id="6">
+				<div class="answers-indicator">
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div class="atual"></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+					</div>
 					<div class="question-box">
 						<div class="question-number">
 							<?php
@@ -675,17 +1065,17 @@ include_once("../../../../conexao.php");
 								}
 							?>
 							<input type="radio" name="questao6" id="alternativa1q6" value="<?php echo $alternativa1q6 ?>">
-							<label for="alternativa1q6"><?php echo $alternativa1q6 ?></label>
+							<label for="alternativa1q6" id="alternativa1q6"><?php echo $alternativa1q6 ?></label>
 							<br>
 							<input type="radio" name="questao6" id="alternativa2q6" value="<?php echo $alternativa2q6 ?>">
-							<label for="alternativa2q6"><?php echo $alternativa2q6 ?></label>
+							<label for="alternativa2q6" id="alternativa2q6"><?php echo $alternativa2q6 ?></label>
 							<br>
 							<div class="btn-box">
 								<div class="previous-question-btn">
 									<button type="button" class="btn btn-bio" onclick="backQuestion5()">&ltrif; Questão anterior</button>
 								</div>
 								<div class="confirm-question-btn">
-									<button type="submit" class="btn btn-bio" onclick="next()">Confirmar resposta</button>
+										<button type="submit" class="btn btn-bio" id="bt-q6" onclick="here6()">Confirmar resposta</button>
 								</div>
 								<div class="next-question-btn">
 									<button type="button" class="btn btn-bio" onclick="toQuestion7()">Próxima questão &rtrif;</button>
@@ -693,18 +1083,110 @@ include_once("../../../../conexao.php");
 							</div>
 						</form>
 						<?php
-
-							$envio6 = filter_input(INPUT_POST, 'questao6');
-							$resposta6 = (string) trim($envio6);
-
-							if($resposta6 === $corretaQ6){
-								echo "foi";
+							$escolha6 = filter_input(INPUT_POST, 'questao6');
+							if(isset($escolha6)){
+								if($escolha6 == $corretaQ6){
+									echo '<style type/css>
+									#alternativa1q6{
+										border: 2px solid green;
+										background-color: #d2e8cf;
+									}
+									</style>';
+								}
+								else{ 
+									echo '<style type/css>
+									#alternativa1q6{
+										border: 2px solid green;
+										background-color: #d2e8cf;
+									}
+									</style>';
+									switch ($escolha6) {
+										case $alternativa1q6:
+											echo '<style type/css>
+												#alternativa1q6{
+													border: 2px solid red;
+													background-color: #ff6347;
+												}
+												</style>';
+											break;
+										case $alternativa2q6:
+											echo '<style type/css>
+												#alternativa2q6{
+													border: 2px solid red;
+													background-color:  #ff6347;
+												}
+												</style>';
+											break;
+										case $alternativa3q6:
+											echo '<style type/css>
+												#alternativa3q6{
+													border: 2px solid red;
+													background-color:  #ff6347;
+												}
+												</style>';
+											break;
+										case $alternativa4q6:
+											echo '<style type/css>
+												#alternativa4q6{
+													border: 2px solid red;
+													background-color:  #ff6347;
+												}
+												</style>';
+											break;
+										case $alternativa5q6:
+											echo '<style type/css>
+												#alternativa5q6{
+													border: 2px solid red;
+													background-color:  #ff6347;
+												}
+												</style>';
+											break;
+									}
+								}
+							}
+						?>
+							<script >
+								var atual6 = false;
+								var bt_q6 = document.getElementById("bt-q6");
+							</script>
+							<?php
+							if(isset($escolha6)){
+								if($escolha6 == $corretaQ6){
+									?>
+									<script>
+										atual6 = true;
+										bt_q6.style.display = "none";
+									</script>
+									<?php
+								}
+								else{
+									?>
+									<script>
+										atual6 = true;
+										bt_q6.style.display = "none";
+									</script>
+									<?php
+								}
 							}
 						?>
 					</div>
 				</div>
 				<!-- questão 7 -->
 				<div class="whole-question" id="7">
+				<div class="answers-indicator">
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div class="atual"></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+					</div>
 					<div class="question-box">
 						<div class="question-number">
 							<?php
@@ -724,7 +1206,7 @@ include_once("../../../../conexao.php");
 						</div>
 					</div>
 					<div class="option-container option-container lacuna">
-						<form method="post">
+						<form method="post" autocomplete="off">
 							<?php
 								while ($row_alternativaQ7 = mysqli_fetch_assoc($opcoes7)) {
 								// $id = (string) trim($row_alternativa['id_questao']);
@@ -738,7 +1220,7 @@ include_once("../../../../conexao.php");
 								
 								}
 							?>
-							<label for="alternativa1q7">Insira a resposta:</label>
+							<label for="alternativa1q7" id="alternativa1q7">Insira a resposta:</label>
 							<input type="text" name="questao7" id="alternativa1q7">
 							<br>
 							<div class="btn-box">
@@ -746,7 +1228,7 @@ include_once("../../../../conexao.php");
 									<button type="button" class="btn btn-bio" onclick="backQuestion6()">&ltrif; Questão anterior</button>
 								</div>
 								<div class="confirm-question-btn">
-									<button type="submit" class="btn btn-bio" onclick="next()">Confirmar resposta</button>
+										<button type="submit" class="btn btn-bio" id="bt-q7" onclick="here7()">Confirmar resposta</button>
 								</div>
 								<div class="next-question-btn">
 									<button type="button" class="btn btn-bio" onclick="toQuestion8()">Próxima questão &rtrif;</button>
@@ -757,14 +1239,68 @@ include_once("../../../../conexao.php");
 							$envio7 = filter_input(INPUT_POST, 'questao7');
 							$resposta7 = (string) trim($envio7);
 
-							if($resposta7 === $corretaQ7){
-								echo "foi";
+							if(isset($resposta7)){
+								if($resposta7 === $corretaQ7){
+								echo '<style type/css>
+									#alternativa1q7{
+										border: 2px solid green;
+										background-color: #d2e8cf;
+									}
+									</style>';
+								}
+								elseif(isset($_POST['questao7'])){
+									echo '<style type/css>
+												#alternativa1q7{
+													border: 2px solid red;
+													background-color: #ff6347;
+												}
+												</style>';
+									
+								}
+							}
+						?>
+							<script >
+								var atual7 = false;
+								var bt_q7 = document.getElementById("bt-q7");
+							</script>
+							<?php
+							if(isset($resposta7)){
+								if($resposta7 == $corretaQ7){
+									?>
+									<script>
+										atual7 = true;
+										bt_q7.style.display = "none";
+									</script>
+									<?php
+								}
+								elseif(isset($_POST['questao7'])){
+									?>
+									<script>
+										atual7 = true;
+										bt_q7.style.display = "none";
+									</script>
+									<?php
+								}
 							}
 						?>
 					</div>
 				</div>
 				<!-- questão 8 -->
 				<div class="whole-question" id="8">
+				<div class="answers-indicator">
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div class="atual"></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+					</div>
 					<div class="question-box">
 						<div class="question-number">
 							<?php
@@ -784,7 +1320,7 @@ include_once("../../../../conexao.php");
 						</div>
 					</div>
 					<div class="option-container option-container lacuna">
-						<form method="post">
+						<form method="post" autocomplete="off">
 							<?php
 								while ($row_alternativaQ8 = mysqli_fetch_assoc($opcoes8)) {
 								// $id = (string) trim($row_alternativa['id_questao']);
@@ -826,7 +1362,7 @@ include_once("../../../../conexao.php");
 									<button type="button" class="btn btn-bio" onclick="backQuestion7()">&ltrif; Questão anterior</button>
 								</div>
 								<div class="confirm-question-btn">
-									<button type="submit" class="btn btn-bio" onclick="next()">Confirmar resposta</button>
+										<button type="submit" class="btn btn-bio" id="bt-q8" onclick="here8()">Confirmar resposta</button>
 								</div>
 								<div class="next-question-btn">
 									<button type="button" class="btn btn-bio" onclick="toQuestion9()">Próxima questão &rtrif;</button>
@@ -846,14 +1382,67 @@ include_once("../../../../conexao.php");
 							$envio8d = filter_input(INPUT_POST, 'questao8d');
 							$resposta8d = (string) trim($envio8d);
 
-							if(($resposta8a === $alternativa1q8) && ($resposta8b === $alternativa2q8) && ($resposta8c === $alternativa3q8) && ($resposta8d === $alternativa4q8)){
-								echo "foi";
+							if (isset($resposta8a) && isset($resposta8b) && isset($resposta8c) && isset($resposta8d)) {
+								if(($resposta8a === $alternativa1q8) && ($resposta8b === $alternativa2q8) && ($resposta8c === $alternativa3q8) && ($resposta8d === $alternativa4q8)){
+									echo '<style type/css>
+										#alternativa1q8, #alternativa2q8, #alternativa3q8, #alternativa4q8{
+											border: 2px solid green;
+											background-color: #d2e8cf;
+										}
+										</style>';
+								}
+								elseif(isset($_POST['questao8a']) && isset($_POST['questao8b']) && isset($_POST['questao8c']) && isset($_POST['questao8d'])){
+									echo '<style type/css>
+											#alternativa1q8, #alternativa2q8, #alternativa3q8, #alternativa4q8{
+												border: 2px solid red;
+												background-color: #ff6347;
+											}
+											</style>';
+								}
+							}
+						?>
+							<script >
+								var atual8 = false;
+								var bt_q8 = document.getElementById("bt-q8");
+							</script>
+							<?php
+							if (isset($resposta8a) && isset($resposta8b) && isset($resposta8c) && isset($resposta8d)){
+								if(($resposta8a === $alternativa1q8) && ($resposta8b === $alternativa2q8) && ($resposta8c === $alternativa3q8) && ($resposta8d === $alternativa4q8)){
+									?>
+									<script>
+										atual8 = true;
+										bt_q8.style.display = "none";
+									</script>
+									<?php
+								}
+								elseif(isset($_POST['questao8a']) && isset($_POST['questao8b']) && isset($_POST['questao8c']) && isset($_POST['questao8d'])){
+									?>
+									<script>
+										atual8 = true;
+										bt_q8.style.display = "none";
+									</script>
+									<?php
+								}
 							}
 						?>
 					</div>
 				</div>
 				<!-- questão 9 -->
 				<div class="whole-question" id="9">
+					<div class="answers-indicator">
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div class="atual"></div>
+						<div></div>
+						<div></div>
+						<div></div>
+					</div>
 					<div class="question-box">
 						<div class="question-number">
 							<?php
@@ -873,7 +1462,7 @@ include_once("../../../../conexao.php");
 						</div>
 					</div>
 					<div class="option-container option-container lacuna">
-						<form method="post">
+						<form method="post" autocomplete="off">
 							<?php
 								while ($row_alternativaQ9 = mysqli_fetch_assoc($opcoes9)) {
 								// $id = (string) trim($row_alternativa['id_questao']);
@@ -895,7 +1484,7 @@ include_once("../../../../conexao.php");
 									<button type="button" class="btn btn-bio" onclick="backQuestion8()">&ltrif; Questão anterior</button>
 								</div>
 								<div class="confirm-question-btn">
-									<button type="submit" class="btn btn-bio" onclick="next()">Confirmar resposta</button>
+									<button type="submit" class="btn btn-bio" id="bt-q9" onclick="here9()">Confirmar resposta</button>
 								</div>
 								<div class="next-question-btn">
 									<button type="button" class="btn btn-bio" onclick="toQuestion10()">Próxima questão &rtrif;</button>
@@ -906,14 +1495,67 @@ include_once("../../../../conexao.php");
 							$envio9 = filter_input(INPUT_POST, 'questao9');
 							$resposta9 = (string) trim($envio9);
 
-							if($resposta9 === $corretaQ9){
-								echo "foi";
+							if(isset($resposta9)){
+								if($resposta9 === $corretaQ9){
+								echo '<style type/css>
+									#alternativa1q9{
+										border: 2px solid green;
+										background-color: #d2e8cf;
+									}
+									</style>';
+								}
+								elseif(isset($_POST['questao9'])){
+									echo '<style type/css>
+												#alternativa1q9{
+													border: 2px solid red;
+													background-color: #ff6347;
+												}
+												</style>';	
+								}
+							}
+						?>
+							<script >
+								var atual9 = false;
+								var bt_q9 = document.getElementById("bt-q9");
+							</script>
+							<?php
+							if(isset($resposta9)){
+								if($resposta9 == $corretaQ9){
+									?>
+									<script>
+										atual9 = true;
+										bt_q9.style.display = "none";
+									</script>
+									<?php
+								}
+								elseif(isset($_POST['questao9'])){
+									?>
+									<script>
+										atual9 = true;
+										bt_q9.style.display = "none";
+									</script>
+									<?php
+								}
 							}
 						?>
 					</div>
 				</div>
 				<!-- questão 10 -->
 				<div class="whole-question" id="10">
+				<div class="answers-indicator">
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div class="atual"></div>
+						<div></div>
+						<div></div>
+					</div>
 					<div class="question-box">
 						<div class="question-number">
 							<?php
@@ -948,14 +1590,14 @@ include_once("../../../../conexao.php");
 								}
 							?>
 							<label for="alternativa1q10">Insira a resposta:</label>
-							<input type="text" name="questao10" id="alternativa1q10">
+							<input type="text" name="questao10" id="alternativa1q10" placeholder="Insira sempre dois algarismos">
 							<br>
 							<div class="btn-box">
 								<div class="previous-question-btn">
 									<button type="button" class="btn btn-bio" onclick="backQuestion9()">&ltrif; Questão anterior</button>
 								</div>
 								<div class="confirm-question-btn">
-									<button type="submit" class="btn btn-bio" onclick="next()">Confirmar resposta</button>
+									<button type="submit" class="btn btn-bio" id="bt-q10" onclick="here10()">Confirmar resposta</button>
 								</div>
 								<div class="next-question-btn">
 									<button type="button" class="btn btn-bio" onclick="toQuestion11()">Próxima questão &rtrif;</button>
@@ -966,14 +1608,66 @@ include_once("../../../../conexao.php");
 							$envio10 = filter_input(INPUT_POST, 'questao10');
 							$resposta10 = (string) trim($envio10);
 
-							if($resposta10 === $corretaQ10){
-								echo "foi";
+							if(isset($resposta10)){
+								if($resposta10 === $corretaQ10){
+								echo '<style type/css>
+									#alternativa1q10{
+										border: 2px solid green;
+										background-color: #d2e8cf;
+									}
+									</style>';
+								}
+								elseif(isset($_POST['questao10'])){
+									echo '<style type/css>
+												#alternativa1q10{
+													border: 2px solid red;
+													background-color: #ff6347;
+												}
+												</style>';	
+								}
+							}
+						?>
+							<script >
+								var atual10 = false;
+								var bt_q10 = document.getElementById("bt-q10");
+							</script>
+							<?php
+							if(isset($resposta10)){
+								if($resposta10 == $corretaQ10){
+									?>
+									<script>
+										atual10 = true;
+										bt_q10.style.display = "none";
+									</script>
+									<?php
+								}
+								elseif(isset($_POST['questao10'])){
+									?>
+									<script>
+										atual10 = true;
+										bt_q10.style.display = "none";
+									</script>
+									<?php
+								}
 							}
 						?>
 					</div>
 				</div>
 				<!-- questão 11 -->
 				<div class="whole-question" id="11">
+					<div class="answers-indicator">
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div class="atual"></div>
+						<div></div>
+					</div>
 					<div class="question-box">
 						<div class="question-number">
 							<?php
@@ -993,7 +1687,7 @@ include_once("../../../../conexao.php");
 						</div>
 					</div>
 					<div class="option-container option-container lacuna">
-						<form method="post">
+						<form method="post" autocomplete="off">
 							<?php
 								while ($row_alternativaQ11 = mysqli_fetch_assoc($opcoes11)) {
 								// $id = (string) trim($row_alternativa['id_questao']);
@@ -1008,14 +1702,14 @@ include_once("../../../../conexao.php");
 								}
 							?>
 							<label for="alternativa1q11">Insira a resposta:</label>
-							<input type="text" name="questao11" id="alternativa1q11">
+							<input type="text" name="questao11" id="alternativa1q11" placeholder="Insira sempre dois algarismos">
 							<br>
 							<div class="btn-box">
 								<div class="previous-question-btn">
 									<button type="button" class="btn btn-bio" onclick="backQuestion10()">&ltrif; Questão anterior</button>
 								</div>
 								<div class="confirm-question-btn">
-									<button type="submit" class="btn btn-bio" onclick="next()">Confirmar resposta</button>
+									<button type="submit" class="btn btn-bio" id="bt-q11" onclick="here11()">Confirmar resposta</button>
 								</div>
 								<div class="next-question-btn">
 									<button type="button" class="btn btn-bio" onclick="toQuestion12()">Próxima questão &rtrif;</button>
@@ -1026,14 +1720,67 @@ include_once("../../../../conexao.php");
 							$envio11 = filter_input(INPUT_POST, 'questao11');
 							$resposta11 = (string) trim($envio11);
 
-							if($resposta11 === $corretaQ11){
-								echo "foi";
+							if(isset($resposta11)){
+								if($resposta11 === $corretaQ11){
+								echo '<style type/css>
+									#alternativa1q11{
+										border: 2px solid green;
+										background-color: #d2e8cf;
+									}
+									</style>';
+								}
+								elseif(isset($_POST['questao11'])){
+									echo '<style type/css>
+												#alternativa1q11{
+													border: 2px solid red;
+													background-color: #ff6347;
+												}
+												</style>';	
+								}
+							}
+						?>
+							<script >
+								var atual11 = false;
+								var bt_q11 = document.getElementById("bt-q11");
+							</script>
+							<?php
+							if(isset($resposta11)){
+								if($resposta11 == $corretaQ11){
+									?>
+									<script>
+										atual11 = true;
+										bt_q11.style.display = "none";
+									</script>
+									<?php
+								}
+								elseif(isset($_POST['questao11'])){
+									?>
+									<script>
+										atual11 = true;
+										bt_q11.style.display = "none";
+									</script>
+									<?php
+								}
 							}
 						?>
 					</div>
 				</div>
 				<!-- questão 12 -->
 				<div class="whole-question" id="12">
+					<div class="answers-indicator">
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div class="atual"></div>
+					</div>
 					<div class="question-box">
 						<div class="question-number">
 							<?php
@@ -1053,7 +1800,7 @@ include_once("../../../../conexao.php");
 						</div>
 					</div>
 					<div class="option-container option-container lacuna">
-						<form method="post">
+						<form method="post" autocomplete="off">
 							<?php
 								while ($row_alternativaQ12 = mysqli_fetch_assoc($opcoes12)) {
 								// $id = (string) trim($row_alternativa['id_questao']);
@@ -1067,11 +1814,11 @@ include_once("../../../../conexao.php");
 								}
 							?>
 							<label for="alternativa1q12">Insira a resposta:</label>
-							<input type="text" name="questao12" id="alternativa1q12">
+							<input type="text" name="questao12" id="alternativa1q12" placeholder="Insira sempre dois algarismos">
 							<br>
 							<div class="btn-box">
 								<div class="previous-question-btn">
-									<button type="button" class="btn btn-bio" onclick="backQuestion11()">&ltrif; Questão anterior</button>
+									<button type="button" class="btn btn-bio" id="bt-q12" onclick="here12()">&ltrif; Questão anterior</button>
 								</div>
 								<div class="confirm-question-btn">
 									<button type="submit" class="btn btn-bio" onclick="next()">Confirmar resposta</button>
@@ -1082,24 +1829,51 @@ include_once("../../../../conexao.php");
 							$envio12 = filter_input(INPUT_POST, 'questao12');
 							$resposta12 = (string) trim($envio12);
 
-							if($resposta12 === $corretaQ12){
-								echo "foi";
+							if(isset($resposta12)){
+								if($resposta12 === $corretaQ12){
+								echo '<style type/css>
+									#alternativa1q12{
+										border: 2px solid green;
+										background-color: #d2e8cf;
+									}
+									</style>';
+								}
+								elseif(isset($_POST['questao12'])){
+									echo '<style type/css>
+												#alternativa1q12{
+													border: 2px solid red;
+													background-color: #ff6347;
+												}
+												</style>';	
+								}
+							}
+						?>
+							<script >
+								var atual12 = false;
+								var bt_q12 = document.getElementById("bt-q12");
+							</script>
+							<?php
+							if(isset($resposta12)){
+								if($resposta12 == $corretaQ9){
+									?>
+									<script>
+										atual12 = true;
+										bt_q12.style.display = "none";
+									</script>
+									<?php
+								}
+								elseif(isset($_POST['questao12'])){
+									?>
+									<script>
+										atual12 = true;
+										bt_q12.style.display = "none";
+									</script>
+									<?php
+								}
 							}
 						?>
 					</div>
 				</div>
-				<!-- fim do questionário -->
-				<!-- <div class="btn-box">
-					<div class="previous-question-btn">
-						<button type="button" class="btn btn-bio" onclick="back()">&ltrif; Questão anterior</button>
-					</div>
-					<div class="confirm-question-btn">
-						<button type="button" class="btn btn-bio" onclick="next()">Confirmar resposta</button>
-					</div>
-					<div class="next-question-btn">
-						<button type="button" class="btn btn-bio" onclick="next()">Próxima questão &rtrif;</button>
-					</div>
-				</div> -->
 			</div>
 			<div class="footer footer-size footer-questionario">
 				<footer>

@@ -20,17 +20,17 @@ include_once("conexao.php");
 				unset($_SESSION['msg']);
 			}
 
-			$get = "SELECT * FROM alternativa WHERE id_alternativa = 807";
+			$get = "SELECT * FROM alternativa WHERE id_alternativa = 518";
 			$vamove = mysqli_query($conexao, $get);
 			while($row = mysqli_fetch_assoc($vamove)){
 				echo $banco1 = (string) trim($row['texto'])."<br>";	
 			}
-			$get = "SELECT * FROM alternativa WHERE id_alternativa = 499";
+			$get = "SELECT * FROM alternativa WHERE id_alternativa = 519";
 			$vamove2 = mysqli_query($conexao, $get);
 			while($row = mysqli_fetch_assoc($vamove2)){
 				echo $banco2 = (string) trim($row['texto'])."<br>";	
 			}
-			$get = "SELECT * FROM alternativa WHERE id_alternativa = 527";
+			$get = "SELECT * FROM alternativa WHERE id_alternativa = 517";
 			$vamove3 = mysqli_query($conexao, $get);
 			while($row = mysqli_fetch_assoc($vamove3)){
 				echo $banco3 = (string) trim($row['texto'])."<br>";	

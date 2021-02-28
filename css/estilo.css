@@ -1194,6 +1194,7 @@ display: none;
 }
 .lacuna label{
 	display: inline;
+	margin-bottom: 50px;
 }
 .lacuna input[type="text"]{
 	border: 2px solid #f2f2f2;
@@ -1247,6 +1248,12 @@ display: none;
 	border-radius: 15px;
 	width: 1000px;
 	text-align: left;
+}
+#margin{
+	margin-top: 15px;
+}
+.quiz-box .question-text img{
+	text-align: center;
 }
 .quiz-box .option-container{
 	text-align: justify;
@@ -1327,6 +1334,10 @@ display: none;
 		transform: translateX(0%);
 	}
 }
+.btn-box{
+	margin-top: 35px;
+	text-align: center;
+}
 .btn-box div, .option-container input[type="submit"]{
 	display: inline;
 	margin: 25px 50px;
@@ -1363,6 +1374,11 @@ display: none;
 	border-radius: 50%;
 	margin: 10px;
 }
+.quiz-box .answers-indicator div.atual{
+	height: 13px;
+	width: 13px;
+}
+
 .quiz-box .answers-indicator div.correct{
 	background-color: green;
 }
