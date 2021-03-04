@@ -2060,8 +2060,7 @@ include_once("../../../../conexao.php");
 													border: 2px solid red;
 													background-color: #ff6347;
 												}
-												</style>';
-									
+												</style>';	
 								}
 							}
 						?>

@@ -461,20 +461,58 @@ include_once("../../../../conexao.php");
 						<input type="submit" name="confirmar" value="Confirmar resposta">
 					</form>
 					<?php
+							$envio4x = filter_input(INPUT_POST, 'questao4x');
+							$resposta4x = (string) trim($envio4x);
 
-						$envio4x = filter_input(INPUT_POST, 'questao4x');
-						$resposta4x = (string) trim($envio4x);
+							$envio4y = filter_input(INPUT_POST, 'questao4y');
+							$resposta4y = (string) trim($envio4y);
 
-						$envio4y = filter_input(INPUT_POST, 'questao4y');
-						$resposta4y = (string) trim($envio4y);
+							$envio4z = filter_input(INPUT_POST, 'questao4z');
+							$resposta4z = (string) trim($envio4z);
 
-						$envio4z = filter_input(INPUT_POST, 'questao4z');
-						$resposta4z = (string) trim($envio4z);
-
-						if(($resposta4x === $alternativa1q4x) && ($resposta4y === $alternativa1q4y) && ($resposta4z === $alternativa1q4z)){
-							echo "foi";
-						}
-					?>
+							if(isset($resposta4x) && isset($resposta4y) && isset($resposta4z)){
+								if(($resposta4x === $alternativa1q4x) && ($resposta4y === $alternativa1q4y) && ($resposta4z === $alternativa1q4z)){
+								echo '<style type/css>
+									#alternativa1q4x, #alternativa1q4y, #alternativa1q4z{
+										border: 2px solid green;
+										background-color: #d2e8cf;
+									}
+									</style>';
+								}
+								elseif(isset($_POST['questao4x']) && isset($_POST['questao4y']) && isset($_POST['questao4z'])){
+									echo '<style type/css>
+												#alternativa1q4x, #alternativa1q4y, #alternativa1q4z{
+													border: 2px solid red;
+													background-color: #ff6347;
+												}
+												</style>';
+								}
+							}
+						?>
+							<script >
+								var atual4 = false;
+								var bt_q4 = document.getElementById("bt-q4");
+							</script>
+							<?php
+							if(isset($resposta4x) && isset($resposta4y) && isset($resposta4z)){
+								if(($resposta4x === $alternativa1q4x) && ($resposta4y === $alternativa1q4y) && ($resposta4z === $alternativa1q4z)){
+									?>
+									<script>
+										atual4 = true;
+										bt_q4.style.display = "none";
+									</script>
+									<?php
+								}
+								elseif(isset($_POST['questao4x']) && isset($_POST['questao4y']) && isset($_POST['questao4z'])){
+									?>
+									<script>
+										atual4 = true;
+										bt_q4.style.display = "none";
+									</script>
+									<?php
+								}
+							}
+						?>
 				</div>
 				<!-- questão 5 -->
 				<div class="question-box">

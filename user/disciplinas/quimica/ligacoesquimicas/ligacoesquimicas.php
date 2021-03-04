@@ -197,942 +197,1402 @@ include_once("../../../../conexao.php");
 			<div class="quiz-box custom-box">
 				<!-- início do questionário -->
 				<!-- questão 1 -->
-				<div class="answers-indicator">
-				
-				</div>
-				<div class="question-box">
-					<div class="question-number-qui">
+				<div class="whole-question active" id="1">
+					<div class="answers-indicator">
+						<div class="atual"></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+					</div>
+					<div class="question-box">
+						<div class="question-number-qui">
+							<?php
+								while ($row_id_questao = mysqli_fetch_assoc($id_questao1)) {
+								$index_questao++;
+								$id = (string) trim($row_id_questao['id_questao']);
+								echo $index_questao;
+								}
+							?>
+						</div>
+						<div class="question-text">
+							<?php
+								while ($row_questao = mysqli_fetch_assoc($questao1)) {
+								echo $row_questao['enunciado'];
+								}
+							?>		
+						</div>
+					</div>
+					<div class="option-container option-container-qui">
+						<form method="post">
+							<?php
+								while ($row_alternativa = mysqli_fetch_assoc($opcoes1)) {
+								// $id = (string) trim($row_alternativa['id_questao']);
+									if ($row_alternativa['id_alternativa'] == 419) {
+										$alternativa1 = $row_alternativa['texto'];
+										// echo $alternativa1;
+									}
+									if ($row_alternativa['id_alternativa'] == 420) {
+										$alternativa2 = $row_alternativa['texto'];
+										// echo $alternativa1;
+									}
+									if ($row_alternativa['id_alternativa'] == 421) {
+										$alternativa3 = $row_alternativa['texto'];
+										// echo $alternativa1;
+									}
+									if ($row_alternativa['id_alternativa'] == 422) {
+										$alternativa4 = $row_alternativa['texto'];
+										// echo $alternativa1;
+									}
+									if ($row_alternativa['id_alternativa'] == 423) {
+										$alternativa5 = $row_alternativa['texto'];
+										// echo $alternativa1;
+									}
+									if ($row_alternativa['veracidade'] == 1) {
+										$correta = $row_alternativa['texto'];
+									}
+								
+								}
+							?>
+							<input type="radio" name="questao1" id="alternativa1" value="<?php echo $alternativa1 ?>">
+							<label for="alternativa1"><?php echo $alternativa1 ?></label>
+							<br>
+							<input type="radio" name="questao1" id="alternativa2" value="<?php echo $alternativa2 ?>">
+							<label for="alternativa2"><?php echo $alternativa2 ?></label>
+							<br>
+							<input type="radio" name="questao1" id="alternativa3" value="<?php echo $alternativa3 ?>">
+							<label for="alternativa3"><?php echo $alternativa3 ?></label>
+							<br>
+							<input type="radio" name="questao1" id="alternativa4" value="<?php echo $alternativa4 ?>">
+							<label for="alternativa4"><?php echo $alternativa4 ?></label>
+							<br>
+							<input type="radio" name="questao1" id="alternativa5" value="<?php echo $alternativa5 ?>">
+							<label for="alternativa5"><?php echo $alternativa5 ?></label>
+							<br>
+							<div class="btn-box">
+								<div class="confirm-question-btn">
+									<button type="submit" class="btn btn-qui" id="bt-q1">Confirmar resposta</button>
+								</div>
+								<div class="next-question-btn">
+									<button type="button" class="btn btn-qui" onclick="toQuestion2()">Próxima questão &rtrif;</button>
+								</div>
+							</div>
+						</form>
 						<?php
-							while ($row_id_questao = mysqli_fetch_assoc($id_questao1)) {
-							$index_questao++;
-							$id = (string) trim($row_id_questao['id_questao']);
-							echo $index_questao;
+							$escolha = filter_input(INPUT_POST, 'questao1');
+							if($escolha == $correta){
+								echo "foi";
 							}
 						?>
 					</div>
-					<div class="question-text">
-						<?php
-							while ($row_questao = mysqli_fetch_assoc($questao1)) {
-							echo $row_questao['enunciado'];
-							}
-						?>		
-					</div>
-				</div>
-				<div class="option-container option-container-qui">
-					<form method="post">
-						<?php
-							while ($row_alternativa = mysqli_fetch_assoc($opcoes1)) {
-							// $id = (string) trim($row_alternativa['id_questao']);
-								if ($row_alternativa['id_alternativa'] == 419) {
-									$alternativa1 = $row_alternativa['texto'];
-									// echo $alternativa1;
-								}
-								if ($row_alternativa['id_alternativa'] == 420) {
-									$alternativa2 = $row_alternativa['texto'];
-									// echo $alternativa1;
-								}
-								if ($row_alternativa['id_alternativa'] == 421) {
-									$alternativa3 = $row_alternativa['texto'];
-									// echo $alternativa1;
-								}
-								if ($row_alternativa['id_alternativa'] == 422) {
-									$alternativa4 = $row_alternativa['texto'];
-									// echo $alternativa1;
-								}
-								if ($row_alternativa['id_alternativa'] == 423) {
-									$alternativa5 = $row_alternativa['texto'];
-									// echo $alternativa1;
-								}
-								if ($row_alternativa['veracidade'] == 1) {
-									$correta = $row_alternativa['texto'];
-								}
-							
-							}
-						?>
-						<input type="radio" name="questao1" id="alternativa1" value="<?php echo $alternativa1 ?>">
-						<label for="alternativa1"><?php echo $alternativa1 ?></label>
-						<br>
-						<input type="radio" name="questao1" id="alternativa2" value="<?php echo $alternativa2 ?>">
-						<label for="alternativa2"><?php echo $alternativa2 ?></label>
-						<br>
-						<input type="radio" name="questao1" id="alternativa3" value="<?php echo $alternativa3 ?>">
-						<label for="alternativa3"><?php echo $alternativa3 ?></label>
-						<br>
-						<input type="radio" name="questao1" id="alternativa4" value="<?php echo $alternativa4 ?>">
-						<label for="alternativa4"><?php echo $alternativa4 ?></label>
-						<br>
-						<input type="radio" name="questao1" id="alternativa5" value="<?php echo $alternativa5 ?>">
-						<label for="alternativa5"><?php echo $alternativa5 ?></label>
-						<br>
-						<input type="submit" name="confirmar" value="Confirmar resposta">
-					</form>
-					<?php
-						$escolha = filter_input(INPUT_POST, 'questao1');
-						if($escolha == $correta){
-							echo "foi";
-						}
-					?>
 				</div>
 				<!-- questão 2 -->
-				<div class="question-box">
-					<div class="question-number-qui">
+				<div class="whole-question" id="2">
+					<div class="answers-indicator">
+						<div></div>
+						<div class="atual"></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+					</div>
+					<div class="question-box">
+						<div class="question-number-qui">
+							<?php
+								while ($row_id_questao = mysqli_fetch_assoc($id_questao2)) {
+								$index_questao++;
+								$id = (string) trim($row_id_questao['id_questao']);
+								echo $index_questao;
+								}
+							?>
+						</div>
+						<div class="question-text">
+							<?php
+								while ($row_questao = mysqli_fetch_assoc($questao2)) {
+								echo $row_questao['enunciado'];
+								}
+							?>		
+						</div>
+					</div>
+					<div class="option-container option-container-qui">
+						<form method="post">
+							<?php
+								while ($row_alternativaQ2 = mysqli_fetch_assoc($opcoes2)) {
+								// $id = (string) trim($row_alternativa['id_questao']);
+									if ($row_alternativaQ2['id_alternativa'] == 424) {
+										$alternativa1q2 = $row_alternativaQ2['texto'];
+										// echo $alternativa1;
+									}
+									if ($row_alternativaQ2['id_alternativa'] == 425) {
+										$alternativa2q2 = $row_alternativaQ2['texto'];
+										// echo $alternativa1;
+									}
+									if ($row_alternativaQ2['id_alternativa'] == 426) {
+										$alternativa3q2 = $row_alternativaQ2['texto'];
+										// echo $alternativa1;
+									}
+									if ($row_alternativaQ2['id_alternativa'] == 427) {
+										$alternativa4q2 = $row_alternativaQ2['texto'];
+										// echo $alternativa1;
+									}
+									if ($row_alternativaQ2['id_alternativa'] == 428) {
+										$alternativa5q2 = $row_alternativaQ2['texto'];
+										// echo $alternativa1;
+									}
+									if ($row_alternativaQ2['veracidade'] == 1) {
+										$corretaQ2 = $row_alternativaQ2['texto'];
+									}
+								
+								}
+							?>
+							<input type="radio" name="questao2" id="alternativa1q2" value="<?php echo $alternativa1q2 ?>">
+							<label for="alternativa1q2"><?php echo $alternativa1q2 ?></label>
+							<br>
+							<input type="radio" name="questao2" id="alternativa2q2" value="<?php echo $alternativa2q2 ?>">
+							<label for="alternativa2q2"><?php echo $alternativa2q2 ?></label>
+							<br>
+							<input type="radio" name="questao2" id="alternativa3q2" value="<?php echo $alternativa3q2 ?>">
+							<label for="alternativa3q2"><?php echo $alternativa3q2 ?></label>
+							<br>
+							<input type="radio" name="questao2" id="alternativa4q2" value="<?php echo $alternativa4q2 ?>">
+							<label for="alternativa4q2"><?php echo $alternativa4q2 ?></label>
+							<br>
+							<input type="radio" name="questao2" id="alternativa5q2" value="<?php echo $alternativa5q2 ?>">
+							<label for="alternativa5q2"><?php echo $alternativa5q2 ?></label>
+							<br>
+							<div class="btn-box">
+								<div class="previous-question-btn">
+									<button type="button" class="btn btn-qui" onclick="backQuestion1()">&ltrif; Questão anterior</button>
+								</div>
+								<div class="confirm-question-btn">
+									<button type="submit" class="btn btn-qui" id="bt-q2" onclick="here2()">Confirmar resposta</button>
+								</div>
+								<div class="next-question-btn">
+									<button type="button" class="btn btn-qui" onclick="toQuestion3()">Próxima questão &rtrif;</button>
+								</div>
+							</div>
+						</form>
 						<?php
-							while ($row_id_questao = mysqli_fetch_assoc($id_questao2)) {
-							$index_questao++;
-							$id = (string) trim($row_id_questao['id_questao']);
-							echo $index_questao;
+							$escolha2 = filter_input(INPUT_POST, 'questao2');
+							if($escolha2 == $corretaQ2){
+								echo "foi";
 							}
 						?>
 					</div>
-					<div class="question-text">
-						<?php
-							while ($row_questao = mysqli_fetch_assoc($questao2)) {
-							echo $row_questao['enunciado'];
-							}
-						?>		
-					</div>
-				</div>
-				<div class="option-container option-container-qui">
-					<form method="post">
-						<?php
-							while ($row_alternativaQ2 = mysqli_fetch_assoc($opcoes2)) {
-							// $id = (string) trim($row_alternativa['id_questao']);
-								if ($row_alternativaQ2['id_alternativa'] == 424) {
-									$alternativa1q2 = $row_alternativaQ2['texto'];
-									// echo $alternativa1;
-								}
-								if ($row_alternativaQ2['id_alternativa'] == 425) {
-									$alternativa2q2 = $row_alternativaQ2['texto'];
-									// echo $alternativa1;
-								}
-								if ($row_alternativaQ2['id_alternativa'] == 426) {
-									$alternativa3q2 = $row_alternativaQ2['texto'];
-									// echo $alternativa1;
-								}
-								if ($row_alternativaQ2['id_alternativa'] == 427) {
-									$alternativa4q2 = $row_alternativaQ2['texto'];
-									// echo $alternativa1;
-								}
-								if ($row_alternativaQ2['id_alternativa'] == 428) {
-									$alternativa5q2 = $row_alternativaQ2['texto'];
-									// echo $alternativa1;
-								}
-								if ($row_alternativaQ2['veracidade'] == 1) {
-									$corretaQ2 = $row_alternativaQ2['texto'];
-								}
-							
-							}
-						?>
-						<input type="radio" name="questao2" id="alternativa1q2" value="<?php echo $alternativa1q2 ?>">
-						<label for="alternativa1q2"><?php echo $alternativa1q2 ?></label>
-						<br>
-						<input type="radio" name="questao2" id="alternativa2q2" value="<?php echo $alternativa2q2 ?>">
-						<label for="alternativa2q2"><?php echo $alternativa2q2 ?></label>
-						<br>
-						<input type="radio" name="questao2" id="alternativa3q2" value="<?php echo $alternativa3q2 ?>">
-						<label for="alternativa3q2"><?php echo $alternativa3q2 ?></label>
-						<br>
-						<input type="radio" name="questao2" id="alternativa4q2" value="<?php echo $alternativa4q2 ?>">
-						<label for="alternativa4q2"><?php echo $alternativa4q2 ?></label>
-						<br>
-						<input type="radio" name="questao2" id="alternativa5q2" value="<?php echo $alternativa5q2 ?>">
-						<label for="alternativa5q2"><?php echo $alternativa5q2 ?></label>
-						<br>
-						<input type="submit" name="confirmar" value="Confirmar resposta">
-					</form>
-					<?php
-						$escolha2 = filter_input(INPUT_POST, 'questao2');
-						if($escolha2 == $corretaQ2){
-							echo "foi";
-						}
-					?>
 				</div>
 				<!-- questão 3 -->
-				<div class="question-box">
-					<div class="question-number-qui">
+				<div class="whole-question" id="3">
+					<div class="answers-indicator">
+						<div></div>
+						<div></div>
+						<div class="atual"></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+					</div>
+					<div class="question-box">
+						<div class="question-number-qui">
+							<?php
+								while ($row_id_questao = mysqli_fetch_assoc($id_questao3)) {
+								$index_questao++;
+								$id = (string) trim($row_id_questao['id_questao']);
+								echo $index_questao;
+								}
+							?>
+						</div>
+						<div class="question-text">
+							<?php
+								while ($row_questao = mysqli_fetch_assoc($questao3)) {
+								echo $row_questao['enunciado'];
+								}
+							?>		
+						</div>
+					</div>
+					<div class="option-container option-container-qui">
+						<form method="post">
+							<?php
+								while ($row_alternativaQ3 = mysqli_fetch_assoc($opcoes3)) {
+								// $id = (string) trim($row_alternativa['id_questao']);
+									if ($row_alternativaQ3['id_alternativa'] == 429) {
+										$alternativa1q3 = $row_alternativaQ3['texto'];
+										// echo $alternativa1;
+									}
+									if ($row_alternativaQ3['id_alternativa'] == 430) {
+										$alternativa2q3 = $row_alternativaQ3['texto'];
+										// echo $alternativa1;
+									}
+									if ($row_alternativaQ3['id_alternativa'] == 431) {
+										$alternativa3q3 = $row_alternativaQ3['texto'];
+										// echo $alternativa1;
+									}
+									if ($row_alternativaQ3['id_alternativa'] == 432) {
+										$alternativa4q3 = $row_alternativaQ3['texto'];
+										// echo $alternativa1;
+									}
+									if ($row_alternativaQ3['id_alternativa'] == 433) {
+										$alternativa5q3 = $row_alternativaQ3['texto'];
+										// echo $alternativa1;
+									}
+									if ($row_alternativaQ3['veracidade'] == 1) {
+										$corretaQ3 = $row_alternativaQ3['texto'];
+									}
+								
+								}
+							?>
+							<input type="radio" name="questao3" id="alternativa1q3" value="<?php echo $alternativa1q3 ?>">
+							<label for="alternativa1q3"><?php echo $alternativa1q3 ?></label>
+							<br>
+							<input type="radio" name="questao3" id="alternativa2q3" value="<?php echo $alternativa2q3 ?>">
+							<label for="alternativa2q3"><?php echo $alternativa2q3 ?></label>
+							<br>
+							<input type="radio" name="questao3" id="alternativa3q3" value="<?php echo $alternativa3q3 ?>">
+							<label for="alternativa3q3"><?php echo $alternativa3q3 ?></label>
+							<br>
+							<input type="radio" name="questao3" id="alternativa4q3" value="<?php echo $alternativa4q3 ?>">
+							<label for="alternativa4q3"><?php echo $alternativa4q3 ?></label>
+							<br>
+							<input type="radio" name="questao3" id="alternativa5q3" value="<?php echo $alternativa5q3 ?>">
+							<label for="alternativa5q3"><?php echo $alternativa5q3 ?></label>
+							<br>
+							<div class="btn-box">
+								<div class="previous-question-btn">
+									<button type="button" class="btn btn-qui" onclick="backQuestion2()">&ltrif; Questão anterior</button>
+								</div>
+								<div class="confirm-question-btn">
+									<button type="submit" class="btn btn-qui" id="bt-q3" onclick="here3()">Confirmar resposta</button>
+								</div>
+								<div class="next-question-btn">
+									<button type="button" class="btn btn-qui" onclick="toQuestion4()">Próxima questão &rtrif;</button>
+								</div>
+							</div>
+						</form>
 						<?php
-							while ($row_id_questao = mysqli_fetch_assoc($id_questao3)) {
-							$index_questao++;
-							$id = (string) trim($row_id_questao['id_questao']);
-							echo $index_questao;
+							$escolha3 = filter_input(INPUT_POST, 'questao3');
+							if($escolha3 == $corretaQ3){
+								echo "foi";
 							}
 						?>
 					</div>
-					<div class="question-text">
-						<?php
-							while ($row_questao = mysqli_fetch_assoc($questao3)) {
-							echo $row_questao['enunciado'];
-							}
-						?>		
-					</div>
-				</div>
-				<div class="option-container option-container-qui">
-					<form method="post">
-						<?php
-							while ($row_alternativaQ3 = mysqli_fetch_assoc($opcoes3)) {
-							// $id = (string) trim($row_alternativa['id_questao']);
-								if ($row_alternativaQ3['id_alternativa'] == 429) {
-									$alternativa1q3 = $row_alternativaQ3['texto'];
-									// echo $alternativa1;
-								}
-								if ($row_alternativaQ3['id_alternativa'] == 430) {
-									$alternativa2q3 = $row_alternativaQ3['texto'];
-									// echo $alternativa1;
-								}
-								if ($row_alternativaQ3['id_alternativa'] == 431) {
-									$alternativa3q3 = $row_alternativaQ3['texto'];
-									// echo $alternativa1;
-								}
-								if ($row_alternativaQ3['id_alternativa'] == 432) {
-									$alternativa4q3 = $row_alternativaQ3['texto'];
-									// echo $alternativa1;
-								}
-								if ($row_alternativaQ3['id_alternativa'] == 433) {
-									$alternativa5q3 = $row_alternativaQ3['texto'];
-									// echo $alternativa1;
-								}
-								if ($row_alternativaQ3['veracidade'] == 1) {
-									$corretaQ3 = $row_alternativaQ3['texto'];
-								}
-							
-							}
-						?>
-						<input type="radio" name="questao3" id="alternativa1q3" value="<?php echo $alternativa1q3 ?>">
-						<label for="alternativa1q3"><?php echo $alternativa1q3 ?></label>
-						<br>
-						<input type="radio" name="questao3" id="alternativa2q3" value="<?php echo $alternativa2q3 ?>">
-						<label for="alternativa2q3"><?php echo $alternativa2q3 ?></label>
-						<br>
-						<input type="radio" name="questao3" id="alternativa3q3" value="<?php echo $alternativa3q3 ?>">
-						<label for="alternativa3q3"><?php echo $alternativa3q3 ?></label>
-						<br>
-						<input type="radio" name="questao3" id="alternativa4q3" value="<?php echo $alternativa4q3 ?>">
-						<label for="alternativa4q3"><?php echo $alternativa4q3 ?></label>
-						<br>
-						<input type="radio" name="questao3" id="alternativa5q3" value="<?php echo $alternativa5q3 ?>">
-						<label for="alternativa5q3"><?php echo $alternativa5q3 ?></label>
-						<br>
-						<input type="submit" name="confirmar" value="Confirmar resposta">
-					</form>
-					<?php
-						$escolha3 = filter_input(INPUT_POST, 'questao3');
-						if($escolha3 == $corretaQ3){
-							echo "foi";
-						}
-					?>
 				</div>
 				<!-- questão 4 -->
-				<div class="question-box">
-					<div class="question-number-qui">
+				<div class="whole-question" id="4">
+					<div class="answers-indicator">
+						<div></div>
+						<div></div>
+						<div></div>
+						<div class="atual"></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+					</div>
+					<div class="question-box">
+						<div class="question-number-qui">
+							<?php
+								while ($row_id_questao = mysqli_fetch_assoc($id_questao4)) {
+								$index_questao++;
+								$id = (string) trim($row_id_questao['id_questao']);
+								echo $index_questao;
+								}
+							?>
+						</div>
+						<div class="question-text">
+							<?php
+								while ($row_questao = mysqli_fetch_assoc($questao4)) {
+								echo $row_questao['enunciado'];
+								}
+							?>		
+						</div>
+					</div>
+					<div class="option-container option-container-qui">
+						<form method="post">
+							<?php
+								while ($row_alternativaQ4 = mysqli_fetch_assoc($opcoes4)) {
+								// $id = (string) trim($row_alternativa['id_questao']);
+									if ($row_alternativaQ4['id_alternativa'] == 434) {
+										$alternativa1q4 = $row_alternativaQ4['texto'];
+										// echo $alternativa1;
+									}
+									if ($row_alternativaQ4['id_alternativa'] == 435) {
+										$alternativa2q4 = $row_alternativaQ4['texto'];
+										// echo $alternativa1;
+									}
+									if ($row_alternativaQ4['id_alternativa'] == 436) {
+										$alternativa3q4 = $row_alternativaQ4['texto'];
+										// echo $alternativa1;
+									}
+									if ($row_alternativaQ4['id_alternativa'] == 437) {
+										$alternativa4q4 = $row_alternativaQ4['texto'];
+										// echo $alternativa1;
+									}
+									if ($row_alternativaQ4['id_alternativa'] == 438) {
+										$alternativa5q4 = $row_alternativaQ4['texto'];
+										// echo $alternativa1;
+									}
+									if ($row_alternativaQ4['veracidade'] == 1) {
+										$corretaQ4 = $row_alternativaQ4['texto'];
+									}
+								}
+							?>
+							<input type="radio" name="questao4" id="alternativa1q4" value="<?php echo $alternativa1q4 ?>">
+							<label for="alternativa1q4"><?php echo $alternativa1q4 ?></label>
+							<br>
+							<input type="radio" name="questao4" id="alternativa2q4" value="<?php echo $alternativa2q4 ?>">
+							<label for="alternativa2q4"><?php echo $alternativa2q4 ?></label>
+							<br>
+							<input type="radio" name="questao4" id="alternativa3q4" value="<?php echo $alternativa3q4 ?>">
+							<label for="alternativa3q4"><?php echo $alternativa3q4 ?></label>
+							<br>
+							<input type="radio" name="questao4" id="alternativa4q4" value="<?php echo $alternativa4q4 ?>">
+							<label for="alternativa4q4"><?php echo $alternativa4q4 ?></label>
+							<br>
+							<input type="radio" name="questao4" id="alternativa5q4" value="<?php echo $alternativa5q4 ?>">
+							<label for="alternativa5q4"><?php echo $alternativa5q4 ?></label>
+							<br>
+							<div class="btn-box">
+								<div class="previous-question-btn">
+									<button type="button" class="btn btn-qui" onclick="backQuestion3()">&ltrif; Questão anterior</button>
+								</div>
+								<div class="confirm-question-btn">
+									<button type="submit" class="btn btn-qui" id="bt-q4" onclick="here4()">Confirmar resposta</button>
+								</div>
+								<div class="next-question-btn">
+									<button type="button" class="btn btn-qui" onclick="toQuestion5()">Próxima questão &rtrif;</button>
+								</div>
+							</div>
+						</form>
 						<?php
-							while ($row_id_questao = mysqli_fetch_assoc($id_questao4)) {
-							$index_questao++;
-							$id = (string) trim($row_id_questao['id_questao']);
-							echo $index_questao;
+							$escolha4 = filter_input(INPUT_POST, 'questao4');
+							if($escolha4 == $corretaQ4){
+								echo "foi";
 							}
 						?>
 					</div>
-					<div class="question-text">
-						<?php
-							while ($row_questao = mysqli_fetch_assoc($questao4)) {
-							echo $row_questao['enunciado'];
-							}
-						?>		
-					</div>
-				</div>
-				<div class="option-container option-container-qui">
-					<form method="post">
-						<?php
-							while ($row_alternativaQ4 = mysqli_fetch_assoc($opcoes4)) {
-							// $id = (string) trim($row_alternativa['id_questao']);
-								if ($row_alternativaQ4['id_alternativa'] == 434) {
-									$alternativa1q4 = $row_alternativaQ4['texto'];
-									// echo $alternativa1;
-								}
-								if ($row_alternativaQ4['id_alternativa'] == 435) {
-									$alternativa2q4 = $row_alternativaQ4['texto'];
-									// echo $alternativa1;
-								}
-								if ($row_alternativaQ4['id_alternativa'] == 436) {
-									$alternativa3q4 = $row_alternativaQ4['texto'];
-									// echo $alternativa1;
-								}
-								if ($row_alternativaQ4['id_alternativa'] == 437) {
-									$alternativa4q4 = $row_alternativaQ4['texto'];
-									// echo $alternativa1;
-								}
-								if ($row_alternativaQ4['id_alternativa'] == 438) {
-									$alternativa5q4 = $row_alternativaQ4['texto'];
-									// echo $alternativa1;
-								}
-								if ($row_alternativaQ4['veracidade'] == 1) {
-									$corretaQ4 = $row_alternativaQ4['texto'];
-								}
-							}
-						?>
-						<input type="radio" name="questao4" id="alternativa1q4" value="<?php echo $alternativa1q4 ?>">
-						<label for="alternativa1q4"><?php echo $alternativa1q4 ?></label>
-						<br>
-						<input type="radio" name="questao4" id="alternativa2q4" value="<?php echo $alternativa2q4 ?>">
-						<label for="alternativa2q4"><?php echo $alternativa2q4 ?></label>
-						<br>
-						<input type="radio" name="questao4" id="alternativa3q4" value="<?php echo $alternativa3q4 ?>">
-						<label for="alternativa3q4"><?php echo $alternativa3q4 ?></label>
-						<br>
-						<input type="radio" name="questao4" id="alternativa4q4" value="<?php echo $alternativa4q4 ?>">
-						<label for="alternativa4q4"><?php echo $alternativa4q4 ?></label>
-						<br>
-						<input type="radio" name="questao4" id="alternativa5q4" value="<?php echo $alternativa5q4 ?>">
-						<label for="alternativa5q4"><?php echo $alternativa5q4 ?></label>
-						<br>
-						<input type="submit" name="confirmar" value="Confirmar resposta">
-					</form>
-					<?php
-						$escolha4 = filter_input(INPUT_POST, 'questao4');
-						if($escolha4 == $corretaQ4){
-							echo "foi";
-						}
-					?>
 				</div>
 				<!-- questão 5 -->
-				<div class="question-box">
-					<div class="question-number-qui">
+				<div class="whole-question" id="5">
+					<div class="answers-indicator">
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div class="atual"></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+					</div>
+					<div class="question-box">
+						<div class="question-number-qui">
+							<?php
+								while ($row_id_questao = mysqli_fetch_assoc($id_questao5)) {
+								$index_questao++;
+								$id = (string) trim($row_id_questao['id_questao']);
+								echo $index_questao;
+								}
+							?>
+						</div>
+						<div class="question-text">
+							<?php
+								while ($row_questao = mysqli_fetch_assoc($questao5)) {
+								echo $row_questao['enunciado'];
+								}
+							?>		
+						</div>
+					</div>
+					<div class="option-container option-container-qui lacuna">
+						<form method="post">
+							<?php
+								while ($row_alternativaQ5 = mysqli_fetch_assoc($opcoes5)) {
+								// $id = (string) trim($row_alternativa['id_questao']);
+									if ($row_alternativaQ5['id_alternativa'] == 606) {
+										$alternativa1q5 = $row_alternativaQ5['texto'];
+										// echo $alternativa1;
+									}
+									if ($row_alternativaQ5['veracidade'] == 1) {
+										$corretaQ5 = (string) trim($row_alternativaQ5['texto']);
+									}
+								
+								}
+							?>
+							<label for="alternativa1q5">Insira a resposta:</label>
+							<input type="text" name="questao5" id="alternativa1q5">
+							<br>
+							<div class="btn-box">
+								<div class="previous-question-btn">
+									<button type="button" class="btn btn-qui" onclick="backQuestion4()">&ltrif; Questão anterior</button>
+								</div>
+								<div class="confirm-question-btn">
+										<button type="submit" class="btn btn-qui" id="bt-q5" onclick="here5()">Confirmar resposta</button>
+								</div>
+								<div class="next-question-btn">
+									<button type="button" class="btn btn-qui" onclick="toQuestion6()">Próxima questão &rtrif;</button>
+								</div>
+							</div>
+						</form>
 						<?php
-							while ($row_id_questao = mysqli_fetch_assoc($id_questao5)) {
-							$index_questao++;
-							$id = (string) trim($row_id_questao['id_questao']);
-							echo $index_questao;
+
+							$envio5 = filter_input(INPUT_POST, 'questao5');
+							$resposta5 = (string) trim($envio5);
+
+							if($resposta5 === $corretaQ5){
+								echo "foi";
 							}
 						?>
 					</div>
-					<div class="question-text">
-						<?php
-							while ($row_questao = mysqli_fetch_assoc($questao5)) {
-							echo $row_questao['enunciado'];
-							}
-						?>		
-					</div>
-				</div>
-				<div class="option-container option-container-qui lacuna">
-					<form method="post">
-						<?php
-							while ($row_alternativaQ5 = mysqli_fetch_assoc($opcoes5)) {
-							// $id = (string) trim($row_alternativa['id_questao']);
-								if ($row_alternativaQ5['id_alternativa'] == 606) {
-									$alternativa1q5 = $row_alternativaQ5['texto'];
-									// echo $alternativa1;
-								}
-								if ($row_alternativaQ5['veracidade'] == 1) {
-									$corretaQ5 = (string) trim($row_alternativaQ5['texto']);
-								}
-							
-							}
-						?>
-						<label for="alternativa1q5">Insira a resposta:</label>
-						<input type="text" name="questao5" id="alternativa1q5">
-						<br>
-						<input type="submit" name="confirmar" value="Confirmar resposta">
-					</form>
-					<?php
-
-						$envio5 = filter_input(INPUT_POST, 'questao5');
-						$resposta5 = (string) trim($envio5);
-
-						if($resposta5 === $corretaQ5){
-							echo "foi";
-						}
-					?>
 				</div>
 				<!-- questão 6 -->
-				<div class="question-box">
-					<div class="question-number-qui">
+				<div class="whole-question" id="6">
+					<div class="answers-indicator">
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div class="atual"></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+					</div>
+					<div class="question-box">
+						<div class="question-number-qui">
+							<?php
+								while ($row_id_questao = mysqli_fetch_assoc($id_questao6)) {
+								$index_questao++;
+								$id = (string) trim($row_id_questao['id_questao']);
+								echo $index_questao;
+								}
+							?>
+						</div>
+						<div class="question-text">
+							<?php
+								while ($row_questao = mysqli_fetch_assoc($questao6)) {
+								echo $row_questao['enunciado'];
+								}
+							?>		
+						</div>
+					</div>
+					<div class="option-container option-container-qui lacuna">
+						<form method="post">
+							<?php
+								while ($row_alternativaQ6 = mysqli_fetch_assoc($opcoes6)) {
+								// $id = (string) trim($row_alternativa['id_questao']);
+									if ($row_alternativaQ6['id_alternativa'] == 607) {
+										$alternativa1q6 = (string) trim($row_alternativaQ6['texto']);
+										// echo $alternativa1;
+									}
+									if ($row_alternativaQ6['id_alternativa'] == 608) {
+										$alternativa2q6 = (string) trim($row_alternativaQ6['texto']);
+										// echo $alternativa1;
+									}
+									if ($row_alternativaQ6['veracidade'] == 1) {
+										$corretaQ6 = (string) trim($row_alternativaQ6['texto']);
+									}
+								
+								}
+							?>
+							<label for="alternativa1q6">Ligação 1:</label>
+							<input type="text" name="questao6a" id="alternativa1q6">
+							<br>
+							<label for="alternativa2q6">Ligação 2:</label>
+							<input type="text" name="questao6b" id="alternativa2q6">
+							<br>
+							<div class="btn-box">
+								<div class="previous-question-btn">
+									<button type="button" class="btn btn-qui" onclick="backQuestion5()">&ltrif; Questão anterior</button>
+								</div>
+								<div class="confirm-question-btn">
+										<button type="submit" class="btn btn-qui" id="bt-q6" onclick="here6()">Confirmar resposta</button>
+								</div>
+								<div class="next-question-btn">
+									<button type="button" class="btn btn-qui" onclick="toQuestion7()">Próxima questão &rtrif;</button>
+								</div>
+							</div>
+						</form>
 						<?php
-							while ($row_id_questao = mysqli_fetch_assoc($id_questao6)) {
-							$index_questao++;
-							$id = (string) trim($row_id_questao['id_questao']);
-							echo $index_questao;
+
+							$envio6a = filter_input(INPUT_POST, 'questao6a');
+							$resposta6a = (string) trim($envio6a);
+
+							$envio6b = filter_input(INPUT_POST, 'questao6b');
+							$resposta6b = (string) trim($envio6b);
+
+							if(($resposta6a === $alternativa1q6) && ($resposta6b === $alternativa2q6)){
+								echo "foi";
 							}
 						?>
 					</div>
-					<div class="question-text">
-						<?php
-							while ($row_questao = mysqli_fetch_assoc($questao6)) {
-							echo $row_questao['enunciado'];
-							}
-						?>		
-					</div>
-				</div>
-				<div class="option-container option-container-qui lacuna">
-					<form method="post">
-						<?php
-							while ($row_alternativaQ6 = mysqli_fetch_assoc($opcoes6)) {
-							// $id = (string) trim($row_alternativa['id_questao']);
-								if ($row_alternativaQ6['id_alternativa'] == 607) {
-									$alternativa1q6 = (string) trim($row_alternativaQ6['texto']);
-									// echo $alternativa1;
-								}
-								if ($row_alternativaQ6['id_alternativa'] == 608) {
-									$alternativa2q6 = (string) trim($row_alternativaQ6['texto']);
-									// echo $alternativa1;
-								}
-								if ($row_alternativaQ6['veracidade'] == 1) {
-									$corretaQ6 = (string) trim($row_alternativaQ6['texto']);
-								}
-							
-							}
-						?>
-						<label for="alternativa1q6">Ligação 1:</label>
-						<input type="text" name="questao6a" id="alternativa1q6">
-						<br>
-						<label for="alternativa2q6">Ligação 2:</label>
-						<input type="text" name="questao6b" id="alternativa2q6">
-						<br>
-						<input type="submit" name="confirmar" value="Confirmar resposta">
-					</form>
-					<?php
-
-						$envio6a = filter_input(INPUT_POST, 'questao6a');
-						$resposta6a = (string) trim($envio6a);
-
-						$envio6b = filter_input(INPUT_POST, 'questao6b');
-						$resposta6b = (string) trim($envio6b);
-
-						if(($resposta6a === $alternativa1q6) && ($resposta6b === $alternativa2q6)){
-							echo "foi";
-						}
-					?>
 				</div>
 				<!-- questão 7 -->
-				<div class="question-box">
-					<div class="question-number-qui">
-						<?php
-							while ($row_id_questao = mysqli_fetch_assoc($id_questao7)) {
-							$index_questao++;
-							$id = (string) trim($row_id_questao['id_questao']);
-							echo $index_questao;
-							}
-						?>
+				<div class="whole-question" id="7">
+					<div class="answers-indicator">
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div class="atual"></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
 					</div>
-					<div class="question-text">
-						<?php
-							while ($row_questao = mysqli_fetch_assoc($questao7)) {
-							echo $row_questao['enunciado'];
-							}
-						?>		
+					<div class="question-box">
+						<div class="question-number-qui">
+							<?php
+								while ($row_id_questao = mysqli_fetch_assoc($id_questao7)) {
+								$index_questao++;
+								$id = (string) trim($row_id_questao['id_questao']);
+								echo $index_questao;
+								}
+							?>
+						</div>
+						<div class="question-text">
+							<?php
+								while ($row_questao = mysqli_fetch_assoc($questao7)) {
+								echo $row_questao['enunciado'];
+								}
+							?>		
+						</div>
 					</div>
-				</div>
-				<div class="option-container option-container-qui lacuna">
-					<form method="post">
+					<div class="option-container option-container-qui lacuna">
+						<form method="post">
+							<?php
+								while ($row_alternativaQ7 = mysqli_fetch_assoc($opcoes7)) {
+								// $id = (string) trim($row_alternativa['id_questao']);
+									if ($row_alternativaQ7['id_alternativa'] == 609) {
+										$alternativa1q7 = $row_alternativaQ7['texto'];
+										// echo $alternativa1;
+									}
+									if ($row_alternativaQ7['veracidade'] == 1) {
+										$corretaQ7 = (string) trim($row_alternativaQ7['texto']);
+									}
+								
+								}
+							?>
+							<label for="alternativa1q7">Insira a resposta:</label>
+							<input type="text" name="questao7" id="alternativa1q7">
+							<br>
+							<div class="btn-box">
+								<div class="previous-question-btn">
+									<button type="button" class="btn btn-qui" onclick="backQuestion6()">&ltrif; Questão anterior</button>
+								</div>
+								<div class="confirm-question-btn">
+										<button type="submit" class="btn btn-qui" id="bt-q7" onclick="here7()">Confirmar resposta</button>
+								</div>
+								<div class="next-question-btn">
+									<button type="button" class="btn btn-qui" onclick="toQuestion8()">Próxima questão &rtrif;</button>
+								</div>
+							</div>
+						</form>
 						<?php
-							while ($row_alternativaQ7 = mysqli_fetch_assoc($opcoes7)) {
-							// $id = (string) trim($row_alternativa['id_questao']);
-								if ($row_alternativaQ7['id_alternativa'] == 609) {
-									$alternativa1q7 = $row_alternativaQ7['texto'];
-									// echo $alternativa1;
-								}
-								if ($row_alternativaQ7['veracidade'] == 1) {
-									$corretaQ7 = (string) trim($row_alternativaQ7['texto']);
-								}
-							
-							}
-						?>
-						<label for="alternativa1q7">Insira a resposta:</label>
-						<input type="text" name="questao7" id="alternativa1q7">
-						<br>
-						<input type="submit" name="confirmar" value="Confirmar resposta">
-					</form>
-					<?php
-						$envio7 = filter_input(INPUT_POST, 'questao7');
-						$resposta7 = (string) trim($envio7);
+							$envio7 = filter_input(INPUT_POST, 'questao7');
+							$resposta7 = (string) trim($envio7);
 
-						if($resposta7 === $corretaQ7){
-							echo "foi";
-						}
-					?>
+							if($resposta7 === $corretaQ7){
+								echo "foi";
+							}
+						?>
+					</div>
 				</div>
 				<!-- questão 8 -->
-				<div class="question-box">
-					<div class="question-number-qui">
-						<?php
-							while ($row_id_questao = mysqli_fetch_assoc($id_questao8)) {
-							$index_questao++;
-							$id = (string) trim($row_id_questao['id_questao']);
-							echo $index_questao;
-							}
-						?>
+				<div class="whole-question" id="8">
+					<div class="answers-indicator">
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div class="atual"></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
 					</div>
-					<div class="question-text">
-						<?php
-							while ($row_questao = mysqli_fetch_assoc($questao8)) {
-							echo $row_questao['enunciado'];
-							}
-						?>		
+					<div class="question-box">
+						<div class="question-number-qui">
+							<?php
+								while ($row_id_questao = mysqli_fetch_assoc($id_questao8)) {
+								$index_questao++;
+								$id = (string) trim($row_id_questao['id_questao']);
+								echo $index_questao;
+								}
+							?>
+						</div>
+						<div class="question-text">
+							<?php
+								while ($row_questao = mysqli_fetch_assoc($questao8)) {
+								echo $row_questao['enunciado'];
+								}
+							?>		
+						</div>
 					</div>
-				</div>
-				<div class="option-container option-container-qui lacuna">
-					<form method="post">
+					<div class="option-container option-container-qui lacuna">
+						<form method="post">
+							<?php
+								while ($row_alternativaQ8 = mysqli_fetch_assoc($opcoes8)) {
+								// $id = (string) trim($row_alternativa['id_questao']);
+									if ($row_alternativaQ8['id_alternativa'] == 610) {
+										$alternativa1q8 = $row_alternativaQ8['texto'];
+										// echo $alternativa1;
+									}
+									if ($row_alternativaQ8['veracidade'] == 1) {
+										$corretaQ8 = (string) trim($row_alternativaQ8['texto']);
+									}
+								
+								}
+							?>
+							<label for="alternativa1q8">Insira a resposta:</label>
+							<input type="text" name="questao8" id="alternativa1q8">
+							<br>
+							<div class="btn-box">
+								<div class="previous-question-btn">
+									<button type="button" class="btn btn-qui" onclick="backQuestion7()">&ltrif; Questão anterior</button>
+								</div>
+								<div class="confirm-question-btn">
+										<button type="submit" class="btn btn-qui" id="bt-q8" onclick="here8()">Confirmar resposta</button>
+								</div>
+								<div class="next-question-btn">
+									<button type="button" class="btn btn-qui" onclick="toQuestion9()">Próxima questão &rtrif;</button>
+								</div>
+							</div>
+						</form>
 						<?php
-							while ($row_alternativaQ8 = mysqli_fetch_assoc($opcoes8)) {
-							// $id = (string) trim($row_alternativa['id_questao']);
-								if ($row_alternativaQ8['id_alternativa'] == 610) {
-									$alternativa1q8 = $row_alternativaQ8['texto'];
-									// echo $alternativa1;
-								}
-								if ($row_alternativaQ8['veracidade'] == 1) {
-									$corretaQ8 = (string) trim($row_alternativaQ8['texto']);
-								}
-							
-							}
-						?>
-						<label for="alternativa1q8">Insira a resposta:</label>
-						<input type="text" name="questao8" id="alternativa1q8">
-						<br>
-						<input type="submit" name="confirmar" value="Confirmar resposta">
-					</form>
-					<?php
-						$envio8 = filter_input(INPUT_POST, 'questao8');
-						$resposta8 = (string) trim($envio8);
+							$envio8 = filter_input(INPUT_POST, 'questao8');
+							$resposta8 = (string) trim($envio8);
 
-						if($resposta8 === $corretaQ8){
-							echo "foi";
-						}
-					?>
+							if($resposta8 === $corretaQ8){
+								echo "foi";
+							}
+						?>
+					</div>
 				</div>
 				<!-- questão 9 -->
-				<div class="question-box">
-					<div class="question-number-qui">
+				<div class="whole-question" id="9">
+					<div class="answers-indicator">
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div class="atual"></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+					</div>
+					<div class="question-box">
+						<div class="question-number-qui">
+							<?php
+								while ($row_id_questao = mysqli_fetch_assoc($id_questao9)) {
+								$index_questao++;
+								$id = (string) trim($row_id_questao['id_questao']);
+								echo $index_questao;
+								}
+							?>
+						</div>
+						<div class="question-text">
+							<?php
+								while ($row_questao = mysqli_fetch_assoc($questao9)) {
+								echo $row_questao['enunciado'];
+								}
+							?>		
+						</div>
+					</div>
+					<div class="option-container option-container-qui">
+						<form method="post">
+							<?php
+								while ($row_alternativaQ9 = mysqli_fetch_assoc($opcoes9)) {
+								// $id = (string) trim($row_alternativa['id_questao']);
+									if ($row_alternativaQ9['id_alternativa'] == 667) {
+										$alternativa1q9 = $row_alternativaQ9['texto'];
+										// echo $alternativa1;
+									}
+									if ($row_alternativaQ9['id_alternativa'] == 668) {
+										$alternativa2q9 = $row_alternativaQ9['texto'];
+										// echo $alternativa1;
+									}
+
+									if ($row_alternativaQ9['id_alternativa'] == 669) {
+										$alternativa3q9 = $row_alternativaQ9['texto'];
+										// echo $alternativa1;
+									}
+
+									if ($row_alternativaQ9['id_alternativa'] == 670) {
+										$alternativa4q9 = $row_alternativaQ9['texto'];
+										// echo $alternativa1;
+									}
+
+									if ($row_alternativaQ9['id_alternativa'] == 671) {
+										$alternativa5q9 = $row_alternativaQ9['texto'];
+										// echo $alternativa1;
+									}
+									if ($row_alternativaQ9['veracidade'] == 1) {
+										$corretaQ9 = $row_alternativaQ9['texto'];
+									}
+								
+								}
+							?>
+							<input type="radio" name="questao9" id="alternativa1q9" value="<?php echo $alternativa1q9 ?>">
+							<label for="alternativa1q9"><?php echo $alternativa1q9 ?></label>
+							<br>
+							<input type="radio" name="questao9" id="alternativa2q9" value="<?php echo $alternativa2q9 ?>">
+							<label for="alternativa2q9"><?php echo $alternativa2q9 ?></label>
+							<br>
+							<input type="radio" name="questao9" id="alternativa3q9" value="<?php echo $alternativa3q9 ?>">
+							<label for="alternativa3q9"><?php echo $alternativa3q9 ?></label>
+							<br>
+							<input type="radio" name="questao9" id="alternativa4q9" value="<?php echo $alternativa4q9 ?>">
+							<label for="alternativa4q9"><?php echo $alternativa4q9 ?></label>
+							<br>
+							<input type="radio" name="questao9" id="alternativa5q9" value="<?php echo $alternativa5q9 ?>">
+							<label for="alternativa5q9"><?php echo $alternativa5q9 ?></label>
+							<br>
+							<div class="btn-box">
+								<div class="previous-question-btn">
+									<button type="button" class="btn btn-qui" onclick="backQuestion8()">&ltrif; Questão anterior</button>
+								</div>
+								<div class="confirm-question-btn">
+									<button type="submit" class="btn btn-qui" id="bt-q9" onclick="here9()">Confirmar resposta</button>
+								</div>
+								<div class="next-question-btn">
+									<button type="button" class="btn btn-qui" onclick="toQuestion10()">Próxima questão &rtrif;</button>
+								</div>
+							</div>
+						</form>
 						<?php
-							while ($row_id_questao = mysqli_fetch_assoc($id_questao9)) {
-							$index_questao++;
-							$id = (string) trim($row_id_questao['id_questao']);
-							echo $index_questao;
+							$escolha9 = filter_input(INPUT_POST, 'questao9');
+							if($escolha9 == $corretaQ9){
+								echo "foi";
 							}
 						?>
 					</div>
-					<div class="question-text">
-						<?php
-							while ($row_questao = mysqli_fetch_assoc($questao9)) {
-							echo $row_questao['enunciado'];
-							}
-						?>		
-					</div>
-				</div>
-				<div class="option-container option-container-qui">
-					<form method="post">
-						<?php
-							while ($row_alternativaQ9 = mysqli_fetch_assoc($opcoes9)) {
-							// $id = (string) trim($row_alternativa['id_questao']);
-								if ($row_alternativaQ9['id_alternativa'] == 667) {
-									$alternativa1q9 = $row_alternativaQ9['texto'];
-									// echo $alternativa1;
-								}
-								if ($row_alternativaQ9['id_alternativa'] == 668) {
-									$alternativa2q9 = $row_alternativaQ9['texto'];
-									// echo $alternativa1;
-								}
-
-								if ($row_alternativaQ9['id_alternativa'] == 669) {
-									$alternativa3q9 = $row_alternativaQ9['texto'];
-									// echo $alternativa1;
-								}
-
-								if ($row_alternativaQ9['id_alternativa'] == 670) {
-									$alternativa4q9 = $row_alternativaQ9['texto'];
-									// echo $alternativa1;
-								}
-
-								if ($row_alternativaQ9['id_alternativa'] == 671) {
-									$alternativa5q9 = $row_alternativaQ9['texto'];
-									// echo $alternativa1;
-								}
-								if ($row_alternativaQ9['veracidade'] == 1) {
-									$corretaQ9 = $row_alternativaQ9['texto'];
-								}
-							
-							}
-						?>
-						<input type="radio" name="questao9" id="alternativa1q9" value="<?php echo $alternativa1q9 ?>">
-						<label for="alternativa1q9"><?php echo $alternativa1q9 ?></label>
-						<br>
-						<input type="radio" name="questao9" id="alternativa2q9" value="<?php echo $alternativa2q9 ?>">
-						<label for="alternativa2q9"><?php echo $alternativa2q9 ?></label>
-						<br>
-						<input type="radio" name="questao9" id="alternativa3q9" value="<?php echo $alternativa3q9 ?>">
-						<label for="alternativa3q9"><?php echo $alternativa3q9 ?></label>
-						<br>
-						<input type="radio" name="questao9" id="alternativa4q9" value="<?php echo $alternativa4q9 ?>">
-						<label for="alternativa4q9"><?php echo $alternativa4q9 ?></label>
-						<br>
-						<input type="radio" name="questao9" id="alternativa5q9" value="<?php echo $alternativa5q9 ?>">
-						<label for="alternativa5q9"><?php echo $alternativa5q9 ?></label>
-						<br>
-						<input type="submit" name="confirmar" value="Confirmar resposta">
-					</form>
-					<?php
-						$escolha9 = filter_input(INPUT_POST, 'questao9');
-						if($escolha9 == $corretaQ9){
-							echo "foi";
-						}
-					?>
 				</div>
 				<!-- questão 10 -->
-				<div class="question-box">
-					<div class="question-number-qui">
+				<div class="whole-question" id="10">
+					<div class="answers-indicator">
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div class="atual"></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+					</div>
+					<div class="question-box">
+						<div class="question-number-qui">
+							<?php
+								while ($row_id_questao = mysqli_fetch_assoc($id_questao10)) {
+								$index_questao++;
+								$id = (string) trim($row_id_questao['id_questao']);
+								echo $index_questao;
+								}
+							?>
+						</div>
+						<div class="question-text">
+							<?php
+								while ($row_questao = mysqli_fetch_assoc($questao10)) {
+								echo $row_questao['enunciado'];
+								}
+							?>		
+						</div>
+					</div>
+					<div class="option-container option-container-qui">
+						<form method="post">
+							<?php
+								while ($row_alternativaQ10 = mysqli_fetch_assoc($opcoes10)) {
+								// $id = (string) trim($row_alternativa['id_questao']);
+									if ($row_alternativaQ10['id_alternativa'] == 672) {
+										$alternativa1q10 = $row_alternativaQ10['texto'];
+										// echo $alternativa1;
+									}
+									if ($row_alternativaQ10['id_alternativa'] == 673) {
+										$alternativa2q10 = $row_alternativaQ10['texto'];
+										// echo $alternativa1;
+									}
+									if ($row_alternativaQ10['veracidade'] == 1) {
+										$corretaQ10 = $row_alternativaQ10['texto'];
+									}
+								
+								}
+							?>
+							<input type="radio" name="questao10" id="alternativa1q10" value="<?php echo $alternativa1q10 ?>">
+							<label for="alternativa1q10"><?php echo $alternativa1q10 ?></label>
+							<br>
+							<input type="radio" name="questao10" id="alternativa2q10" value="<?php echo $alternativa2q10 ?>">
+							<label for="alternativa2q10"><?php echo $alternativa2q10 ?></label>
+							<br>
+							<div class="btn-box">
+								<div class="previous-question-btn">
+									<button type="button" class="btn btn-qui" onclick="backQuestion9()">&ltrif; Questão anterior</button>
+								</div>
+								<div class="confirm-question-btn">
+									<button type="submit" class="btn btn-qui" id="bt-q10" onclick="here10()">Confirmar resposta</button>
+								</div>
+								<div class="next-question-btn">
+									<button type="button" class="btn btn-qui" onclick="toQuestion11()">Próxima questão &rtrif;</button>
+								</div>
+							</div>
+						</form>
 						<?php
-							while ($row_id_questao = mysqli_fetch_assoc($id_questao10)) {
-							$index_questao++;
-							$id = (string) trim($row_id_questao['id_questao']);
-							echo $index_questao;
+							$escolha10 = filter_input(INPUT_POST, 'questao10');
+							if($escolha10 == $corretaQ10){
+								echo "foi";
 							}
 						?>
 					</div>
-					<div class="question-text">
-						<?php
-							while ($row_questao = mysqli_fetch_assoc($questao10)) {
-							echo $row_questao['enunciado'];
-							}
-						?>		
-					</div>
-				</div>
-				<div class="option-container option-container-qui">
-					<form method="post">
-						<?php
-							while ($row_alternativaQ10 = mysqli_fetch_assoc($opcoes10)) {
-							// $id = (string) trim($row_alternativa['id_questao']);
-								if ($row_alternativaQ10['id_alternativa'] == 672) {
-									$alternativa1q10 = $row_alternativaQ10['texto'];
-									// echo $alternativa1;
-								}
-								if ($row_alternativaQ10['id_alternativa'] == 673) {
-									$alternativa2q10 = $row_alternativaQ10['texto'];
-									// echo $alternativa1;
-								}
-								if ($row_alternativaQ10['veracidade'] == 1) {
-									$corretaQ10 = $row_alternativaQ10['texto'];
-								}
-							
-							}
-						?>
-						<input type="radio" name="questao10" id="alternativa1q10" value="<?php echo $alternativa1q10 ?>">
-						<label for="alternativa1q10"><?php echo $alternativa1q10 ?></label>
-						<br>
-						<input type="radio" name="questao10" id="alternativa2q10" value="<?php echo $alternativa2q10 ?>">
-						<label for="alternativa2q10"><?php echo $alternativa2q10 ?></label>
-						<br>
-						<input type="submit" name="confirmar" value="Confirmar resposta">
-					</form>
-					<?php
-						$escolha10 = filter_input(INPUT_POST, 'questao10');
-						if($escolha10 == $corretaQ10){
-							echo "foi";
-						}
-					?>
 				</div>
 				<!-- questão 11 -->
-				<div class="question-box">
-					<div class="question-number-qui">
+				<div class="whole-question" id="11">
+					<div class="answers-indicator">
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div class="atual"></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+					</div>
+					<div class="question-box">
+						<div class="question-number-qui">
+							<?php
+								while ($row_id_questao = mysqli_fetch_assoc($id_questao11)) {
+								$index_questao++;
+								$id = (string) trim($row_id_questao['id_questao']);
+								echo $index_questao;
+								}
+							?>
+						</div>
+						<div class="question-text">
+							<?php
+								while ($row_questao = mysqli_fetch_assoc($questao11)) {
+								echo $row_questao['enunciado'];
+								}
+							?>		
+						</div>
+					</div>
+					<div class="option-container option-container-qui">
+						<form method="post">
+							<?php
+								while ($row_alternativaQ11 = mysqli_fetch_assoc($opcoes11)) {
+								// $id = (string) trim($row_alternativa['id_questao']);
+									if ($row_alternativaQ11['id_alternativa'] == 674) {
+										$alternativa1q11 = $row_alternativaQ11['texto'];
+										// echo $alternativa1;
+									}
+									if ($row_alternativaQ11['id_alternativa'] == 675) {
+										$alternativa2q11 = $row_alternativaQ11['texto'];
+										// echo $alternativa1;
+									}
+									if ($row_alternativaQ11['veracidade'] == 1) {
+										$corretaQ11 = $row_alternativaQ11['texto'];
+									}
+								
+								}
+							?>
+							<input type="radio" name="questao11" id="alternativa1q11" value="<?php echo $alternativa1q11 ?>">
+							<label for="alternativa1q11"><?php echo $alternativa1q11 ?></label>
+							<br>
+							<input type="radio" name="questao11" id="alternativa2q11" value="<?php echo $alternativa2q11 ?>">
+							<label for="alternativa2q11"><?php echo $alternativa2q11 ?></label>
+							<br>
+							<div class="btn-box">
+								<div class="previous-question-btn">
+									<button type="button" class="btn btn-qui" onclick="backQuestion10()">&ltrif; Questão anterior</button>
+								</div>
+								<div class="confirm-question-btn">
+									<button type="submit" class="btn btn-qui" id="bt-q11" onclick="here11()">Confirmar resposta</button>
+								</div>
+								<div class="next-question-btn">
+									<button type="button" class="btn btn-qui" onclick="toQuestion12()">Próxima questão &rtrif;</button>
+								</div>
+							</div>
+						</form>
 						<?php
-							while ($row_id_questao = mysqli_fetch_assoc($id_questao11)) {
-							$index_questao++;
-							$id = (string) trim($row_id_questao['id_questao']);
-							echo $index_questao;
+							$escolha11 = filter_input(INPUT_POST, 'questao11');
+							if($escolha11 == $corretaQ11){
+								echo "foi";
 							}
 						?>
 					</div>
-					<div class="question-text">
-						<?php
-							while ($row_questao = mysqli_fetch_assoc($questao11)) {
-							echo $row_questao['enunciado'];
-							}
-						?>		
-					</div>
-				</div>
-				<div class="option-container option-container-qui">
-					<form method="post">
-						<?php
-							while ($row_alternativaQ11 = mysqli_fetch_assoc($opcoes11)) {
-							// $id = (string) trim($row_alternativa['id_questao']);
-								if ($row_alternativaQ11['id_alternativa'] == 674) {
-									$alternativa1q11 = $row_alternativaQ11['texto'];
-									// echo $alternativa1;
-								}
-								if ($row_alternativaQ11['id_alternativa'] == 675) {
-									$alternativa2q11 = $row_alternativaQ11['texto'];
-									// echo $alternativa1;
-								}
-								if ($row_alternativaQ11['veracidade'] == 1) {
-									$corretaQ11 = $row_alternativaQ11['texto'];
-								}
-							
-							}
-						?>
-						<input type="radio" name="questao11" id="alternativa1q11" value="<?php echo $alternativa1q11 ?>">
-						<label for="alternativa1q11"><?php echo $alternativa1q11 ?></label>
-						<br>
-						<input type="radio" name="questao11" id="alternativa2q11" value="<?php echo $alternativa2q11 ?>">
-						<label for="alternativa2q11"><?php echo $alternativa2q11 ?></label>
-						<br>
-						<input type="submit" name="confirmar" value="Confirmar resposta">
-					</form>
-					<?php
-						$escolha11 = filter_input(INPUT_POST, 'questao11');
-						if($escolha11 == $corretaQ11){
-							echo "foi";
-						}
-					?>
 				</div>
 				<!-- questão 12 -->
-				<div class="question-box">
-					<div class="question-number-qui">
+				<div class="whole-question" id="12">
+					<div class="answers-indicator">
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div class="atual"></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+					</div>
+					<div class="question-box">
+						<div class="question-number-qui">
+							<?php
+								while ($row_id_questao = mysqli_fetch_assoc($id_questao12)) {
+								$index_questao++;
+								$id = (string) trim($row_id_questao['id_questao']);
+								echo $index_questao;
+								}
+							?>
+						</div>
+						<div class="question-text">
+							<?php
+								while ($row_questao = mysqli_fetch_assoc($questao12)) {
+								echo $row_questao['enunciado'];
+								}
+							?>		
+						</div>
+					</div>
+					<div class="option-container option-container-qui">
+						<form method="post">
+							<?php
+								while ($row_alternativaQ12 = mysqli_fetch_assoc($opcoes12)) {
+								// $id = (string) trim($row_alternativa['id_questao']);
+									if ($row_alternativaQ12['id_alternativa'] == 676) {
+										$alternativa1q12 = $row_alternativaQ12['texto'];
+										// echo $alternativa1;
+									}
+									if ($row_alternativaQ12['id_alternativa'] == 677) {
+										$alternativa2q12 = $row_alternativaQ12['texto'];
+										// echo $alternativa1;
+									}
+									if ($row_alternativaQ12['veracidade'] == 1) {
+										$corretaQ12 = $row_alternativaQ12['texto'];
+									}
+								}
+							?>
+							<input type="radio" name="questao12" id="alternativa1q12" value="<?php echo $alternativa1q12 ?>">
+							<label for="alternativa1q12"><?php echo $alternativa1q12 ?></label>
+							<br>
+							<input type="radio" name="questao12" id="alternativa2q12" value="<?php echo $alternativa2q12 ?>">
+							<label for="alternativa2q12"><?php echo $alternativa2q12 ?></label>
+							<br>
+							<div class="btn-box">
+								<div class="previous-question-btn">
+									<button type="button" class="btn btn-qui" onclick="backQuestion11()">&ltrif; Questão anterior</button>
+								</div>
+								<div class="confirm-question-btn">
+									<button type="submit" class="btn btn-qui" id="bt-q12" onclick="here12()">Confirmar resposta</button>
+								</div>
+								<div class="next-question-btn">
+									<button type="button" class="btn btn-qui" onclick="toQuestion13()">Próxima questão &rtrif;</button>
+								</div>
+							</div>
+						</form>
 						<?php
-							while ($row_id_questao = mysqli_fetch_assoc($id_questao12)) {
-							$index_questao++;
-							$id = (string) trim($row_id_questao['id_questao']);
-							echo $index_questao;
+							$escolha12 = filter_input(INPUT_POST, 'questao12');
+							if($escolha12 == $corretaQ12){
+								echo "foi";
 							}
 						?>
 					</div>
-					<div class="question-text">
-						<?php
-							while ($row_questao = mysqli_fetch_assoc($questao12)) {
-							echo $row_questao['enunciado'];
-							}
-						?>		
-					</div>
-				</div>
-				<div class="option-container option-container-qui">
-					<form method="post">
-						<?php
-							while ($row_alternativaQ12 = mysqli_fetch_assoc($opcoes12)) {
-							// $id = (string) trim($row_alternativa['id_questao']);
-								if ($row_alternativaQ12['id_alternativa'] == 676) {
-									$alternativa1q12 = $row_alternativaQ12['texto'];
-									// echo $alternativa1;
-								}
-								if ($row_alternativaQ12['id_alternativa'] == 677) {
-									$alternativa2q12 = $row_alternativaQ12['texto'];
-									// echo $alternativa1;
-								}
-								if ($row_alternativaQ12['veracidade'] == 1) {
-									$corretaQ12 = $row_alternativaQ12['texto'];
-								}
-							}
-						?>
-						<input type="radio" name="questao12" id="alternativa1q12" value="<?php echo $alternativa1q12 ?>">
-						<label for="alternativa1q12"><?php echo $alternativa1q12 ?></label>
-						<br>
-						<input type="radio" name="questao12" id="alternativa2q12" value="<?php echo $alternativa2q12 ?>">
-						<label for="alternativa2q12"><?php echo $alternativa2q12 ?></label>
-						<br>
-						<input type="submit" name="confirmar" value="Confirmar resposta">
-					</form>
-					<?php
-						$escolha12 = filter_input(INPUT_POST, 'questao12');
-						if($escolha12 == $corretaQ12){
-							echo "foi";
-						}
-					?>
 				</div>
 				<!-- questão 13 -->
-				<div class="question-box">
-					<div class="question-number-qui">
-						<?php
-							while ($row_id_questao = mysqli_fetch_assoc($id_questao13)) {
-							$index_questao++;
-							$id = (string) trim($row_id_questao['id_questao']);
-							echo $index_questao;
-							}
-						?>
+				<div class="whole-question" id="13">
+					<div class="answers-indicator">
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div class="atual"></div>
+						<div></div>
+						<div></div>
+						<div></div>
 					</div>
-					<div class="question-text">
-						<?php
-							while ($row_questao = mysqli_fetch_assoc($questao13)) {
-							echo $row_questao['enunciado'];
-							}
-						?>		
+					<div class="question-box">
+						<div class="question-number-qui">
+							<?php
+								while ($row_id_questao = mysqli_fetch_assoc($id_questao13)) {
+								$index_questao++;
+								$id = (string) trim($row_id_questao['id_questao']);
+								echo $index_questao;
+								}
+							?>
+						</div>
+						<div class="question-text">
+							<?php
+								while ($row_questao = mysqli_fetch_assoc($questao13)) {
+								echo $row_questao['enunciado'];
+								}
+							?>		
+						</div>
 					</div>
-				</div>
-				<div class="option-container option-container-qui lacuna">
-					<form method="post">
+					<div class="option-container option-container-qui lacuna">
+						<form method="post">
+							<?php
+								while ($row_alternativaQ13 = mysqli_fetch_assoc($opcoes13)) {
+								// $id = (string) trim($row_alternativa['id_questao']);
+									if ($row_alternativaQ13['id_alternativa'] == 820) {
+										$alternativa1q13 = $row_alternativaQ13['texto'];
+										// echo $alternativa1;
+									}
+									if ($row_alternativaQ13['veracidade'] == 1) {
+										$corretaQ13 = $row_alternativaQ13['texto'];
+									}
+								}
+							?>
+							<label for="alternativa1q13">Insira a resposta:</label>
+							<input type="text" name="questao13" id="alternativa1q13" placeholder="Insira sempre dois algarismos">
+							<br>
+							<div class="btn-box">
+								<div class="previous-question-btn">
+									<button type="button" class="btn btn-qui" onclick="backQuestion12()">&ltrif; Questão anterior</button>
+								</div>
+								<div class="confirm-question-btn">
+									<button type="submit" class="btn btn-qui" id="bt-q13" onclick="here13()">Confirmar resposta</button>
+								</div>
+								<div class="next-question-btn">
+									<button type="button" class="btn btn-qui" onclick="toQuestion14()">Próxima questão &rtrif;</button>
+								</div>
+							</div>
+						</form>
 						<?php
-							while ($row_alternativaQ13 = mysqli_fetch_assoc($opcoes13)) {
-							// $id = (string) trim($row_alternativa['id_questao']);
-								if ($row_alternativaQ13['id_alternativa'] == 820) {
-									$alternativa1q13 = $row_alternativaQ13['texto'];
-									// echo $alternativa1;
-								}
-								if ($row_alternativaQ13['veracidade'] == 1) {
-									$corretaQ13 = $row_alternativaQ13['texto'];
-								}
-							}
-						?>
-						<label for="alternativa1q13">Insira a resposta:</label>
-						<input type="text" name="questao13" id="alternativa1q13" placeholder="Insira sempre dois algarismos">
-						<br>
-						<input type="submit" name="confirmar" value="Confirmar resposta">
-					</form>
-					<?php
-						$envio13 = filter_input(INPUT_POST, 'questao13');
-						$resposta13 = (string) trim($envio13);
+							$envio13 = filter_input(INPUT_POST, 'questao13');
+							$resposta13 = (string) trim($envio13);
 
-						if($resposta13 === $corretaQ13){
-							echo "foi";
-						}
-					?>
+							if($resposta13 === $corretaQ13){
+								echo "foi";
+							}
+						?>
+					</div>
 				</div>
 				<!-- questão 14 -->
-				<div class="question-box">
-					<div class="question-number-qui">
-						<?php
-							while ($row_id_questao = mysqli_fetch_assoc($id_questao14)) {
-							$index_questao++;
-							$id = (string) trim($row_id_questao['id_questao']);
-							echo $index_questao;
-							}
-						?>
+				<div class="whole-question" id="14">
+					<div class="answers-indicator">
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div class="atual"></div>
+						<div></div>
+						<div></div>
 					</div>
-					<div class="question-text">
-						<?php
-							while ($row_questao = mysqli_fetch_assoc($questao14)) {
-							echo $row_questao['enunciado'];
-							}
-						?>		
+					<div class="question-box">
+						<div class="question-number-qui">
+							<?php
+								while ($row_id_questao = mysqli_fetch_assoc($id_questao14)) {
+								$index_questao++;
+								$id = (string) trim($row_id_questao['id_questao']);
+								echo $index_questao;
+								}
+							?>
+						</div>
+						<div class="question-text">
+							<?php
+								while ($row_questao = mysqli_fetch_assoc($questao14)) {
+								echo $row_questao['enunciado'];
+								}
+							?>		
+						</div>
 					</div>
-				</div>
-				<div class="option-container option-container-qui lacuna">
-					<form method="post">
+					<div class="option-container option-container-qui lacuna">
+						<form method="post">
+							<?php
+								while ($row_alternativaQ14 = mysqli_fetch_assoc($opcoes14)) {
+								// $id = (string) trim($row_alternativa['id_questao']);
+									if ($row_alternativaQ14['id_alternativa'] == 821) {
+										$alternativa1q14 = $row_alternativaQ14['texto'];
+										// echo $alternativa1;
+									}
+									if ($row_alternativaQ14['veracidade'] == 1) {
+										$corretaQ14 = $row_alternativaQ14['texto'];
+									}
+								}
+							?>
+							<label for="alternativa1q14">Insira a resposta:</label>
+							<input type="text" name="questao14" id="alternativa1q14" placeholder="Insira sempre dois algarismos">
+							<br>
+							<div class="btn-box">
+								<div class="previous-question-btn">
+									<button type="button" class="btn btn-qui" onclick="backQuestion13()">&ltrif; Questão anterior</button>
+								</div>
+								<div class="confirm-question-btn">
+									<button type="submit" class="btn btn-qui" id="bt-q14" onclick="here14()">Confirmar resposta</button>
+								</div>
+								<div class="next-question-btn">
+									<button type="button" class="btn btn-qui" onclick="toQuestion15()">Próxima questão &rtrif;</button>
+								</div>
+							</div>
+						</form>
 						<?php
-							while ($row_alternativaQ14 = mysqli_fetch_assoc($opcoes14)) {
-							// $id = (string) trim($row_alternativa['id_questao']);
-								if ($row_alternativaQ14['id_alternativa'] == 821) {
-									$alternativa1q14 = $row_alternativaQ14['texto'];
-									// echo $alternativa1;
-								}
-								if ($row_alternativaQ14['veracidade'] == 1) {
-									$corretaQ14 = $row_alternativaQ14['texto'];
-								}
-							}
-						?>
-						<label for="alternativa1q14">Insira a resposta:</label>
-						<input type="text" name="questao14" id="alternativa1q14" placeholder="Insira sempre dois algarismos">
-						<br>
-						<input type="submit" name="confirmar" value="Confirmar resposta">
-					</form>
-					<?php
-						$envio14 = filter_input(INPUT_POST, 'questao14');
-						$resposta14 = (string) trim($envio14);
+							$envio14 = filter_input(INPUT_POST, 'questao14');
+							$resposta14 = (string) trim($envio14);
 
-						if($resposta14 === $corretaQ14){
-							echo "foi";
-						}
-					?>
+							if($resposta14 === $corretaQ14){
+								echo "foi";
+							}
+						?>
+					</div>
 				</div>
 				<!-- questão 15 -->
-				<div class="question-box">
-					<div class="question-number-qui">
-						<?php
-							while ($row_id_questao = mysqli_fetch_assoc($id_questao15)) {
-							$index_questao++;
-							$id = (string) trim($row_id_questao['id_questao']);
-							echo $index_questao;
-							}
-						?>
+				<div class="whole-question" id="15">
+					<div class="answers-indicator">
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div class="atual"></div>
+						<div></div>
 					</div>
-					<div class="question-text">
-						<?php
-							while ($row_questao = mysqli_fetch_assoc($questao15)) {
-							echo $row_questao['enunciado'];
-							}
-						?>		
+					<div class="question-box">
+						<div class="question-number-qui">
+							<?php
+								while ($row_id_questao = mysqli_fetch_assoc($id_questao15)) {
+								$index_questao++;
+								$id = (string) trim($row_id_questao['id_questao']);
+								echo $index_questao;
+								}
+							?>
+						</div>
+						<div class="question-text">
+							<?php
+								while ($row_questao = mysqli_fetch_assoc($questao15)) {
+								echo $row_questao['enunciado'];
+								}
+							?>		
+						</div>
 					</div>
-				</div>
-				<div class="option-container option-container-qui lacuna">
-					<form method="post">
+					<div class="option-container option-container-qui lacuna">
+						<form method="post">
+							<?php
+								while ($row_alternativaQ15 = mysqli_fetch_assoc($opcoes15)) {
+								// $id = (string) trim($row_alternativa['id_questao']);
+									if ($row_alternativaQ15['id_alternativa'] == 822) {
+										$alternativa1q15 = $row_alternativaQ15['texto'];
+										// echo $alternativa1;
+									}
+									if ($row_alternativaQ15['veracidade'] == 1) {
+										$corretaQ15 = $row_alternativaQ15['texto'];
+									}
+								}
+							?>
+							<label for="alternativa1q15">Insira a resposta:</label>
+							<input type="text" name="questao15" id="alternativa1q15" placeholder="Insira sempre dois algarismos">
+							<br>
+							<div class="btn-box">
+								<div class="previous-question-btn">
+									<button type="button" class="btn btn-qui" onclick="backQuestion14()">&ltrif; Questão anterior</button>
+								</div>
+								<div class="confirm-question-btn">
+									<button type="submit" class="btn btn-qui" id="bt-q15" onclick="here15()">Confirmar resposta</button>
+								</div>
+								<div class="next-question-btn">
+									<button type="button" class="btn btn-qui" onclick="toQuestion16()">Próxima questão &rtrif;</button>
+								</div>
+							</div>
+						</form>
 						<?php
-							while ($row_alternativaQ15 = mysqli_fetch_assoc($opcoes15)) {
-							// $id = (string) trim($row_alternativa['id_questao']);
-								if ($row_alternativaQ15['id_alternativa'] == 822) {
-									$alternativa1q15 = $row_alternativaQ15['texto'];
-									// echo $alternativa1;
-								}
-								if ($row_alternativaQ15['veracidade'] == 1) {
-									$corretaQ15 = $row_alternativaQ15['texto'];
-								}
-							}
-						?>
-						<label for="alternativa1q15">Insira a resposta:</label>
-						<input type="text" name="questao15" id="alternativa1q15" placeholder="Insira sempre dois algarismos">
-						<br>
-						<input type="submit" name="confirmar" value="Confirmar resposta">
-					</form>
-					<?php
-						$envio15 = filter_input(INPUT_POST, 'questao15');
-						$resposta15 = (string) trim($envio15);
+							$envio15 = filter_input(INPUT_POST, 'questao15');
+							$resposta15 = (string) trim($envio15);
 
-						if($resposta15 === $corretaQ15){
-							echo "foi";
-						}
-					?>
+							if($resposta15 === $corretaQ15){
+								echo "foi";
+							}
+						?>
+					</div>
 				</div>
 				<!-- questão 16 -->
-				<div class="question-box">
-					<div class="question-number-qui">
-						<?php
-							while ($row_id_questao = mysqli_fetch_assoc($id_questao16)) {
-							$index_questao++;
-							$id = (string) trim($row_id_questao['id_questao']);
-							echo $index_questao;
-							}
-						?>
+				<div class="whole-question" id="16">
+					<div class="answers-indicator">
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div class="atual"></div>
 					</div>
-					<div class="question-text">
-						<?php
-							while ($row_questao = mysqli_fetch_assoc($questao16)) {
-							echo $row_questao['enunciado'];
-							}
-						?>		
+					<div class="question-box">
+						<div class="question-number-qui">
+							<?php
+								while ($row_id_questao = mysqli_fetch_assoc($id_questao16)) {
+								$index_questao++;
+								$id = (string) trim($row_id_questao['id_questao']);
+								echo $index_questao;
+								}
+							?>
+						</div>
+						<div class="question-text">
+							<?php
+								while ($row_questao = mysqli_fetch_assoc($questao16)) {
+								echo $row_questao['enunciado'];
+								}
+							?>		
+						</div>
 					</div>
-				</div>
-				<div class="option-container option-container-qui lacuna">
-					<form method="post">
+					<div class="option-container option-container-qui lacuna">
+						<form method="post">
+							<?php
+								while ($row_alternativaQ16 = mysqli_fetch_assoc($opcoes16)) {
+								// $id = (string) trim($row_alternativa['id_questao']);
+									if ($row_alternativaQ16['id_alternativa'] == 823) {
+										$alternativa1q16 = $row_alternativaQ16['texto'];
+										// echo $alternativa1;
+									}
+									if ($row_alternativaQ16['veracidade'] == 1) {
+										$corretaQ16 = $row_alternativaQ16['texto'];
+									}
+								}
+							?>
+							<label for="alternativa1q16">Insira a resposta:</label>
+							<input type="text" name="questao16" id="alternativa1q16" placeholder="Insira sempre dois algarismos">
+							<br>
+							<div class="btn-box">
+								<div class="previous-question-btn">
+									<button type="button" class="btn btn-qui" onclick="backQuestion15()">&ltrif; Questão anterior</button>
+								</div>
+								<div class="confirm-question-btn">
+									<button type="submit" class="btn btn-qui" id="bt-q16" onclick="here16()">Confirmar resposta</button>
+								</div>
+							</div>
+						</form>
 						<?php
-							while ($row_alternativaQ16 = mysqli_fetch_assoc($opcoes16)) {
-							// $id = (string) trim($row_alternativa['id_questao']);
-								if ($row_alternativaQ16['id_alternativa'] == 823) {
-									$alternativa1q16 = $row_alternativaQ16['texto'];
-									// echo $alternativa1;
-								}
-								if ($row_alternativaQ16['veracidade'] == 1) {
-									$corretaQ16 = $row_alternativaQ16['texto'];
-								}
-							}
-						?>
-						<label for="alternativa1q16">Insira a resposta:</label>
-						<input type="text" name="questao16" id="alternativa1q16" placeholder="Insira sempre dois algarismos">
-						<br>
-						<input type="submit" name="confirmar" value="Confirmar resposta">
-					</form>
-					<?php
-						$envio16 = filter_input(INPUT_POST, 'questao16');
-						$resposta16 = (string) trim($envio16);
+							$envio16 = filter_input(INPUT_POST, 'questao16');
+							$resposta16 = (string) trim($envio16);
 
-						if($resposta16 === $corretaQ16){
-							echo "foi";
-						}
-					?>
+							if($resposta16 === $corretaQ16){
+								echo "foi";
+							}
+						?>
+					</div>
 				</div>
 				<!-- fim do questionário -->
-				<div class="btn-box">
-					<div class="previous-question-btn">
-						<button type="button" class="btn btn-qui" onclick="back()">&ltrif; Questão anterior</button>
-					</div>
-					<div class="confirm-question-btn">
-						<button type="button" class="btn btn-qui" onclick="next()">Confirmar resposta</button>
-					</div>
-					<div class="next-question-btn">
-						<button type="button" class="btn btn-qui" onclick="next()">Próxima questão &rtrif;</button>
-					</div>
-				</div>
 			</div>
 			<div class="footer footer-size footer-questionario">
 				<footer>
@@ -1142,6 +1602,7 @@ include_once("../../../../conexao.php");
 		</div>
 
 		<script src="../../../../js/pesquisa.js"></script>
+		<script src="../../../../js/paginacao.js"></script>
 
 	</body>
 </html>
