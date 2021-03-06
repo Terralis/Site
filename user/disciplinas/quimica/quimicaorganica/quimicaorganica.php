@@ -266,19 +266,19 @@ include_once("../../../../conexao.php");
 								}
 							?>
 							<input type="radio" name="questao1" id="alternativa1" value="<?php echo $alternativa1 ?>">
-							<label for="alternativa1"><?php echo $alternativa1 ?></label>
+							<label for="alternativa1" id="alternativa1"><?php echo $alternativa1 ?></label>
 							<br>
 							<input type="radio" name="questao1" id="alternativa2" value="<?php echo $alternativa2 ?>">
-							<label for="alternativa2"><?php echo $alternativa2 ?></label>
+							<label for="alternativa2" id="alternativa2"><?php echo $alternativa2 ?></label>
 							<br>
 							<input type="radio" name="questao1" id="alternativa3" value="<?php echo $alternativa3 ?>">
-							<label for="alternativa3"><?php echo $alternativa3 ?></label>
+							<label for="alternativa3" id="alternativa3"><?php echo $alternativa3 ?></label>
 							<br>
 							<input type="radio" name="questao1" id="alternativa4" value="<?php echo $alternativa4 ?>">
-							<label for="alternativa4"><?php echo $alternativa4 ?></label>
+							<label for="alternativa4" id="alternativa4"><?php echo $alternativa4 ?></label>
 							<br>
 							<input type="radio" name="questao1" id="alternativa5" value="<?php echo $alternativa5 ?>">
-							<label for="alternativa5"><?php echo $alternativa5 ?></label>
+							<label for="alternativa5" id="alternativa5"><?php echo $alternativa5 ?></label>
 							<br>
 							<div class="btn-box">
 								<div class="confirm-question-btn">
@@ -291,8 +291,77 @@ include_once("../../../../conexao.php");
 						</form>
 						<?php
 							$escolha = filter_input(INPUT_POST, 'questao1');
-							if($escolha == $correta){
-								echo "foi";
+							if(isset($escolha)){
+								if($escolha == $correta){
+									echo '<style type/css>
+									#alternativa5{
+										border: 2px solid green;
+										background-color: #d2e8cf;
+									}
+									</style>';
+								}
+								else{ 
+									echo '<style type/css>
+									#alternativa5{
+										border: 2px solid green;
+										background-color: #d2e8cf;
+									}
+									</style>';
+									switch ($escolha) {
+										case $alternativa1:
+											echo '<style type/css>
+												#alternativa1{
+													border: 2px solid red;
+													background-color: #ff6347;
+												}
+												</style>';
+											break;
+										case $alternativa2:
+											echo '<style type/css>
+												#alternativa2{
+													border: 2px solid red;
+													background-color:  #ff6347;
+												}
+												</style>';
+											break;
+										case $alternativa3:
+											echo '<style type/css>
+												#alternativa3{
+													border: 2px solid red;
+													background-color:  #ff6347;
+												}
+												</style>';
+											break;
+										case $alternativa4:
+											echo '<style type/css>
+												#alternativa4{
+													border: 2px solid red;
+													background-color:  #ff6347;
+												}
+												</style>';
+											break;
+										case $alternativa5:
+											echo '<style type/css>
+												#alternativa5{
+													border: 2px solid red;
+													background-color:  #ff6347;
+												}
+												</style>';
+											break;
+									}
+								}
+							}
+						?>
+						<script >
+							var bt_q1 = document.getElementById("bt-q1");
+						</script>
+						<?php
+							if(isset($escolha)){
+						?>
+						<script>
+							bt_q1.style.display = "none";
+						</script>
+						<?php
 							}
 						?>
 					</div>
@@ -367,19 +436,19 @@ include_once("../../../../conexao.php");
 								}
 							?>
 							<input type="radio" name="questao2" id="alternativa1q2" value="<?php echo $alternativa1q2 ?>">
-							<label for="alternativa1q2"><?php echo $alternativa1q2 ?></label>
+							<label for="alternativa1q2" id="alternativa1q2"><?php echo $alternativa1q2 ?></label>
 							<br>
 							<input type="radio" name="questao2" id="alternativa2q2" value="<?php echo $alternativa2q2 ?>">
-							<label for="alternativa2q2"><?php echo $alternativa2q2 ?></label>
+							<label for="alternativa2q2" id="alternativa2q2"><?php echo $alternativa2q2 ?></label>
 							<br>
 							<input type="radio" name="questao2" id="alternativa3q2" value="<?php echo $alternativa3q2 ?>">
-							<label for="alternativa3q2"><?php echo $alternativa3q2 ?></label>
+							<label for="alternativa3q2" id="alternativa3q2"><?php echo $alternativa3q2 ?></label>
 							<br>
 							<input type="radio" name="questao2" id="alternativa4q2" value="<?php echo $alternativa4q2 ?>">
-							<label for="alternativa4q2"><?php echo $alternativa4q2 ?></label>
+							<label for="alternativa4q2" id="alternativa4q2"><?php echo $alternativa4q2 ?></label>
 							<br>
 							<input type="radio" name="questao2" id="alternativa5q2" value="<?php echo $alternativa5q2 ?>">
-							<label for="alternativa5q2"><?php echo $alternativa5q2 ?></label>
+							<label for="alternativa5q2" id="alternativa5q2"><?php echo $alternativa5q2 ?></label>
 							<br>
 							<div class="btn-box">
 								<div class="previous-question-btn">
@@ -395,8 +464,89 @@ include_once("../../../../conexao.php");
 						</form>
 						<?php
 							$escolha2 = filter_input(INPUT_POST, 'questao2');
-							if($escolha2 == $corretaQ2){
-								echo "foi";
+							if(isset($escolha2)){
+								if($escolha2 == $corretaQ2){
+									echo '<style type/css>
+									#alternativa4q2{
+										border: 2px solid green;
+										background-color: #d2e8cf;
+									}
+									</style>';
+								}
+								else{ 
+									echo '<style type/css>
+									#alternativa4q2{
+										border: 2px solid green;
+										background-color: #d2e8cf;
+									}
+									</style>';
+									switch ($escolha2) {
+										case $alternativa1q2:
+											echo '<style type/css>
+												#alternativa1q2{
+													border: 2px solid red;
+													background-color: #ff6347;
+												}
+												</style>';
+											break;
+										case $alternativa2q2:
+											echo '<style type/css>
+												#alternativa2q2{
+													border: 2px solid red;
+													background-color:  #ff6347;
+												}
+												</style>';
+											break;
+										case $alternativa3q2:
+											echo '<style type/css>
+												#alternativa3q2{
+													border: 2px solid red;
+													background-color:  #ff6347;
+												}
+												</style>';
+											break;
+										case $alternativa4q2:
+											echo '<style type/css>
+												#alternativa4q2{
+													border: 2px solid red;
+													background-color:  #ff6347;
+												}
+												</style>';
+											break;
+										case $alternativa5q2:
+											echo '<style type/css>
+												#alternativa5q2{
+													border: 2px solid red;
+													background-color:  #ff6347;
+												}
+												</style>';
+											break;
+									}
+								}
+							}
+						?>
+							<script >
+								var atual2 = false;
+								var bt_q2 = document.getElementById("bt-q2");
+							</script>
+							<?php
+							if(isset($escolha2)){
+								if($escolha2 == $corretaQ2){
+									?>
+									<script>
+										atual2 = true;
+										bt_q2.style.display = "none";
+									</script>
+									<?php
+								}
+								else{
+									?>
+									<script>
+										atual2 = true;
+										bt_q2.style.display = "none";
+									</script>
+									<?php
+								}
 							}
 						?>
 					</div>
@@ -471,19 +621,19 @@ include_once("../../../../conexao.php");
 								}
 							?>
 							<input type="radio" name="questao3" id="alternativa1q3" value="<?php echo $alternativa1q3 ?>">
-							<label for="alternativa1q3"><?php echo $alternativa1q3 ?></label>
+							<label for="alternativa1q3" id="alternativa1q3"><?php echo $alternativa1q3 ?></label>
 							<br>
 							<input type="radio" name="questao3" id="alternativa2q3" value="<?php echo $alternativa2q3 ?>">
-							<label for="alternativa2q3"><?php echo $alternativa2q3 ?></label>
+							<label for="alternativa2q3" id="alternativa2q3"><?php echo $alternativa2q3 ?></label>
 							<br>
 							<input type="radio" name="questao3" id="alternativa3q3" value="<?php echo $alternativa3q3 ?>">
-							<label for="alternativa3q3"><?php echo $alternativa3q3 ?></label>
+							<label for="alternativa3q3" id="alternativa3q3"><?php echo $alternativa3q3 ?></label>
 							<br>
 							<input type="radio" name="questao3" id="alternativa4q3" value="<?php echo $alternativa4q3 ?>">
-							<label for="alternativa4q3"><?php echo $alternativa4q3 ?></label>
+							<label for="alternativa4q3" id="alternativa4q3"><?php echo $alternativa4q3 ?></label>
 							<br>
 							<input type="radio" name="questao3" id="alternativa5q3" value="<?php echo $alternativa5q3 ?>">
-							<label for="alternativa5q3"><?php echo $alternativa5q3 ?></label>
+							<label for="alternativa5q3" id="alternativa5q3"><?php echo $alternativa5q3 ?></label>
 							<br>
 							<div class="btn-box">
 								<div class="previous-question-btn">
@@ -499,8 +649,89 @@ include_once("../../../../conexao.php");
 						</form>
 						<?php
 							$escolha3 = filter_input(INPUT_POST, 'questao3');
-							if($escolha3 == $corretaQ3){
-								echo "foi";
+							if(isset($escolha3)){
+								if($escolha3 == $corretaQ3){
+									echo '<style type/css>
+									#alternativa4q3{
+										border: 2px solid green;
+										background-color: #d2e8cf;
+									}
+									</style>';
+								}
+								else{ 
+									echo '<style type/css>
+									#alternativa4q3{
+										border: 2px solid green;
+										background-color: #d2e8cf;
+									}
+									</style>';
+									switch ($escolha3) {
+										case $alternativa1q3:
+											echo '<style type/css>
+												#alternativa1q3{
+													border: 2px solid red;
+													background-color: #ff6347;
+												}
+												</style>';
+											break;
+										case $alternativa2q3:
+											echo '<style type/css>
+												#alternativa2q3{
+													border: 2px solid red;
+													background-color:  #ff6347;
+												}
+												</style>';
+											break;
+										case $alternativa3q3:
+											echo '<style type/css>
+												#alternativa3q3{
+													border: 2px solid red;
+													background-color:  #ff6347;
+												}
+												</style>';
+											break;
+										case $alternativa4q3:
+											echo '<style type/css>
+												#alternativa4q3{
+													border: 2px solid red;
+													background-color:  #ff6347;
+												}
+												</style>';
+											break;
+										case $alternativa5q3:
+											echo '<style type/css>
+												#alternativa5q3{
+													border: 2px solid red;
+													background-color:  #ff6347;
+												}
+												</style>';
+											break;
+									}
+								}
+							}
+						?>
+							<script >
+								var atual3 = false;
+								var bt_q3 = document.getElementById("bt-q3");
+							</script>
+							<?php
+							if(isset($escolha3)){
+								if($escolha3 == $corretaQ3){
+									?>
+									<script>
+										atual3 = true;
+										bt_q3.style.display = "none";
+									</script>
+									<?php
+								}
+								else{
+									?>
+									<script>
+										atual3 = true;
+										bt_q3.style.display = "none";
+									</script>
+									<?php
+								}
 							}
 						?>
 					</div>
@@ -574,19 +805,19 @@ include_once("../../../../conexao.php");
 								}
 							?>
 							<input type="radio" name="questao4" id="alternativa1q4" value="<?php echo $alternativa1q4 ?>">
-							<label for="alternativa1q4"><?php echo $alternativa1q4 ?></label>
+							<label for="alternativa1q4" id="alternativa1q4"><?php echo $alternativa1q4 ?></label>
 							<br>
 							<input type="radio" name="questao4" id="alternativa2q4" value="<?php echo $alternativa2q4 ?>">
-							<label for="alternativa2q4"><?php echo $alternativa2q4 ?></label>
+							<label for="alternativa2q4" id="alternativa2q4"><?php echo $alternativa2q4 ?></label>
 							<br>
 							<input type="radio" name="questao4" id="alternativa3q4" value="<?php echo $alternativa3q4 ?>">
-							<label for="alternativa3q4"><?php echo $alternativa3q4 ?></label>
+							<label for="alternativa3q4" id="alternativa3q4"><?php echo $alternativa3q4 ?></label>
 							<br>
 							<input type="radio" name="questao4" id="alternativa4q4" value="<?php echo $alternativa4q4 ?>">
-							<label for="alternativa4q4"><?php echo $alternativa4q4 ?></label>
+							<label for="alternativa4q4" id="alternativa4q4"><?php echo $alternativa4q4 ?></label>
 							<br>
 							<input type="radio" name="questao4" id="alternativa5q4" value="<?php echo $alternativa5q4 ?>">
-							<label for="alternativa5q4"><?php echo $alternativa5q4 ?></label>
+							<label for="alternativa5q4" id="alternativa5q4"><?php echo $alternativa5q4 ?></label>
 							<br>
 							<div class="btn-box">
 								<div class="previous-question-btn">
@@ -602,8 +833,89 @@ include_once("../../../../conexao.php");
 						</form>
 						<?php
 							$escolha4 = filter_input(INPUT_POST, 'questao4');
-							if($escolha4 == $corretaQ4){
-								echo "foi";
+							if(isset($escolha4)){
+								if($escolha4 == $corretaQ4){
+									echo '<style type/css>
+									#alternativa3q4{
+										border: 2px solid green;
+										background-color: #d2e8cf;
+									}
+									</style>';
+								}
+								else{ 
+									echo '<style type/css>
+									#alternativa3q4{
+										border: 2px solid green;
+										background-color: #d2e8cf;
+									}
+									</style>';
+									switch ($escolha4) {
+										case $alternativa1q4:
+											echo '<style type/css>
+												#alternativa1q4{
+													border: 2px solid red;
+													background-color: #ff6347;
+												}
+												</style>';
+											break;
+										case $alternativa2q4:
+											echo '<style type/css>
+												#alternativa2q4{
+													border: 2px solid red;
+													background-color:  #ff6347;
+												}
+												</style>';
+											break;
+										case $alternativa3q4:
+											echo '<style type/css>
+												#alternativa3q4{
+													border: 2px solid red;
+													background-color:  #ff6347;
+												}
+												</style>';
+											break;
+										case $alternativa4q4:
+											echo '<style type/css>
+												#alternativa4q4{
+													border: 2px solid red;
+													background-color:  #ff6347;
+												}
+												</style>';
+											break;
+										case $alternativa5q4:
+											echo '<style type/css>
+												#alternativa5q4{
+													border: 2px solid red;
+													background-color:  #ff6347;
+												}
+												</style>';
+											break;
+									}
+								}
+							}
+						?>
+							<script >
+								var atual4 = false;
+								var bt_q4 = document.getElementById("bt-q4");
+							</script>
+							<?php
+							if(isset($escolha4)){
+								if($escolha4 == $corretaQ4){
+									?>
+									<script>
+										atual4 = true;
+										bt_q4.style.display = "none";
+									</script>
+									<?php
+								}
+								else{
+									?>
+									<script>
+										atual4 = true;
+										bt_q4.style.display = "none";
+									</script>
+									<?php
+								}
 							}
 						?>
 					</div>
@@ -766,12 +1078,49 @@ include_once("../../../../conexao.php");
 							</div>
 						</form>
 						<?php
-
 							$envio6 = filter_input(INPUT_POST, 'questao6');
-							$resposta6 = (string) trim($envio6);
-
-							if($resposta6 === $corretaQ6){
-								echo "foi";
+							$resposta6= (string) trim($envio6);
+							if(isset($resposta6)){
+								if($resposta6 === $corretaQ6){
+								echo '<style type/css>
+									#alternativa1q6{
+										border: 2px solid green;
+										background-color: #d2e8cf;
+									}
+									</style>';
+								}
+								elseif(isset($_POST['questao6'])){
+									echo '<style type/css>
+												#alternativa1q6{
+													border: 2px solid red;
+													background-color: #ff6347;
+												}
+												</style>';
+								}
+							}
+						?>
+							<script >
+								var atual6 = false;
+								var bt_q6 = document.getElementById("bt-q6");
+							</script>
+							<?php
+							if(isset($resposta6)){
+								if($resposta6 == $corretaQ6){
+									?>
+									<script>
+										atual6 = true;
+										bt_q6.style.display = "none";
+									</script>
+									<?php
+								}
+								elseif(isset($_POST['questao6'])){
+									?>
+									<script>
+										atual6 = true;
+										bt_q6.style.display = "none";
+									</script>
+									<?php
+								}
 							}
 						?>
 					</div>
@@ -847,9 +1196,47 @@ include_once("../../../../conexao.php");
 						<?php
 							$envio7 = filter_input(INPUT_POST, 'questao7');
 							$resposta7 = (string) trim($envio7);
-
-							if($resposta7 === $corretaQ7){
-								echo "foi";
+							if(isset($resposta7)){
+								if($resposta7 === $corretaQ7){
+									echo '<style type/css>
+										#alternativa1q7{
+										border: 2px solid green;
+											background-color: #d2e8cf;
+										}
+										</style>';
+									}
+								elseif(isset($_POST['questao7'])){
+									echo '<style type/css>
+										#alternativa1q7{
+											border: 2px solid red;
+											background-color: #ff6347;
+										}
+										</style>';
+								}
+							}
+						?>
+							<script >
+								var atual7 = false;
+								var bt_q7 = document.getElementById("bt-q7");
+							</script>
+							<?php
+							if(isset($resposta7)){
+								if($resposta7 == $corretaQ7){
+									?>
+									<script>
+										atual7 = true;
+										bt_q7.style.display = "none";
+									</script>
+									<?php
+								}
+								elseif(isset($_POST['questao7'])){
+									?>
+									<script>
+										atual7 = true;
+										bt_q7.style.display = "none";
+									</script>
+									<?php
+								}
 							}
 						?>
 					</div>
@@ -925,9 +1312,47 @@ include_once("../../../../conexao.php");
 						<?php
 							$envio8 = filter_input(INPUT_POST, 'questao8');
 							$resposta8 = (string) trim($envio8);
-
-							if($resposta8 === $corretaQ8){
-								echo "foi";
+							if(isset($resposta8)){
+								if($resposta8 === $corretaQ8){
+									echo '<style type/css>
+										#alternativa1q8{
+										border: 2px solid green;
+											background-color: #d2e8cf;
+										}
+										</style>';
+									}
+								elseif(isset($_POST['questao8'])){
+									echo '<style type/css>
+										#alternativa1q8{
+											border: 2px solid red;
+											background-color: #ff6347;
+										}
+										</style>';
+								}
+							}
+						?>
+							<script >
+								var atual8 = false;
+								var bt_q8 = document.getElementById("bt-q8");
+							</script>
+							<?php
+							if(isset($resposta8)){
+								if($resposta8 == $corretaQ8){
+									?>
+									<script>
+										atual8 = true;
+										bt_q8.style.display = "none";
+									</script>
+									<?php
+								}
+								elseif(isset($_POST['questao8'])){
+									?>
+									<script>
+										atual8 = true;
+										bt_q8.style.display = "none";
+									</script>
+									<?php
+								}
 							}
 						?>
 					</div>
@@ -990,10 +1415,10 @@ include_once("../../../../conexao.php");
 								}
 							?>
 							<input type="radio" name="questao9" id="alternativa1q9" value="<?php echo $alternativa1q9 ?>">
-							<label for="alternativa1q9"><?php echo $alternativa1q9 ?></label>
+							<label for="alternativa1q9" id="alternativa1q9"><?php echo $alternativa1q9 ?></label>
 							<br>
 							<input type="radio" name="questao9" id="alternativa2q9" value="<?php echo $alternativa2q9 ?>">
-							<label for="alternativa2q9"><?php echo $alternativa2q9 ?></label>
+							<label for="alternativa2q9" id="alternativa2q9"><?php echo $alternativa2q9 ?></label>
 							<br>
 							<div class="btn-box">
 								<div class="previous-question-btn">
@@ -1009,8 +1434,65 @@ include_once("../../../../conexao.php");
 						</form>
 						<?php
 							$escolha9 = filter_input(INPUT_POST, 'questao9');
-							if($escolha9 == $corretaQ9){
-								echo "foi";
+							if(isset($escolha9)){
+								if($escolha9 == $corretaQ9){
+									echo '<style type/css>
+									#alternativa1q9{
+										border: 2px solid green;
+										background-color: #d2e8cf;
+									}
+									</style>';
+								}
+								else{ 
+									echo '<style type/css>
+									#alternativa1q9{
+										border: 2px solid green;
+										background-color: #d2e8cf;
+									}
+									</style>';
+									switch ($escolha9) {
+										case $alternativa1q9:
+											echo '<style type/css>
+												#alternativa1q9{
+													border: 2px solid red;
+													background-color: #ff6347;
+												}
+												</style>';
+											break;
+										case $alternativa2q9:
+											echo '<style type/css>
+												#alternativa2q9{
+													border: 2px solid red;
+													background-color:  #ff6347;
+												}
+												</style>';
+											break;
+									}
+								}
+							}
+						?>
+							<script >
+								var atual9 = false;
+								var bt_q9 = document.getElementById("bt-q9");
+							</script>
+							<?php
+							if(isset($escolha9)){
+								if($escolha9 == $corretaQ9){
+									?>
+									<script>
+										atual9 = true;
+										bt_q9.style.display = "none";
+									</script>
+									<?php
+								}
+								else{
+									?>
+									<script>
+										atual9 = true;
+										bt_q9.style.display = "none";
+									</script>
+									<?php
+								}
 							}
 						?>
 					</div>
@@ -1073,10 +1555,10 @@ include_once("../../../../conexao.php");
 								}
 							?>
 							<input type="radio" name="questao10" id="alternativa1q10" value="<?php echo $alternativa1q10 ?>">
-							<label for="alternativa1q10"><?php echo $alternativa1q10 ?></label>
+							<label for="alternativa1q10" id="alternativa1q10"><?php echo $alternativa1q10 ?></label>
 							<br>
 							<input type="radio" name="questao10" id="alternativa2q10" value="<?php echo $alternativa2q10 ?>">
-							<label for="alternativa2q10"><?php echo $alternativa2q10 ?></label>
+							<label for="alternativa2q10" id="alternativa2q10"><?php echo $alternativa2q10 ?></label>
 							<br>
 							<div class="btn-box">
 								<div class="previous-question-btn">
@@ -1092,8 +1574,65 @@ include_once("../../../../conexao.php");
 						</form>
 						<?php
 							$escolha10 = filter_input(INPUT_POST, 'questao10');
-							if($escolha10 == $corretaQ10){
-								echo "foi";
+							if(isset($escolha10)){
+								if($escolha10 == $corretaQ10){
+									echo '<style type/css>
+									#alternativa2q10{
+										border: 2px solid green;
+										background-color: #d2e8cf;
+									}
+									</style>';
+								}
+								else{ 
+									echo '<style type/css>
+									#alternativa2q10{
+										border: 2px solid green;
+										background-color: #d2e8cf;
+									}
+									</style>';
+									switch ($escolha10) {
+										case $alternativa1q10:
+											echo '<style type/css>
+												#alternativa1q10{
+													border: 2px solid red;
+													background-color: #ff6347;
+												}
+												</style>';
+											break;
+										case $alternativa2q10:
+											echo '<style type/css>
+												#alternativa2q10{
+													border: 2px solid red;
+													background-color:  #ff6347;
+												}
+												</style>';
+											break;
+									}
+								}
+							}
+						?>
+							<script >
+								var atual10 = false;
+								var bt_q10 = document.getElementById("bt-q10");
+							</script>
+							<?php
+							if(isset($escolha10)){
+								if($escolha10 == $corretaQ10){
+									?>
+									<script>
+										atual10 = true;
+										bt_q10.style.display = "none";
+									</script>
+									<?php
+								}
+								else{
+									?>
+									<script>
+										atual10 = true;
+										bt_q10.style.display = "none";
+									</script>
+									<?php
+								}
 							}
 						?>
 					</div>
@@ -1156,10 +1695,10 @@ include_once("../../../../conexao.php");
 								}
 							?>
 							<input type="radio" name="questao11" id="alternativa1q11" value="<?php echo $alternativa1q11 ?>">
-							<label for="alternativa1q11"><?php echo $alternativa1q11 ?></label>
+							<label for="alternativa1q11" id="alternativa1q11"><?php echo $alternativa1q11 ?></label>
 							<br>
 							<input type="radio" name="questao11" id="alternativa2q11" value="<?php echo $alternativa2q11 ?>">
-							<label for="alternativa2q11"><?php echo $alternativa2q11 ?></label>
+							<label for="alternativa2q11" id="alternativa2q11"><?php echo $alternativa2q11 ?></label>
 							<br>
 							<div class="btn-box">
 								<div class="previous-question-btn">
@@ -1175,8 +1714,65 @@ include_once("../../../../conexao.php");
 						</form>
 						<?php
 							$escolha11 = filter_input(INPUT_POST, 'questao11');
-							if($escolha11 == $corretaQ11){
-								echo "foi";
+							if(isset($escolha11)){
+								if($escolha11 == $corretaQ11){
+									echo '<style type/css>
+									#alternativa1q11{
+										border: 2px solid green;
+										background-color: #d2e8cf;
+									}
+									</style>';
+								}
+								else{ 
+									echo '<style type/css>
+									#alternativa1q11{
+										border: 2px solid green;
+										background-color: #d2e8cf;
+									}
+									</style>';
+									switch ($escolha11) {
+										case $alternativa1q11:
+											echo '<style type/css>
+												#alternativa1q11{
+													border: 2px solid red;
+													background-color: #ff6347;
+												}
+												</style>';
+											break;
+										case $alternativa2q11:
+											echo '<style type/css>
+												#alternativa2q11{
+													border: 2px solid red;
+													background-color:  #ff6347;
+												}
+												</style>';
+											break;
+									}
+								}
+							}
+						?>
+						<script >
+								var atual11 = false;
+								var bt_q11 = document.getElementById("bt-q11");
+							</script>
+							<?php
+							if(isset($escolha11)){
+								if($escolha11 == $corretaQ11){
+									?>
+									<script>
+										atual11 = true;
+										bt_q11.style.display = "none";
+									</script>
+									<?php
+								}
+								else{
+									?>
+									<script>
+										atual11 = true;
+										bt_q11.style.display = "none";
+									</script>
+									<?php
+								}
 							}
 						?>
 					</div>
@@ -1238,10 +1834,10 @@ include_once("../../../../conexao.php");
 								}
 							?>
 							<input type="radio" name="questao12" id="alternativa1q12" value="<?php echo $alternativa1q12 ?>">
-							<label for="alternativa1q12"><?php echo $alternativa1q12 ?></label>
+							<label for="alternativa1q12" id="alternativa1q12"><?php echo $alternativa1q12 ?></label>
 							<br>
 							<input type="radio" name="questao12" id="alternativa2q12" value="<?php echo $alternativa2q12 ?>">
-							<label for="alternativa2q12"><?php echo $alternativa2q12 ?></label>
+							<label for="alternativa2q12" id="alternativa2q12"><?php echo $alternativa2q12 ?></label>
 							<br>
 							<div class="btn-box">
 								<div class="previous-question-btn">
@@ -1257,8 +1853,65 @@ include_once("../../../../conexao.php");
 						</form>
 						<?php
 							$escolha12 = filter_input(INPUT_POST, 'questao12');
-							if($escolha12 == $corretaQ12){
-								echo "foi";
+							if(isset($escolha12)){
+								if($escolha12 == $corretaQ12){
+									echo '<style type/css>
+									#alternativa2q12{
+										border: 2px solid green;
+										background-color: #d2e8cf;
+									}
+									</style>';
+								}
+								else{ 
+									echo '<style type/css>
+									#alternativa2q12{
+										border: 2px solid green;
+										background-color: #d2e8cf;
+									}
+									</style>';
+									switch ($escolha12) {
+										case $alternativa1q12:
+											echo '<style type/css>
+												#alternativa1q12{
+													border: 2px solid red;
+													background-color: #ff6347;
+												}
+												</style>';
+											break;
+										case $alternativa2q12:
+											echo '<style type/css>
+												#alternativa2q12{
+													border: 2px solid red;
+													background-color:  #ff6347;
+												}
+												</style>';
+											break;
+									}
+								}
+							}
+						?>
+						<script >
+								var atual12 = false;
+								var bt_q12 = document.getElementById("bt-q12");
+							</script>
+							<?php
+							if(isset($escolha12)){
+								if($escolha12 == $corretaQ12){
+									?>
+									<script>
+										atual12 = true;
+										bt_q12.style.display = "none";
+									</script>
+									<?php
+								}
+								else{
+									?>
+									<script>
+										atual12 = true;
+										bt_q12.style.display = "none";
+									</script>
+									<?php
+								}
 							}
 						?>
 					</div>
@@ -1334,8 +1987,47 @@ include_once("../../../../conexao.php");
 							$envio13 = filter_input(INPUT_POST, 'questao13');
 							$resposta13 = (string) trim($envio13);
 
-							if($resposta13 === $corretaQ13){
-								echo "foi";
+							if(isset($resposta13)){
+								if($resposta13 === $corretaQ13){
+								echo '<style type/css>
+									#alternativa1q13{
+										border: 2px solid green;
+										background-color: #d2e8cf;
+									}
+									</style>';
+								}
+								elseif(isset($_POST['questao13'])){
+									echo '<style type/css>
+												#alternativa1q13{
+													border: 2px solid red;
+													background-color: #ff6347;
+												}
+												</style>';
+								}
+							}
+						?>
+							<script >
+								var atual13 = false;
+								var bt_q13 = document.getElementById("bt-q13");
+							</script>
+							<?php
+							if(isset($resposta13)){
+								if($resposta13 == $corretaQ13){
+									?>
+									<script>
+										atual13 = true;
+										bt_q13.style.display = "none";
+									</script>
+									<?php
+								}
+								elseif(isset($_POST['questao13'])){
+									?>
+									<script>
+										atual13 = true;
+										bt_q13.style.display = "none";
+									</script>
+									<?php
+								}
 							}
 						?>
 					</div>
@@ -1411,8 +2103,47 @@ include_once("../../../../conexao.php");
 							$envio14 = filter_input(INPUT_POST, 'questao14');
 							$resposta14 = (string) trim($envio14);
 
-							if($resposta14 === $corretaQ14){
-								echo "foi";
+							if(isset($resposta14)){
+								if($resposta14 === $corretaQ14){
+								echo '<style type/css>
+									#alternativa1q14{
+										border: 2px solid green;
+										background-color: #d2e8cf;
+									}
+									</style>';
+								}
+								elseif(isset($_POST['questao14'])){
+									echo '<style type/css>
+												#alternativa1q14{
+													border: 2px solid red;
+													background-color: #ff6347;
+												}
+												</style>';	
+								}
+							}
+						?>
+							<script >
+								var atual14 = false;
+								var bt_q14 = document.getElementById("bt-q14");
+							</script>
+							<?php
+							if(isset($resposta14)){
+								if($resposta14 == $corretaQ14){
+									?>
+									<script>
+										atual14 = true;
+										bt_q11.style.display = "none";
+									</script>
+									<?php
+								}
+								elseif(isset($_POST['questao14'])){
+									?>
+									<script>
+										atual14 = true;
+										bt_q14.style.display = "none";
+									</script>
+									<?php
+								}
 							}
 						?>
 					</div>
@@ -1488,8 +2219,48 @@ include_once("../../../../conexao.php");
 							$envio15 = filter_input(INPUT_POST, 'questao15');
 							$resposta15 = (string) trim($envio15);
 
-							if($resposta15 === $corretaQ15){
-								echo "foi";
+							if(isset($resposta15)){
+								if($resposta15 === $corretaQ15){
+								echo '<style type/css>
+									#alternativa1q15{
+										border: 2px solid green;
+										background-color: #d2e8cf;
+									}
+									</style>';
+								}
+								elseif(isset($_POST['questao15'])){
+									echo '<style type/css>
+												#alternativa1q15{
+													border: 2px solid red;
+													background-color: #ff6347;
+												}
+												</style>';
+									
+								}
+							}
+						?>
+							<script >
+								var atual15 = false;
+								var bt_q15 = document.getElementById("bt-q15");
+							</script>
+							<?php
+							if(isset($resposta15)){
+								if($resposta15 == $corretaQ15){
+									?>
+									<script>
+										atual15 = true;
+										bt_q15.style.display = "none";
+									</script>
+									<?php
+								}
+								elseif(isset($_POST['questao15'])){
+									?>
+									<script>
+										atual15 = true;
+										bt_q15.style.display = "none";
+									</script>
+									<?php
+								}
 							}
 						?>
 					</div>
@@ -1562,8 +2333,48 @@ include_once("../../../../conexao.php");
 							$envio16 = filter_input(INPUT_POST, 'questao16');
 							$resposta16 = (string) trim($envio16);
 
-							if($resposta16 === $corretaQ16){
-								echo "foi";
+							if(isset($resposta16)){
+								if($resposta16 === $corretaQ16){
+								echo '<style type/css>
+									#alternativa1q16{
+										border: 2px solid green;
+										background-color: #d2e8cf;
+									}
+									</style>';
+								}
+								elseif(isset($_POST['questao16'])){
+									echo '<style type/css>
+												#alternativa1q16{
+													border: 2px solid red;
+													background-color: #ff6347;
+												}
+												</style>';
+									
+								}
+							}
+						?>
+							<script >
+								var atual16 = false;
+								var bt_q16 = document.getElementById("bt-q16");
+							</script>
+							<?php
+							if(isset($resposta16)){
+								if($resposta16 == $corretaQ16){
+									?>
+									<script>
+										atual16 = true;
+										bt_q16.style.display = "none";
+									</script>
+									<?php
+								}
+								elseif(isset($_POST['questao16'])){
+									?>
+									<script>
+										atual16 = true;
+										bt_q16.style.display = "none";
+									</script>
+									<?php
+								}
 							}
 						?>
 					</div>
