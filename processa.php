@@ -11,6 +11,9 @@ $email = filter_input(INPUT_POST, 'email');
 $email = trim($email);
 $senha = filter_input(INPUT_POST, 'senha');
 $senha = trim(md5($senha));
+$confirmar_senha = filter_input(INPUT_POST, 'confirmarsenha');
+$confirmar_senha = trim(md5($confirmar_senha));
+
 
 $validar = "SELECT COUNT(*) AS total FROM usuario WHERE email = '$email'";
 $result = mysqli_query($conexao, $validar);
@@ -23,6 +26,7 @@ if($row['total'] == 1){
 	exit;
 }
 
+// if($senha == $confirmar_senha)
 $sql = "INSERT INTO usuario (nome, sobrenome, data_nascimento, email, senha) VALUES ('$nome', '$sobrenome', '$datanascimento', '$email', '$senha')";
 
 if($conexao->query($sql) === true){

@@ -1,3 +1,28 @@
+<?php
+session_start();
+include_once("../conexao.php");
+?>
+<?php 
+	$get_pontuacao_correta = "SELECT * FROM desempenho WHERE desempenho.id_usuario =1 AND desempenho.id_questionario = 8";
+	$pontuacao_correta = mysqli_query($conexao, $get_pontuacao_correta);
+
+	$get_pontuacao_errada = "SELECT * FROM desempenho WHERE desempenho.id_usuario =1 AND desempenho.id_questionario = 8";
+	$pontuacao_errada = mysqli_query($conexao, $get_pontuacao_errada);
+
+	while ($row_pontuacao_correta = mysqli_fetch_assoc($pontuacao_correta)) {
+		// echo "corretas: ";
+		$corretas = $row_pontuacao_correta['qtd_questao_correta'];
+		// echo "<br>";
+	}
+	while ($row_pontuacao_errada = mysqli_fetch_assoc($pontuacao_errada)) {
+		// echo "erradas: ";
+		$erradas = $row_pontuacao_errada['qtd_questao_errada'];
+	}
+?>
+
+<?php
+	
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -100,7 +125,99 @@
 
 		<script src="../js/pesquisa.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-		<script src="../js/desempenho/graphics.js"></script>
+		<!-- <script src="../js/desempenho/graphics.js"></script> -->
+		<script type="text/javascript">
+			//geral//
+			var ctx = document.getElementById('myChart').getContext('2d');
+			var mixedChart = new Chart(ctx, {
+			    type: 'bar',
+
+			   data: {
+			        datasets: [{
+			            label: 'Aproveitamento',
+			            borderColor: '#346b60',
+			            backgroundColor: 'transparent',
+			            data: [15, 10, 30],
+			            type: 'line',
+			            order: 1,
+			        }, {
+			            label: 'Questões',
+			            backgroundColor: 'rgba(85, 171, 160, 0.8)',
+			            data: [10, 20, 30],
+			            order: 2
+			        }, {
+			            label: 'Acertos',
+			            backgroundColor: 'rgba(154, 204, 147, 0.8)',
+			            data: [10, 20, 30],
+			            order: 3
+			        }],
+			        labels: ['Biologia', 'Física', 'Química']
+			    },
+			    options: {
+			    	maintainAspectRatio: false,
+			    	scales: {
+			      yAxes: [{
+			      	display: true,
+			        id: 'A',
+			        type: 'linear',
+			        position: 'left',
+			        ticks:{
+			        	beginAtZero: true
+			        }
+			      }]
+			    }
+			}
+			});
+
+			//biologia//
+			var ctx = document.getElementById('bio').getContext('2d');
+			var chart = new Chart(ctx, {
+			type: 'doughnut',
+
+			data: {
+			    labels: ['Acertos', 'Erros'],
+			    datasets: [{
+			    label: 'My First dataset',
+			    backgroundColor: ['#346b60', '#c1c1c1'],
+			    borderColor: 'white',
+			    data: [<?php echo $corretas ?>, <?php echo $erradas ?>]
+			    }]
+			  },
+			    options: {}
+			});
+			//física//
+			var ctx = document.getElementById('fis').getContext('2d');
+			var chart = new Chart(ctx, {
+			type: 'doughnut',
+
+			data: {
+			    labels: ['Acertos', 'Erros'],
+			    datasets: [{
+			    label: 'My First dataset',
+			    backgroundColor: ['#346b60', '#c1c1c1'],
+			    borderColor: 'white',
+			    data: [7, 10]
+			    }]
+			  },
+			    options: {}
+			});
+			//química//
+			var ctx = document.getElementById('qui').getContext('2d');
+			var chart = new Chart(ctx, {
+			type: 'doughnut',
+
+			data: {
+			    labels: ['Acertos', 'Erros'],
+			    datasets: [{
+			    label: 'My First dataset',
+			    backgroundColor: ['#346b60', '#c1c1c1'],
+			    borderColor: 'white',
+			    data: [14, 10]
+			    }]
+			  },
+			    options: {}
+			});
+		</script>
 
 	</body>
 </html>

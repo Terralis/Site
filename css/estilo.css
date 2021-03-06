@@ -2442,6 +2442,30 @@ input:-webkit-autofill
 .whole-question{
 	display: none;
 }
+.escolha div.result{
+	/*display: none;*/
+	border: 1px solid #c6c6c6;
+	border-radius: 15px;
+	height: 350px;
+	margin: 50px 100px 50px 150px;
+	padding: 15px;
+	text-align: center;
+}
+.result table{
+	margin: auto;
+	margin-top: 50px;
+}
+.result table tr td{
+	border-bottom: 1px solid #c6c6c6;
+	padding: 15px 50px;
+	width: 200px;
+}
+.result table tr td:first-child{
+	border-right: 1px solid #c6c6c6;
+}
+.result table tr:last-child td{
+	border-bottom: transparent;
+}
 .active{
 	display: block;
 }
