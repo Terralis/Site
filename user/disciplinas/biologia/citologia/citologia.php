@@ -5,6 +5,15 @@ include_once("../../../../conexao.php");
 <?php
 	$index_questao = 0;
 	$index_alternativa = 0;
+	
+	$seu_id = $_SESSION['id_usuario'];
+
+	$get_pontuacao_correta = "SELECT * FROM desempenho WHERE desempenho.id_usuario = $seu_id AND desempenho.id_questionario = 10";
+	$pontuacao_correta = mysqli_query($conexao, $get_pontuacao_correta);
+
+	$get_pontuacao_errada = "SELECT * FROM desempenho WHERE desempenho.id_usuario = $seu_id AND desempenho.id_questionario = 10";
+	$pontuacao_errada = mysqli_query($conexao, $get_pontuacao_errada);
+
 	// questão 1
 	$pergunta1 = "SELECT * FROM questao WHERE questao.id_questao = 8";
 	$id_questao1 = mysqli_query($conexao, $pergunta1);
@@ -283,16 +292,38 @@ include_once("../../../../conexao.php");
 						</form>
 						<?php
 							$escolha = filter_input(INPUT_POST, 'questao1');
+
+							$get_bt1 = mysqli_query($conexao, "SELECT respondida FROM controle_resposta WHERE id_questao = $id");
+
+							while ($row_bt1 = mysqli_fetch_assoc($get_bt1)) {
+									$bt1_origemdavida = $row_bt1['respondida'];
+								}
+
+							if ($bt1_origemdavida == true) {
+								echo '<style type/css>
+									#bt-q1{
+										display: none;
+									}
+									</style>';
+							}
+
 							if(isset($escolha)){
 								if($escolha == $correta){
+								$confirmar = mysqli_query($conexao, "UPDATE controle_resposta SET respondida = 1 WHERE id_questao = $id");
 									echo '<style type/css>
 									#alternativa1{
 										border: 2px solid green;
 										background-color: #d2e8cf;
 									}
 									</style>';
+
+									$up = mysqli_query($conexao, "UPDATE desempenho SET qtd_questao_correta = qtd_questao_correta + 1 WHERE id_usuario = $seu_id AND id_questionario = 10");
 								}
 								else{ 
+								$confirmar = mysqli_query($conexao, "UPDATE controle_resposta SET respondida = 1 WHERE id_questao = $id");
+
+									$down = mysqli_query($conexao, "UPDATE desempenho SET qtd_questao_errada = qtd_questao_errada + 1 WHERE id_usuario = $seu_id AND id_questionario = 10");
+
 									echo '<style type/css>
 									#alternativa1{
 										border: 2px solid green;
@@ -455,16 +486,38 @@ include_once("../../../../conexao.php");
 						</form>
 						<?php
 							$escolha2 = filter_input(INPUT_POST, 'questao2');
+
+							$get_bt2 = mysqli_query($conexao, "SELECT respondida FROM controle_resposta WHERE id_questao = $id");
+
+							while ($row_bt2 = mysqli_fetch_assoc($get_bt2)) {
+									$bt2_origemdavida = $row_bt2['respondida'];
+								}
+
+							if ($bt2_origemdavida == true) {
+								echo '<style type/css>
+									#bt-q2{
+										display: none;
+									}
+									</style>';
+							}
+
 							if(isset($escolha2)){
 								if($escolha2 == $corretaQ2){
+								$confirmar = mysqli_query($conexao, "UPDATE controle_resposta SET respondida = 1 WHERE id_questao = $id");
 									echo '<style type/css>
 									#alternativa1q2{
 										border: 2px solid green;
 										background-color: #d2e8cf;
 									}
 									</style>';
+
+									$up = mysqli_query($conexao, "UPDATE desempenho SET qtd_questao_correta = qtd_questao_correta + 1 WHERE id_usuario = $seu_id AND id_questionario = 10");
 								}
 								else{ 
+								$confirmar = mysqli_query($conexao, "UPDATE controle_resposta SET respondida = 1 WHERE id_questao = $id");
+
+									$down = mysqli_query($conexao, "UPDATE desempenho SET qtd_questao_errada = qtd_questao_errada + 1 WHERE id_usuario = $seu_id AND id_questionario = 10");
+
 									echo '<style type/css>
 									#alternativa1q2{
 										border: 2px solid green;
@@ -639,16 +692,38 @@ include_once("../../../../conexao.php");
 						</form>
 						<?php
 							$escolha3 = filter_input(INPUT_POST, 'questao3');
+
+							$get_bt3 = mysqli_query($conexao, "SELECT respondida FROM controle_resposta WHERE id_questao = $id");
+
+							while ($row_bt3 = mysqli_fetch_assoc($get_bt3)) {
+									$bt3_origemdavida = $row_bt3['respondida'];
+								}
+
+							if ($bt3_origemdavida == true) {
+								echo '<style type/css>
+									#bt-q3{
+										display: none;
+									}
+									</style>';
+							}
+							
 							if(isset($escolha3)){
 								if($escolha3 == $corretaQ3){
+								$confirmar = mysqli_query($conexao, "UPDATE controle_resposta SET respondida = 1 WHERE id_questao = $id");
 									echo '<style type/css>
 									#alternativa2q3{
 										border: 2px solid green;
 										background-color: #d2e8cf;
 									}
 									</style>';
+
+									$up = mysqli_query($conexao, "UPDATE desempenho SET qtd_questao_correta = qtd_questao_correta + 1 WHERE id_usuario = $seu_id AND id_questionario = 10");
 								}
 								else{ 
+								$confirmar = mysqli_query($conexao, "UPDATE controle_resposta SET respondida = 1 WHERE id_questao = $id");
+
+									$down = mysqli_query($conexao, "UPDATE desempenho SET qtd_questao_errada = qtd_questao_errada + 1 WHERE id_usuario = $seu_id AND id_questionario = 10");
+
 									echo '<style type/css>
 									#alternativa2q3{
 										border: 2px solid green;
@@ -823,16 +898,38 @@ include_once("../../../../conexao.php");
 						</form>
 						<?php
 							$escolha4 = filter_input(INPUT_POST, 'questao4');
+
+							$get_bt4 = mysqli_query($conexao, "SELECT respondida FROM controle_resposta WHERE id_questao = $id");
+
+							while ($row_bt4 = mysqli_fetch_assoc($get_bt4)) {
+									$bt4_origemdavida = $row_bt4['respondida'];
+								}
+
+							if ($bt4_origemdavida == true) {
+								echo '<style type/css>
+									#bt-q4{
+										display: none;
+									}
+									</style>';
+							}
+							
 							if(isset($escolha4)){
 								if($escolha4 == $corretaQ4){
+								$confirmar = mysqli_query($conexao, "UPDATE controle_resposta SET respondida = 1 WHERE id_questao = $id");
 									echo '<style type/css>
 									#alternativa1q4{
 										border: 2px solid green;
 										background-color: #d2e8cf;
 									}
 									</style>';
+
+									$up = mysqli_query($conexao, "UPDATE desempenho SET qtd_questao_correta = qtd_questao_correta + 1 WHERE id_usuario = $seu_id AND id_questionario = 10");
 								}
 								else{ 
+								$confirmar = mysqli_query($conexao, "UPDATE controle_resposta SET respondida = 1 WHERE id_questao = $id");
+
+									$down = mysqli_query($conexao, "UPDATE desempenho SET qtd_questao_errada = qtd_questao_errada + 1 WHERE id_usuario = $seu_id AND id_questionario = 10");
+
 									echo '<style type/css>
 									#alternativa1q4{
 										border: 2px solid green;
@@ -1007,16 +1104,38 @@ include_once("../../../../conexao.php");
 						</form>
 						<?php
 							$escolha5 = filter_input(INPUT_POST, 'questao5');
+
+							$get_bt5 = mysqli_query($conexao, "SELECT respondida FROM controle_resposta WHERE id_questao = $id");
+
+							while ($row_bt5 = mysqli_fetch_assoc($get_bt5)) {
+									$bt5_origemdavida = $row_bt5['respondida'];
+								}
+
+							if ($bt5_origemdavida == true) {
+								echo '<style type/css>
+									#bt-q5{
+										display: none;
+									}
+									</style>';
+							}
+							
 							if(isset($escolha5)){
 								if($escolha5 == $corretaQ5){
+								$confirmar = mysqli_query($conexao, "UPDATE controle_resposta SET respondida = 1 WHERE id_questao = $id");
 									echo '<style type/css>
 									#alternativa4q5{
 										border: 2px solid green;
 										background-color: #d2e8cf;
 									}
 									</style>';
+
+									$up = mysqli_query($conexao, "UPDATE desempenho SET qtd_questao_correta = qtd_questao_correta + 1 WHERE id_usuario = $seu_id AND id_questionario = 10");
 								}
 								else{ 
+								$confirmar = mysqli_query($conexao, "UPDATE controle_resposta SET respondida = 1 WHERE id_questao = $id");
+
+									$down = mysqli_query($conexao, "UPDATE desempenho SET qtd_questao_errada = qtd_questao_errada + 1 WHERE id_usuario = $seu_id AND id_questionario = 10");
+
 									echo '<style type/css>
 									#alternativa4q5{
 										border: 2px solid green;
@@ -1191,16 +1310,38 @@ include_once("../../../../conexao.php");
 						</form>
 						<?php
 							$escolha6 = filter_input(INPUT_POST, 'questao6');
+
+							$get_bt6 = mysqli_query($conexao, "SELECT respondida FROM controle_resposta WHERE id_questao = $id");
+
+							while ($row_bt6 = mysqli_fetch_assoc($get_bt6)) {
+									$bt6_origemdavida = $row_bt6['respondida'];
+								}
+
+							if ($bt6_origemdavida == true) {
+								echo '<style type/css>
+									#bt-q6{
+										display: none;
+									}
+									</style>';
+							}
+							
 							if(isset($escolha6)){
 								if($escolha6 == $corretaQ6){
+								$confirmar = mysqli_query($conexao, "UPDATE controle_resposta SET respondida = 1 WHERE id_questao = $id");
 									echo '<style type/css>
 									#alternativa4q6{
 										border: 2px solid green;
 										background-color: #d2e8cf;
 									}
 									</style>';
+
+									$up = mysqli_query($conexao, "UPDATE desempenho SET qtd_questao_correta = qtd_questao_correta + 1 WHERE id_usuario = $seu_id AND id_questionario = 10");
 								}
 								else{ 
+								$confirmar = mysqli_query($conexao, "UPDATE controle_resposta SET respondida = 1 WHERE id_questao = $id");
+
+									$down = mysqli_query($conexao, "UPDATE desempenho SET qtd_questao_errada = qtd_questao_errada + 1 WHERE id_usuario = $seu_id AND id_questionario = 10");
+
 									echo '<style type/css>
 									#alternativa4q6{
 										border: 2px solid green;
@@ -1375,16 +1516,38 @@ include_once("../../../../conexao.php");
 						</form>
 						<?php
 							$escolha7 = filter_input(INPUT_POST, 'questao7');
+
+							$get_bt7 = mysqli_query($conexao, "SELECT respondida FROM controle_resposta WHERE id_questao = $id");
+
+							while ($row_bt7 = mysqli_fetch_assoc($get_bt7)) {
+									$bt7_origemdavida = $row_bt7['respondida'];
+								}
+
+							if ($bt7_origemdavida == true) {
+								echo '<style type/css>
+									#bt-q7{
+										display: none;
+									}
+									</style>';
+							}
+
 							if(isset($escolha7)){
 								if($escolha7 == $corretaQ7){
+								$confirmar = mysqli_query($conexao, "UPDATE controle_resposta SET respondida = 1 WHERE id_questao = $id");
 									echo '<style type/css>
 									#alternativa3q7{
 										border: 2px solid green;
 										background-color: #d2e8cf;
 									}
 									</style>';
+
+									$up = mysqli_query($conexao, "UPDATE desempenho SET qtd_questao_correta = qtd_questao_correta + 1 WHERE id_usuario = $seu_id AND id_questionario = 10");
 								}
 								else{ 
+								$confirmar = mysqli_query($conexao, "UPDATE controle_resposta SET respondida = 1 WHERE id_questao = $id");
+
+									$down = mysqli_query($conexao, "UPDATE desempenho SET qtd_questao_errada = qtd_questao_errada + 1 WHERE id_usuario = $seu_id AND id_questionario = 10");
+
 									echo '<style type/css>
 									#alternativa3q7{
 										border: 2px solid green;
@@ -1532,16 +1695,35 @@ include_once("../../../../conexao.php");
 							$envio8 = filter_input(INPUT_POST, 'questao8');
 							$resposta8 = (string) trim($envio8);
 
+							$get_bt8 = mysqli_query($conexao, "SELECT respondida FROM controle_resposta WHERE id_questao = $id");
+
+							while ($row_bt8 = mysqli_fetch_assoc($get_bt8)) {
+									$bt8_origemdavida = $row_bt8['respondida'];
+								}
+
+							if ($bt8_origemdavida == true) {
+								echo '<style type/css>
+									#bt-q8{
+										display: none;
+									}
+									</style>';
+							}
+							
+
 							if (isset($resposta8)) {
 								if($resposta8 === $corretaQ8){
+								$confirmar = mysqli_query($conexao, "UPDATE controle_resposta SET respondida = 1 WHERE id_questao = $id");
 									echo '<style type/css>
 										#alternativa1q8{
 											border: 2px solid green;
 											background-color: #d2e8cf;
 										}
 										</style>';
+										$up = mysqli_query($conexao, "UPDATE desempenho SET qtd_questao_correta = qtd_questao_correta + 1 WHERE id_usuario = $seu_id AND id_questionario = 10");
 								}
 								elseif(isset($_POST['questao8'])){
+								$confirmar = mysqli_query($conexao, "UPDATE controle_resposta SET respondida = 1 WHERE id_questao = $id");
+									$down = mysqli_query($conexao, "UPDATE desempenho SET qtd_questao_errada = qtd_questao_errada + 1 WHERE id_usuario = $seu_id AND id_questionario = 10");
 									echo '<style type/css>
 											#alternativa1q8{
 												border: 2px solid red;
@@ -1670,16 +1852,35 @@ include_once("../../../../conexao.php");
 							$envio9c = filter_input(INPUT_POST, 'questao9c');
 							$resposta9c = (string) trim($envio9c);
 
+							$get_bt9 = mysqli_query($conexao, "SELECT respondida FROM controle_resposta WHERE id_questao = $id");
+
+							while ($row_bt9 = mysqli_fetch_assoc($get_bt9)) {
+									$bt9_origemdavida = $row_bt9['respondida'];
+								}
+
+							if ($bt9_origemdavida == true) {
+								echo '<style type/css>
+									#bt-q9{
+										display: none;
+									}
+									</style>';
+							}
+							
+
 							if (isset($resposta9a) && isset($resposta9b) && isset($resposta9c)) {
 								if(($resposta9a === $alternativa1q9) && ($resposta9b === $alternativa2q9) && ($resposta9c === $alternativa3q9)){
+								$confirmar = mysqli_query($conexao, "UPDATE controle_resposta SET respondida = 1 WHERE id_questao = $id");
 									echo '<style type/css>
 										#alternativa1q9, #alternativa2q9, #alternativa3q9{
 											border: 2px solid green;
 											background-color: #d2e8cf;
 										}
 										</style>';
+										$up = mysqli_query($conexao, "UPDATE desempenho SET qtd_questao_correta = qtd_questao_correta + 1 WHERE id_usuario = $seu_id AND id_questionario = 10");
 								}
 								elseif(isset($_POST['questao9a']) && isset($_POST['questao9b']) && isset($_POST['questao9c'])){
+								$confirmar = mysqli_query($conexao, "UPDATE controle_resposta SET respondida = 1 WHERE id_questao = $id");
+									$down = mysqli_query($conexao, "UPDATE desempenho SET qtd_questao_errada = qtd_questao_errada + 1 WHERE id_usuario = $seu_id AND id_questionario = 10");
 									echo '<style type/css>
 											#alternativa1q9, #alternativa2q9, #alternativa3q9{
 												border: 2px solid red;
@@ -1816,16 +2017,35 @@ include_once("../../../../conexao.php");
 							$envio10d = filter_input(INPUT_POST, 'questao10d');
 							$resposta10d = (string) trim($envio10d);
 
+							$get_bt10 = mysqli_query($conexao, "SELECT respondida FROM controle_resposta WHERE id_questao = $id");
+
+							while ($row_bt10 = mysqli_fetch_assoc($get_bt10)) {
+									$bt10_origemdavida = $row_bt10['respondida'];
+								}
+
+							if ($bt10_origemdavida == true) {
+								echo '<style type/css>
+									#bt-q10{
+										display: none;
+									}
+									</style>';
+							}
+							
+
 							if (isset($resposta10a) && isset($resposta10b) && isset($resposta10c) && isset($resposta10d)) {
 								if(($resposta10a === $alternativa1q10) && ($resposta10b === $alternativa2q10) && ($resposta10c === $alternativa3q10) && ($resposta10d === $alternativa4q10)){
+								$confirmar = mysqli_query($conexao, "UPDATE controle_resposta SET respondida = 1 WHERE id_questao = $id");
 									echo '<style type/css>
 										#alternativa1q10, #alternativa2q10, #alternativa3q10, #alternativa4q10{
 											border: 2px solid green;
 											background-color: #d2e8cf;
 										}
 										</style>';
+										$up = mysqli_query($conexao, "UPDATE desempenho SET qtd_questao_correta = qtd_questao_correta + 1 WHERE id_usuario = $seu_id AND id_questionario = 10");
 								}
 								elseif(isset($_POST['questao10a']) && isset($_POST['questao10b']) && isset($_POST['questao10c']) && isset($_POST['questao10d'])){
+								$confirmar = mysqli_query($conexao, "UPDATE controle_resposta SET respondida = 1 WHERE id_questao = $id");
+									$down = mysqli_query($conexao, "UPDATE desempenho SET qtd_questao_errada = qtd_questao_errada + 1 WHERE id_usuario = $seu_id AND id_questionario = 10");
 									echo '<style type/css>
 											#alternativa1q10, #alternativa2q10, #alternativa3q10, #alternativa4q10{
 												border: 2px solid red;
@@ -1932,16 +2152,35 @@ include_once("../../../../conexao.php");
 							$envio11 = filter_input(INPUT_POST, 'questao11');
 							$resposta11 = (string) trim($envio11);
 
+							$get_bt11 = mysqli_query($conexao, "SELECT respondida FROM controle_resposta WHERE id_questao = $id");
+
+							while ($row_bt11 = mysqli_fetch_assoc($get_bt11)) {
+									$bt11_origemdavida = $row_bt11['respondida'];
+								}
+
+							if ($bt11_origemdavida == true) {
+								echo '<style type/css>
+									#bt-q11{
+										display: none;
+									}
+									</style>';
+							}
+							
+
 							if(isset($resposta11)){
 								if($resposta11 === $corretaQ11){
+								$confirmar = mysqli_query($conexao, "UPDATE controle_resposta SET respondida = 1 WHERE id_questao = $id");
 								echo '<style type/css>
 									#alternativa1q11{
 										border: 2px solid green;
 										background-color: #d2e8cf;
 									}
 									</style>';
+									$up = mysqli_query($conexao, "UPDATE desempenho SET qtd_questao_correta = qtd_questao_correta + 1 WHERE id_usuario = $seu_id AND id_questionario = 10");
 								}
 								elseif(isset($_POST['questao11'])){
+								$confirmar = mysqli_query($conexao, "UPDATE controle_resposta SET respondida = 1 WHERE id_questao = $id");
+									$down = mysqli_query($conexao, "UPDATE desempenho SET qtd_questao_errada = qtd_questao_errada + 1 WHERE id_usuario = $seu_id AND id_questionario = 10");
 									echo '<style type/css>
 												#alternativa1q11{
 													border: 2px solid red;
@@ -2048,16 +2287,35 @@ include_once("../../../../conexao.php");
 							$envio12 = filter_input(INPUT_POST, 'questao12');
 							$resposta12 = (string) trim($envio12);
 
+							$get_bt12 = mysqli_query($conexao, "SELECT respondida FROM controle_resposta WHERE id_questao = $id");
+
+							while ($row_bt12 = mysqli_fetch_assoc($get_bt12)) {
+									$bt12_origemdavida = $row_bt12['respondida'];
+								}
+
+							if ($bt12_origemdavida == true) {
+								echo '<style type/css>
+									#bt-q12{
+										display: none;
+									}
+									</style>';
+							}
+
+
 							if(isset($resposta12)){
 								if($resposta12 === $corretaQ12){
+								$confirmar = mysqli_query($conexao, "UPDATE controle_resposta SET respondida = 1 WHERE id_questao = $id");
 								echo '<style type/css>
 									#alternativa1q12{
 										border: 2px solid green;
 										background-color: #d2e8cf;
 									}
 									</style>';
+									$up = mysqli_query($conexao, "UPDATE desempenho SET qtd_questao_correta = qtd_questao_correta + 1 WHERE id_usuario = $seu_id AND id_questionario = 10");
 								}
 								elseif(isset($_POST['questao12'])){
+								$confirmar = mysqli_query($conexao, "UPDATE controle_resposta SET respondida = 1 WHERE id_questao = $id");
+									$down = mysqli_query($conexao, "UPDATE desempenho SET qtd_questao_errada = qtd_questao_errada + 1 WHERE id_usuario = $seu_id AND id_questionario = 10");
 									echo '<style type/css>
 												#alternativa1q12{
 													border: 2px solid red;
@@ -2163,16 +2421,35 @@ include_once("../../../../conexao.php");
 							$envio13 = filter_input(INPUT_POST, 'questao13');
 							$resposta13 = (string) trim($envio13);
 
+							$get_bt13 = mysqli_query($conexao, "SELECT respondida FROM controle_resposta WHERE id_questao = $id");
+
+							while ($row_bt13 = mysqli_fetch_assoc($get_bt13)) {
+									$bt13_origemdavida = $row_bt13['respondida'];
+								}
+
+							if ($bt13_origemdavida == true) {
+								echo '<style type/css>
+									#bt-q13{
+										display: none;
+									}
+									</style>';
+							}
+
+
 							if(isset($resposta13)){
 								if($resposta13 === $corretaQ13){
+								$confirmar = mysqli_query($conexao, "UPDATE controle_resposta SET respondida = 1 WHERE id_questao = $id");
 								echo '<style type/css>
 									#alternativa1q13{
 										border: 2px solid green;
 										background-color: #d2e8cf;
 									}
 									</style>';
+									$up = mysqli_query($conexao, "UPDATE desempenho SET qtd_questao_correta = qtd_questao_correta + 1 WHERE id_usuario = $seu_id AND id_questionario = 10");
 								}
 								elseif(isset($_POST['questao13'])){
+								$confirmar = mysqli_query($conexao, "UPDATE controle_resposta SET respondida = 1 WHERE id_questao = $id");
+									$down = mysqli_query($conexao, "UPDATE desempenho SET qtd_questao_errada = qtd_questao_errada + 1 WHERE id_usuario = $seu_id AND id_questionario = 10");
 									echo '<style type/css>
 												#alternativa1q13{
 													border: 2px solid red;
@@ -2278,16 +2555,34 @@ include_once("../../../../conexao.php");
 							$envio14 = filter_input(INPUT_POST, 'questao14');
 							$resposta14 = (string) trim($envio14);
 
+							$get_bt14 = mysqli_query($conexao, "SELECT respondida FROM controle_resposta WHERE id_questao = $id");
+
+							while ($row_bt14 = mysqli_fetch_assoc($get_bt14)) {
+									$bt14_origemdavida = $row_bt14['respondida'];
+								}
+
+							if ($bt14_origemdavida == true) {
+								echo '<style type/css>
+									#bt-q14{
+										display: none;
+									}
+									</style>';
+							}
+
 							if(isset($resposta14)){
 								if($resposta14 === $corretaQ14){
+								$confirmar = mysqli_query($conexao, "UPDATE controle_resposta SET respondida = 1 WHERE id_questao = $id");
 								echo '<style type/css>
 									#alternativa1q14{
 										border: 2px solid green;
 										background-color: #d2e8cf;
 									}
 									</style>';
+									$up = mysqli_query($conexao, "UPDATE desempenho SET qtd_questao_correta = qtd_questao_correta + 1 WHERE id_usuario = $seu_id AND id_questionario = 10");
 								}
 								elseif(isset($_POST['questao14'])){
+								$confirmar = mysqli_query($conexao, "UPDATE controle_resposta SET respondida = 1 WHERE id_questao = $id");
+									$down = mysqli_query($conexao, "UPDATE desempenho SET qtd_questao_errada = qtd_questao_errada + 1 WHERE id_usuario = $seu_id AND id_questionario = 10");
 									echo '<style type/css>
 												#alternativa1q14{
 													border: 2px solid red;
@@ -2385,22 +2680,43 @@ include_once("../../../../conexao.php");
 								<div class="confirm-question-btn">
 									<button type="submit" class="btn btn-bio" id="bt-q15" onclick="here15()">Confirmar resposta</button>
 								</div>
+								<div class="next-question-btn">
+									<button type="button" class="btn btn-bio" onclick="toQuestion16()">Ver resultado &rtrif;</button>
+								</div>
 							</div>
 						</form>
 						<?php
 							$envio15 = filter_input(INPUT_POST, 'questao15');
 							$resposta15 = (string) trim($envio15);
 
+							$get_bt15 = mysqli_query($conexao, "SELECT respondida FROM controle_resposta WHERE id_questao = $id");
+
+							while ($row_bt15 = mysqli_fetch_assoc($get_bt15)) {
+									$bt15_origemdavida = $row_bt15['respondida'];
+								}
+
+							if ($bt15_origemdavida == true) {
+								echo '<style type/css>
+									#bt-q15{
+										display: none;
+									}
+									</style>';
+							}
+
 							if(isset($resposta15)){
 								if($resposta15 === $corretaQ15){
+								$confirmar = mysqli_query($conexao, "UPDATE controle_resposta SET respondida = 1 WHERE id_questao = $id");
 								echo '<style type/css>
 									#alternativa1q15{
 										border: 2px solid green;
 										background-color: #d2e8cf;
 									}
 									</style>';
+									$up = mysqli_query($conexao, "UPDATE desempenho SET qtd_questao_correta = qtd_questao_correta + 1 WHERE id_usuario = $seu_id AND id_questionario = 10");
 								}
 								elseif(isset($_POST['questao15'])){
+								$confirmar = mysqli_query($conexao, "UPDATE controle_resposta SET respondida = 1 WHERE id_questao = $id");
+									$down = mysqli_query($conexao, "UPDATE desempenho SET qtd_questao_errada = qtd_questao_errada + 1 WHERE id_usuario = $seu_id AND id_questionario = 10");
 									echo '<style type/css>
 												#alternativa1q15{
 													border: 2px solid red;
@@ -2438,6 +2754,55 @@ include_once("../../../../conexao.php");
 					</div>
 				</div>
 				<!-- fim do questionário -->
+				<?php
+					while ($row_pontuacao_correta = mysqli_fetch_assoc($pontuacao_correta)) {
+						// echo "corretas: ";
+						$corretas = $row_pontuacao_correta['qtd_questao_correta'];
+						// echo "<br>";
+					}
+					while ($row_pontuacao_errada = mysqli_fetch_assoc($pontuacao_errada)) {
+						// echo "erradas: ";
+						$erradas = $row_pontuacao_errada['qtd_questao_errada'];
+					}
+					$total = $corretas + $erradas;
+					if ($total > 0) {
+						$porcentagem = number_format($corretas / $total * 100, 2, ',');
+					}
+					else{
+						$porcentagem = 0;
+					}
+				?>
+
+				<!-- resultado -->
+				<div class="whole-question" id="16">
+					<div class="result">
+						<h3><b>Resultado do teste</b></h3>
+						<table>
+							<tr>
+								<td>Quantidade de questões</td>
+								<td><?php echo $total ?></td>
+							</tr>
+							<tr>
+								<td>Quantidade de acertos</td>
+								<td><?php echo $corretas ?></td>
+							</tr>
+							<tr>
+								<td>Quantidade de erros</td>
+								<td><?php echo $erradas ?></td>
+							</tr>
+							<tr>
+								<td>Porcentagem de aproveitamento</td>
+								<td><?php echo $porcentagem ?></td>
+							</tr>
+						</table>
+					</div>
+					<div class="btn-box">
+						<div class="previous-question-btn">
+							<button type="submit" class="btn btn-bio" id="bt-q16" onclick="reiniciar()">&#128472; Reiniciar questionário</button>
+						</div>
+					</div>
+				</div>
+				<!-- fim do resultado -->
 			</div>
 			<div class="footer footer-size footer-questionario">
 				<footer>

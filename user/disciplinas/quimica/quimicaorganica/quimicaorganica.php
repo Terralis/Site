@@ -200,7 +200,7 @@ include_once("../../../../conexao.php");
 		</div>	
 		<div class="escolha conteudo conteudo-qui">
 			<h2>QUESTIONÁRIO</h2>
-			<h3><b>Química orgância</b></h3>		
+			<h3><b>Química orgânica</b></h3>		
 			<div class="quiz-box custom-box">
 				<!-- início do questionário -->
 				<!-- questão 1 -->
@@ -1036,17 +1036,60 @@ include_once("../../../../conexao.php");
 							</div>
 						</form>
 						<?php
-
 							$envio5a = filter_input(INPUT_POST, 'questao5a');
-							$resposta5a = (string) trim($envio5a);
+                            $resposta5a = (string) trim($envio5a);
 
-							$envio5b = filter_input(INPUT_POST, 'questao5b');
-							$resposta5b = (string) trim($envio5b);
+                            $envio5b = filter_input(INPUT_POST, 'questao5b');
+                            $resposta5b = (string) trim($envio5b);
 
-							if(($resposta5a === $alternativa1q5) && ($resposta5b === $alternativa2q5)){
-								echo "foi";
-							}
-						?>
+                            if(isset($resposta5a) && isset($resposta5b)){
+                                if(($resposta5a === $alternativa1q5) && ($resposta5b === $alternativa2q5)){
+                                echo '<style type/css>
+                                    #alternativa1q5, #alternativa2q5{
+                                        border: 2px solid green;
+                                        background-color: #d2e8cf;
+                                    }
+                                    </style>';
+
+                                    $up = mysqli_query($conexao, "UPDATE desempenho SET qtd_questao_correta = qtd_questao_correta + 1 WHERE id_usuario = 1 AND id_questionario = 7");
+                                }
+                                elseif(isset($_POST['questao5a']) && isset($_POST['questao5b'])){
+
+                                	$down = mysqli_query($conexao, "UPDATE desempenho SET qtd_questao_errada = qtd_questao_errada + 1 WHERE id_usuario = 1 AND id_questionario = 7");
+
+                                    echo '<style type/css>
+                                        #alternativa1q5, #alternativa2q5{
+                                            border: 2px solid red;
+                                            background-color: #ff6347;
+                                        }
+                                    </style>';
+                                }
+                            }
+                        ?>
+                               <script >
+                                var atual5 = false;
+                                var bt_q5 = document.getElementById("bt-q5");
+                            </script>
+                            <?php
+                            if(isset($resposta5a) && isset($resposta5b)){
+                                if(($resposta5a === $alternativa1q5) && ($resposta5b === $alternativa2q5)){
+                                    ?>
+                                    <script>
+                                        atual5 = true;
+                                        bt_q5.style.display = "none";
+                                    </script>
+                                    <?php
+                                }
+                                elseif(isset($_POST['questao5a']) && isset($_POST['questao5b'])){
+                                    ?>
+                                    <script>
+                                        atual5 = true;
+                                        bt_q5.style.display = "none";
+                                    </script>
+                                    <?php
+                                }
+                            }
+                        ?>
 					</div>
 				</div>
 				<!-- questão 6 -->
