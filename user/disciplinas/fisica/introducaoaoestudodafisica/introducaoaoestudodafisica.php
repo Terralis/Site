@@ -997,6 +997,11 @@ include_once("../../../../conexao.php");
 
 									$down = mysqli_query($conexao, "UPDATE desempenho SET qtd_questao_errada = qtd_questao_errada + 1 WHERE id_usuario = 1 AND id_questionario = 1");
 
+									echo "Resposta correta:";
+                                    echo "<br>";
+                                    echo $alternativa1q5;
+                                    echo "<br>";
+
 									echo '<style type/css>
 												#alternativa1q5{
 													border: 2px solid red;
@@ -1115,6 +1120,11 @@ include_once("../../../../conexao.php");
 								elseif(isset($_POST['questao6'])){
 
 									$down = mysqli_query($conexao, "UPDATE desempenho SET qtd_questao_errada = qtd_questao_errada + 1 WHERE id_usuario = 1 AND id_questionario = 1");
+
+									echo "Resposta correta:";
+                                    echo "<br>";
+                                    echo $alternativa1q6;
+                                    echo "<br>";
 
 									echo '<style type/css>
 												#alternativa1q6{
@@ -1236,6 +1246,11 @@ include_once("../../../../conexao.php");
 								elseif(isset($_POST['questao7'])){
 
 										$down = mysqli_query($conexao, "UPDATE desempenho SET qtd_questao_errada = qtd_questao_errada + 1 WHERE id_usuario = 1 AND id_questionario = 1");
+
+									echo "Resposta correta:";
+                                    echo "<br>";
+                                    echo $alternativa1q7;
+                                    echo "<br>";
 
 									echo '<style type/css>
 										#alternativa1q7{
