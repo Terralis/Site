@@ -5,6 +5,13 @@ include_once("../../../../conexao.php");
 <?php
 	$index_questao = 0;
 	$index_alternativa = 0;
+
+	$get_pontuacao_correta = "SELECT * FROM desempenho WHERE desempenho.id_usuario = 1 AND desempenho.id_questionario = 15";
+	$pontuacao_correta = mysqli_query($conexao, $get_pontuacao_correta);
+
+	$get_pontuacao_errada = "SELECT * FROM desempenho WHERE desempenho.id_usuario = 1 AND desempenho.id_questionario = 15";
+	$pontuacao_errada = mysqli_query($conexao, $get_pontuacao_errada);
+
 	// questão 1
 	$pergunta1 = "SELECT * FROM questao WHERE questao.id_questao = 76";
 	$id_questao1 = mysqli_query($conexao, $pergunta1);
@@ -333,8 +340,13 @@ include_once("../../../../conexao.php");
 										background-color: #d2e8cf;
 									}
 									</style>';
+
+									$up = mysqli_query($conexao, "UPDATE desempenho SET qtd_questao_correta = qtd_questao_correta + 1 WHERE id_usuario = 1 AND id_questionario = 15");
 								}
 								else{ 
+
+									$down = mysqli_query($conexao, "UPDATE desempenho SET qtd_questao_errada = qtd_questao_errada + 1 WHERE id_usuario = 1 AND id_questionario = 15");
+
 									echo '<style type/css>
 									#alternativa5{
 										border: 2px solid green;
@@ -512,8 +524,13 @@ include_once("../../../../conexao.php");
 										background-color: #d2e8cf;
 									}
 									</style>';
+
+									$up = mysqli_query($conexao, "UPDATE desempenho SET qtd_questao_correta = qtd_questao_correta + 1 WHERE id_usuario = 1 AND id_questionario = 15");
 								}
 								else{ 
+
+									$down = mysqli_query($conexao, "UPDATE desempenho SET qtd_questao_errada = qtd_questao_errada + 1 WHERE id_usuario = 1 AND id_questionario = 15");
+
 									echo '<style type/css>
 									#alternativa3q2{
 										border: 2px solid green;
@@ -703,8 +720,13 @@ include_once("../../../../conexao.php");
 										background-color: #d2e8cf;
 									}
 									</style>';
+
+									$up = mysqli_query($conexao, "UPDATE desempenho SET qtd_questao_correta = qtd_questao_correta + 1 WHERE id_usuario = 1 AND id_questionario = 15");
 								}
 								else{ 
+
+									$down = mysqli_query($conexao, "UPDATE desempenho SET qtd_questao_errada = qtd_questao_errada + 1 WHERE id_usuario = 1 AND id_questionario = 15");
+
 									echo '<style type/css>
 									#alternativa4q3{
 										border: 2px solid green;
@@ -893,8 +915,13 @@ include_once("../../../../conexao.php");
 										background-color: #d2e8cf;
 									}
 									</style>';
+
+									$up = mysqli_query($conexao, "UPDATE desempenho SET qtd_questao_correta = qtd_questao_correta + 1 WHERE id_usuario = 1 AND id_questionario = 15");
 								}
 								else{ 
+
+									$down = mysqli_query($conexao, "UPDATE desempenho SET qtd_questao_errada = qtd_questao_errada + 1 WHERE id_usuario = 1 AND id_questionario = 15");
+
 									echo '<style type/css>
 									#alternativa1q4{
 										border: 2px solid green;
@@ -1082,8 +1109,13 @@ include_once("../../../../conexao.php");
 										background-color: #d2e8cf;
 									}
 									</style>';
+
+									$up = mysqli_query($conexao, "UPDATE desempenho SET qtd_questao_correta = qtd_questao_correta + 1 WHERE id_usuario = 1 AND id_questionario = 15");
 								}
 								else{ 
+
+									$down = mysqli_query($conexao, "UPDATE desempenho SET qtd_questao_errada = qtd_questao_errada + 1 WHERE id_usuario = 1 AND id_questionario = 15");
+
 									echo '<style type/css>
 									#alternativa5q5{
 										border: 2px solid green;
@@ -1244,8 +1276,13 @@ include_once("../../../../conexao.php");
 										background-color: #d2e8cf;
 									}
 									</style>';
+
+									$up = mysqli_query($conexao, "UPDATE desempenho SET qtd_questao_correta = qtd_questao_correta + 1 WHERE id_usuario = 1 AND id_questionario = 15");
 								}
 								elseif(isset($_POST['questao6'])){
+
+									$down = mysqli_query($conexao, "UPDATE desempenho SET qtd_questao_errada = qtd_questao_errada + 1 WHERE id_usuario = 1 AND id_questionario = 15");
+
 									echo '<style type/css>
 												#alternativa1q6{
 													border: 2px solid red;
@@ -1377,8 +1414,13 @@ include_once("../../../../conexao.php");
 											background-color: #d2e8cf;
 										}
 										</style>';
+
+										$up = mysqli_query($conexao, "UPDATE desempenho SET qtd_questao_correta = qtd_questao_correta + 1 WHERE id_usuario = 1 AND id_questionario = 15");
 									}
 								elseif(isset($_POST['questao7x']) && isset($_POST['questao7y'])){
+
+									$down = mysqli_query($conexao, "UPDATE desempenho SET qtd_questao_errada = qtd_questao_errada + 1 WHERE id_usuario = 1 AND id_questionario = 15");
+
 									echo '<style type/css>
 										#alternativa1q7x, #alternativa1q7y{
 											border: 2px solid red;
@@ -1499,8 +1541,13 @@ include_once("../../../../conexao.php");
 											background-color: #d2e8cf;
 										}
 										</style>';
+
+										$up = mysqli_query($conexao, "UPDATE desempenho SET qtd_questao_correta = qtd_questao_correta + 1 WHERE id_usuario = 1 AND id_questionario = 15");
 									}
 								elseif(isset($_POST['questao8'])){
+
+									$down = mysqli_query($conexao, "UPDATE desempenho SET qtd_questao_errada = qtd_questao_errada + 1 WHERE id_usuario = 1 AND id_questionario = 15");
+
 									echo '<style type/css>
 										#alternativa1q8{
 											border: 2px solid red;
@@ -1621,8 +1668,13 @@ include_once("../../../../conexao.php");
 											background-color: #d2e8cf;
 										}
 										</style>';
+
+										$up = mysqli_query($conexao, "UPDATE desempenho SET qtd_questao_correta = qtd_questao_correta + 1 WHERE id_usuario = 1 AND id_questionario = 15");
 									}
 								elseif(isset($_POST['questao9'])){
+
+									$down = mysqli_query($conexao, "UPDATE desempenho SET qtd_questao_errada = qtd_questao_errada + 1 WHERE id_usuario = 1 AND id_questionario = 15");
+
 									echo '<style type/css>
 										#alternativa1q9{
 											border: 2px solid red;
@@ -1743,8 +1795,13 @@ include_once("../../../../conexao.php");
 											background-color: #d2e8cf;
 										}
 										</style>';
+
+										$up = mysqli_query($conexao, "UPDATE desempenho SET qtd_questao_correta = qtd_questao_correta + 1 WHERE id_usuario = 1 AND id_questionario = 15");
 									}
 								elseif(isset($_POST['questao10'])){
+									
+										$down = mysqli_query($conexao, "UPDATE desempenho SET qtd_questao_errada = qtd_questao_errada + 1 WHERE id_usuario = 1 AND id_questionario = 15");
+
 									echo '<style type/css>
 										#alternativa1q10{
 											border: 2px solid red;
@@ -1871,8 +1928,13 @@ include_once("../../../../conexao.php");
 										background-color: #d2e8cf;
 									}
 									</style>';
+
+									$up = mysqli_query($conexao, "UPDATE desempenho SET qtd_questao_correta = qtd_questao_correta + 1 WHERE id_usuario = 1 AND id_questionario = 15");
 								}
 								else{ 
+
+									$down = mysqli_query($conexao, "UPDATE desempenho SET qtd_questao_errada = qtd_questao_errada + 1 WHERE id_usuario = 1 AND id_questionario = 15");
+
 									echo '<style type/css>
 									#alternativa1q11{
 										border: 2px solid green;
@@ -2037,8 +2099,13 @@ include_once("../../../../conexao.php");
 										background-color: #d2e8cf;
 									}
 									</style>';
+
+									$up = mysqli_query($conexao, "UPDATE desempenho SET qtd_questao_correta = qtd_questao_correta + 1 WHERE id_usuario = 1 AND id_questionario = 15");
 								}
 								else{ 
+
+									$down = mysqli_query($conexao, "UPDATE desempenho SET qtd_questao_errada = qtd_questao_errada + 1 WHERE id_usuario = 1 AND id_questionario = 15");
+
 									echo '<style type/css>
 									#alternativa2q12{
 										border: 2px solid green;
@@ -2225,8 +2292,13 @@ include_once("../../../../conexao.php");
 										background-color: #d2e8cf;
 									}
 									</style>';
+
+									$up = mysqli_query($conexao, "UPDATE desempenho SET qtd_questao_correta = qtd_questao_correta + 1 WHERE id_usuario = 1 AND id_questionario = 15");
 								}
 								else{ 
+
+									$down = mysqli_query($conexao, "UPDATE desempenho SET qtd_questao_errada = qtd_questao_errada + 1 WHERE id_usuario = 1 AND id_questionario = 15");
+
 									echo '<style type/css>
 									#alternativa3q13{
 										border: 2px solid green;
@@ -2415,8 +2487,13 @@ include_once("../../../../conexao.php");
 										background-color: #d2e8cf;
 									}
 									</style>';
+
+									$up = mysqli_query($conexao, "UPDATE desempenho SET qtd_questao_correta = qtd_questao_correta + 1 WHERE id_usuario = 1 AND id_questionario = 15");
 								}
 								else{ 
+
+									$down = mysqli_query($conexao, "UPDATE desempenho SET qtd_questao_errada = qtd_questao_errada + 1 WHERE id_usuario = 1 AND id_questionario = 15");
+
 									echo '<style type/css>
 									#alternativa4q14{
 										border: 2px solid green;
@@ -2605,8 +2682,13 @@ include_once("../../../../conexao.php");
 										background-color: #d2e8cf;
 									}
 									</style>';
+
+									$up = mysqli_query($conexao, "UPDATE desempenho SET qtd_questao_correta = qtd_questao_correta + 1 WHERE id_usuario = 1 AND id_questionario = 15");
 								}
 								else{ 
+
+									$down = mysqli_query($conexao, "UPDATE desempenho SET qtd_questao_errada = qtd_questao_errada + 1 WHERE id_usuario = 1 AND id_questionario = 15");
+
 									echo '<style type/css>
 									#alternativa5q15{
 										border: 2px solid green;
@@ -2769,8 +2851,13 @@ include_once("../../../../conexao.php");
 										background-color: #d2e8cf;
 									}
 									</style>';
+
+									$up = mysqli_query($conexao, "UPDATE desempenho SET qtd_questao_correta = qtd_questao_correta + 1 WHERE id_usuario = 1 AND id_questionario = 15");
 								}
 								elseif(isset($_POST['questao16'])){
+
+									$down = mysqli_query($conexao, "UPDATE desempenho SET qtd_questao_errada = qtd_questao_errada + 1 WHERE id_usuario = 1 AND id_questionario = 15");
+
 									echo '<style type/css>
 												#alternativa1q16{
 													border: 2px solid red;
@@ -2891,8 +2978,13 @@ include_once("../../../../conexao.php");
 										background-color: #d2e8cf;
 									}
 									</style>';
+
+									$up = mysqli_query($conexao, "UPDATE desempenho SET qtd_questao_correta = qtd_questao_correta + 1 WHERE id_usuario = 1 AND id_questionario = 15");
 								}
 								elseif(isset($_POST['questao17'])){
+
+									$down = mysqli_query($conexao, "UPDATE desempenho SET qtd_questao_errada = qtd_questao_errada + 1 WHERE id_usuario = 1 AND id_questionario = 15");
+
 									echo '<style type/css>
 												#alternativa1q17{
 													border: 2px solid red;
@@ -3015,8 +3107,13 @@ include_once("../../../../conexao.php");
 										background-color: #d2e8cf;
 									}
 									</style>';
+
+									$up = mysqli_query($conexao, "UPDATE desempenho SET qtd_questao_correta = qtd_questao_correta + 1 WHERE id_usuario = 1 AND id_questionario = 15");
 								}
 								elseif(isset($_POST['questao18'])){
+
+									$down = mysqli_query($conexao, "UPDATE desempenho SET qtd_questao_errada = qtd_questao_errada + 1 WHERE id_usuario = 1 AND id_questionario = 15");
+
 									echo '<style type/css>
 												#alternativa1q18{
 													border: 2px solid red;
@@ -3135,8 +3232,13 @@ include_once("../../../../conexao.php");
 										background-color: #d2e8cf;
 									}
 									</style>';
+
+									$up = mysqli_query($conexao, "UPDATE desempenho SET qtd_questao_correta = qtd_questao_correta + 1 WHERE id_usuario = 1 AND id_questionario = 15");
 								}
 								elseif(isset($_POST['questao19'])){
+
+									$down = mysqli_query($conexao, "UPDATE desempenho SET qtd_questao_errada = qtd_questao_errada + 1 WHERE id_usuario = 1 AND id_questionario = 15");
+
 									echo '<style type/css>
 												#alternativa1q19{
 													border: 2px solid red;
@@ -3252,8 +3354,13 @@ include_once("../../../../conexao.php");
 										background-color: #d2e8cf;
 									}
 									</style>';
+
+									$up = mysqli_query($conexao, "UPDATE desempenho SET qtd_questao_correta = qtd_questao_correta + 1 WHERE id_usuario = 1 AND id_questionario = 15");
 								}
 								elseif(isset($_POST['questao20'])){
+
+									$down = mysqli_query($conexao, "UPDATE desempenho SET qtd_questao_errada = qtd_questao_errada + 1 WHERE id_usuario = 1 AND id_questionario = 15");
+									
 									echo '<style type/css>
 												#alternativa1q20{
 													border: 2px solid red;
@@ -3290,6 +3397,48 @@ include_once("../../../../conexao.php");
 					</div>
 				</div>
 				<!-- fim do questionário -->
+				<?php
+					while ($row_pontuacao_correta = mysqli_fetch_assoc($pontuacao_correta)) {
+						// echo "corretas: ";
+						$corretas = $row_pontuacao_correta['qtd_questao_correta'];
+						// echo "<br>";
+					}
+					while ($row_pontuacao_errada = mysqli_fetch_assoc($pontuacao_errada)) {
+						// echo "erradas: ";
+						$erradas = $row_pontuacao_errada['qtd_questao_errada'];
+					}
+					$total = $corretas + $erradas;
+					if ($total > 0) {
+						$porcentagem = number_format($corretas / $total * 100, 2, ',');
+					}
+					else{
+						$porcentagem = 0;
+					}
+				?>
+
+				<!-- resultado -->
+				<div class="result active">
+					<h3><b>Resultado do teste</b></h3>
+					<table>
+						<tr>
+							<td>Quantidade de questões</td>
+							<td><?php echo $total ?></td>
+						</tr>
+						<tr>
+							<td>Quantidade de acertos</td>
+							<td><?php echo $corretas ?></td>
+						</tr>
+						<tr>
+							<td>Quantidade de erros</td>
+							<td><?php echo $erradas ?></td>
+						</tr>
+						<tr>
+							<td>Porcentagem de aproveitamento</td>
+							<td><?php echo $porcentagem ?></td>
+						</tr>
+					</table>
+				</div>
+				<!-- fim do resultado -->
 			</div>
 			<div class="footer footer-size footer-questionario">
 				<footer>

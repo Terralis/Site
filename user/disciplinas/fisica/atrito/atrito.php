@@ -825,6 +825,8 @@ include_once("../../../../conexao.php");
 							<?php
 								while ($row_questao = mysqli_fetch_assoc($questao4)) {
 								echo $row_questao['enunciado'];
+								echo "<br>";
+								echo "<img id=margin src=../../../../img/img-id168.png>";
 								}
 							?>		
 						</div>
@@ -981,6 +983,8 @@ include_once("../../../../conexao.php");
 							<?php
 								while ($row_questao = mysqli_fetch_assoc($questao5)) {
 								echo $row_questao['enunciado'];
+								echo "<br>";
+								echo "<img id=margin src=../../../../img/img-id169.png>";
 								}
 							?>		
 						</div>
@@ -1583,6 +1587,8 @@ include_once("../../../../conexao.php");
 							<?php
 								while ($row_questao = mysqli_fetch_assoc($questao9)) {
 								echo $row_questao['enunciado'];
+								echo "<br>";
+								echo "<img id=margin src=../../../../img/img-id245.png>";
 								}
 							?>		
 						</div>
@@ -1744,6 +1750,8 @@ include_once("../../../../conexao.php");
 							<?php
 								while ($row_questao = mysqli_fetch_assoc($questao10)) {
 								echo $row_questao['enunciado'];
+								echo "<br>";
+								echo "<img id=margin src=../../../../img/img-id246.png>";
 								}
 							?>		
 						</div>
@@ -2065,6 +2073,8 @@ include_once("../../../../conexao.php");
 							<?php
 								while ($row_questao = mysqli_fetch_assoc($questao12)) {
 								echo $row_questao['enunciado'];
+								echo "<br>";
+								echo "<img id=margin src=../../../../img/img-id269.png>";
 								}
 							?>		
 						</div>

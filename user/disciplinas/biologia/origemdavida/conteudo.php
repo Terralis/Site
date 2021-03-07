@@ -3,6 +3,7 @@ session_start();
 include_once("../../../../conexao.php");
 ?>
 <?php
+<<<<<<< HEAD:user/disciplinas/biologia/origemdavida/conteudo.php
 	
 	$get_conteudo = mysqli_query($conexao, "SELECT * FROM tema WHERE id_tema = 8");
 
@@ -12,6 +13,18 @@ include_once("../../../../conexao.php");
 	}
 
 ?>
+=======
+
+    $get_conteudo = mysqli_query($conexao, "SELECT * FROM tema WHERE id_tema = 8");
+
+    while ($row_conteudo = mysqli_fetch_assoc($get_conteudo)) {
+        $resumo = $row_conteudo['resumo'];
+        $video = $row_conteudo['link_video'];
+    }
+
+?>
+
+>>>>>>> fc6ea1f94f7dff5147f532af0b8c856fa2f3bdf3:user/disciplinas/biologia/origemdavida/conteudo.html
 <!DOCTYPE html>
 <html>
 	<head>
