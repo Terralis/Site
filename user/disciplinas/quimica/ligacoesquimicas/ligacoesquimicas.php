@@ -400,6 +400,8 @@ include_once("../../../../conexao.php");
 							<?php
 								while ($row_questao = mysqli_fetch_assoc($questao2)) {
 								echo $row_questao['enunciado'];
+								echo "<br>";
+								echo "<img id=margin src=../../../../img/img-id90.png>";
 								}
 							?>		
 						</div>

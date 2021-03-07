@@ -2447,9 +2447,15 @@ input:-webkit-autofill
 	border: 1px solid #c6c6c6;
 	border-radius: 15px;
 	height: 350px;
-	margin: 50px 100px 50px 150px;
+	margin: 50px 150px 50px 150px;
 	padding: 15px;
 	text-align: center;
+}
+.result h3{
+	font-weight: 300;
+	font-size: 20px;
+	margin-top: 15px;
+	margin-bottom: -10px;
 }
 .result table{
 	margin: auto;
@@ -2468,4 +2474,5 @@ input:-webkit-autofill
 }
 .active{
 	display: block;
+	visibility: visible;
 }

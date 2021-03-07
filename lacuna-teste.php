@@ -1,5 +1,5 @@
 <?php
-session_start();
+// session_start();
 include_once("conexao.php");
 ?>
 
@@ -19,6 +19,7 @@ include_once("conexao.php");
 				echo $_SESSION['msg'];
 				unset($_SESSION['msg']);
 			}
+
 
 			$get = "SELECT * FROM alternativa WHERE id_alternativa = 518";
 			$vamove = mysqli_query($conexao, $get);

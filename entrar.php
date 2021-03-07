@@ -18,10 +18,12 @@ $row = mysqli_num_rows($result);
 
 while($row_name = mysqli_fetch_assoc($result)){
 	$name = $row_name['nome'];
+	$id_usuario = $row_name['id_usuario'];
 }
 
 if($row == 1){
 	$_SESSION['usuario'] = $name;
+	$_SESSION['id_usuario'] = $id_usuario;
 	header('Location: user/inicio.php');
 	exit();
 }
