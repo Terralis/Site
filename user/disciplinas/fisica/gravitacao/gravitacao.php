@@ -164,7 +164,7 @@ include_once("../../../../conexao.php");
 		</div>
 		<div id="opcaoPerfil">
 			<ul>
-				<li><a href="../../../perfil.html">Abrir perfil</a></li>
+				<li><a href="../../../perfil.php">Abrir perfil</a></li>
 				<li><a href="../../../../logout.php">Sair</a></li>
 			</ul>
 		</div>
@@ -2609,7 +2609,7 @@ include_once("../../../../conexao.php");
 								<div class="confirm-question-btn">
 									<button type="submit" class="btn btn-fis" id="bt-q15" onclick="here15()">Confirmar resposta</button>
 								<div class="next-question-btn">
-									<button type="button" class="btn btn-bio" onclick="toQuestion16()">Ver resultado &rtrif;</button>
+									<button type="button" class="btn btn-fis" onclick="toQuestion16()">Ver resultado &rtrif;</button>
 								</div>
 								</div>
 							</div>
@@ -2730,7 +2730,7 @@ include_once("../../../../conexao.php");
 					</div>
 					<div class="btn-box">
 						<div class="previous-question-btn">
-							<a class="btn btn-bio" href="../../fisica.html">Voltar ao menu</a>
+							<a class="btn btn-fis" href="../../fisica.html">Voltar ao menu</a>
 						</div>
 					</div>
 				</div>

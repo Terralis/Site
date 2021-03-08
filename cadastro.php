@@ -59,8 +59,8 @@ session_start();
 				<input type="email" name="email" id="email" required="required" placeholder="Insira seu email" />
 				<label for="senha">Senha</label>
 				<input type="password" name="senha" id="senha" required="required" placeholder="Insira uma senha" />
-				<label for="confirmarsenha">Confirmar senha</label>
-				<input type="password" name="confirmarsenha" id="confirmarsenha" required="required" placeholder="Confirme sua senha" />
+				<!-- <label for="confirmarsenha">Confirmar senha</label>
+				<input type="password" name="confirmarsenha" id="confirmarsenha" required="required" placeholder="Confirme sua senha" /> -->
 				<div>
 					<input type="checkbox" name="politicas-de-privacidade" required="required" id="politicas">
 					<label for="politicas">Declaro que li e concordo com as <a href="#politicas-de-privacidade">Políticas de Privacidade</a></label>

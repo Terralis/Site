@@ -150,7 +150,7 @@ include_once("../../../../conexao.php");
 		</div>
 		<div id="opcaoPerfil">
 			<ul>
-				<li><a href="../../../perfil.html">Abrir perfil</a></li>
+				<li><a href="../../../perfil.php">Abrir perfil</a></li>
 				<li><a href="../../../../logout.php">Sair</a></li>
 			</ul>
 		</div>

@@ -58,7 +58,7 @@ include_once("../conexao.php");
 		</div>
 		<div id="opcaoPerfil">
 			<ul>
-				<li><a href="perfil.html">Abrir perfil</a></li>
+				<li><a href="perfil.php">Abrir perfil</a></li>
 				<li><a href="../logout.php">Sair</a></li>
 			</ul>
 		</div>
@@ -101,16 +101,16 @@ include_once("../conexao.php");
 							<input type="text" name="nome" id="nome" required="required" value="<?php echo $_SESSION['usuario']; ?>"/>
 							<p>
 							<label for="sobrenome">Sobrenome:</label>
-							<input type="text" name="sobrenome" id="sobrenome" required="required" placeholder="Insira seu sobrenome" />
+							<input type="text" name="sobrenome" id="sobrenome" required="required" value="<?php echo $_SESSION['sobrenome']; ?>" />
 							<p>
 							<label for="datanascimento">Data de nascimento:</label>
-							<input type="date" name="datanascimento" id="datanascimento" required="required" placeholder="Insira sua data de nascimento" />
+							<input type="date" name="datanascimento" id="datanascimento" required="required" value="<?php echo $_SESSION['datanascimento']; ?>" />
 							<p>
 							<label for="email">Email:</label>
-							<input type="email" name="email" id="email" required="required" placeholder="Insira seu email" />
+							<input type="email" name="email" id="email" required="required" value="<?php echo $_SESSION['email_usuario']; ?>" />
 							<p>
 							<label for="senha">Senha</label>
-							<input type="password" name="senha" id="senha" required="required" placeholder="<?php echo $senha; ?>" />
+							<input type="password" name="senha" id="senha" required="required" value="<?php echo $_SESSION['senha_usuario']; ?>" />
 							<p>
 							<!-- <input type="submit" class="botao" name="cadastrar" value="Cadastrar" /> -->
 						</div>

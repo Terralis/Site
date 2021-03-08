@@ -41,7 +41,7 @@ session_start();
 						<label for="senha">Senha</label>
 						<input type="password" name="senha" id="senha" required="required" placeholder="Insira o assunto" />
 						<input type="submit" class="botao" name="entrar" value="Entrar" />
-						<li><a href="#">Esqueceu sua senha?</a></li>
+						<!-- <li><a href="#">Esqueceu sua senha?</a></li> -->
 					</form>
 				</div>
 			</header>

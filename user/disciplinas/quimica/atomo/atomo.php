@@ -169,7 +169,7 @@ include_once("../../../../conexao.php");
 		</div>
 		<div id="opcaoPerfil">
 			<ul>
-				<li><a href="../../../perfil.html">Abrir perfil</a></li>
+				<li><a href="../../../perfil.php">Abrir perfil</a></li>
 				<li><a href="../../../../logout.php">Sair</a></li>
 			</ul>
 		</div>
@@ -2998,7 +2998,7 @@ include_once("../../../../conexao.php");
 					</div>
 					<div class="btn-box">
 						<div class="previous-question-btn">
-							<a class="btn btn-bio" href="../../quimica.html">Voltar ao menu</a>
+							<a class="btn btn-qui" href="../../quimica.html">Voltar ao menu</a>
 						</div>
 					</div>
 				</div>

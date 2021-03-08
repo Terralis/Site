@@ -31,7 +31,7 @@ include_once("../../../../conexao.php");
 						<li><a href="../../../inicio.php">Início</a></li>
 						<li><a href="">Disciplinas &dtri;</a>
 							<ul>
-								<li><a href="../..biologia.html">Biologia</a></li>
+								<li><a href="../../biologia.html">Biologia</a></li>
 								<li class="pagina-atual-rosa"><a href="../../fisica.html">Física</a></li>
 								<li><a href="../../quimica.html">Química</a></li>
 							</ul>
@@ -57,7 +57,7 @@ include_once("../../../../conexao.php");
 		</div>
 		<div id="opcaoPerfil">
 			<ul>
-				<li><a href="../../../perfil.html">Abrir perfil</a></li>
+				<li><a href="../../../perfil.php">Abrir perfil</a></li>
 				<li><a href="../../../../logout.php">Sair</a></li>
 			</ul>
 		</div>
@@ -97,9 +97,9 @@ include_once("../../../../conexao.php");
 					<li><button class="btn-opcoes" onclick="esquerda()">Resumo</button></li>
 					<li><button class="btn-opcoes" onclick="direita()">Videoaula</button></li>
 					<div class="wrapper" id="wrapper">
-						<div class="wrapper-child" >
+						<div class="wrapper-child">
 							<div class="tab" name="resumo" id="resumo">
-								<div class="material-texto">
+								<div class="material-texto" style="overflow-x: hidden;">
 									<p>
 										<?php echo $resumo ?>
 									</p>
