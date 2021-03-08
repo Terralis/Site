@@ -107,7 +107,7 @@ include_once("../../../../conexao.php");
 							</div>
 							<div class="tab" name="video" id="video">
 								<div class="material-video">
-									<iframe width="600" height="337" src="https://www.youtube.com/embed/DVNey_bnbHA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+									<iframe width="600" height="337" src="https://www.youtube.com/embed/sPTmpWqfb7s" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 								</div>
 							</div>
 						</div>
