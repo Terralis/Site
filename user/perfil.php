@@ -1,6 +1,7 @@
 <?php
-session_start();
+// session_start();
 include_once("../conexao.php");
+include('verifica_login.php');
 
 // $nome = $_SESSION['usuario'];
 // $sobrenome = $_SESSION['sobrenome'];
