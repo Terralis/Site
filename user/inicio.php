@@ -30,7 +30,7 @@ include('verifica_login.php');
 					</ul>
 				</nav>
 			</div>
-			<div class="footer footer-size footer-interno">
+			<div class="footer footer-size footer-interno footer-inicio">
 				<footer>
 					<span>&copy; 2021 - Terrális</span>
 				</footer>

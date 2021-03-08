@@ -208,6 +208,9 @@ body{
 	margin-top: 160px;
 	margin-left: -25px;
 }
+.footer-margin{
+	margin-top: 50px;
+}
 footer span{
 	font-size: 16px;
 	font-weight: 400;
@@ -216,8 +219,12 @@ footer span{
 	text-align: center;
 	display: table;
 	background-color: #262626;
-	/*position: absolute;*/
+	position: relative;
 	padding: 5px 0;
+}
+
+.alinhar3{
+	margin-left: -100px;
 }
 
 /*
@@ -1117,7 +1124,7 @@ footer span{
 	margin: 1600px 0 0 0;
 }
 .materia3 h2{
-	margin-left: 420px;
+	margin-left: -50px;
 }
 
 .divisao-menu-fisica, .divisao-superior-fisica{
@@ -1129,9 +1136,9 @@ footer span{
 .capsula-fisica{
 	background-color: #d98594;
 }
-.alinhar-fisica h2{
+/*.alinhar-fisica h2{
 	margin-left: 440px;
-}
+}*/
 
 .divisao-menu-quimica, .divisao-superior-quimica{
 	background-color: #ea6d5a;

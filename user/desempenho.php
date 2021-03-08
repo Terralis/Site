@@ -275,11 +275,11 @@ include('verifica_login.php');
 					</ul>
 				</nav>
 			</div>
-			<div class="footer footer-size footer-interno">
+			<!-- <div class="footer footer-size footer-interno">
 				<footer>
 					<span>&copy; 2021 - Terrális</span>
 				</footer>
-			</div>
+			</div> -->
 		</div>
 		<div class="divisao-superior">
 			<img src="../img/usuario.png">
