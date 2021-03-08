@@ -128,7 +128,7 @@ include_once("../../../../conexao.php");
 			<div class="menu-interno atual-interno">
 				<nav>
 					<ul>
-						<li><a href="../../../inicio.html">Início</a></li>
+						<li><a href="../../../inicio.php">Início</a></li>
 						<li><a href="">Disciplinas &dtri;</a>
 							<ul>
 								<li><a href="../../biologia.html">Biologia</a></li>
@@ -136,7 +136,7 @@ include_once("../../../../conexao.php");
 								<li><a href="../../quimica.html">Química</a></li>
 							</ul>
 						</li>
-						<li><a href="../../../desempenho.html">Desempenho</a></li>
+						<li><a href="../../../desempenho.php">Desempenho</a></li>
 						<li><a href="../../../ajuda.html">Ajuda?</a></li>
 					</ul>
 				</nav>
@@ -158,32 +158,35 @@ include_once("../../../../conexao.php");
 		<div id="opcaoPerfil">
 			<ul>
 				<li><a href="../../../perfil.html">Abrir perfil</a></li>
-				<li><a href="#">Sair</a></li>
+				<li><a href="../../../../logout.php">Sair</a></li>
 			</ul>
 		</div>
 		<div class="pesquisa-materias" id="pesquisa-materias">
 			<ul id="materias">
-				<li><a href="disciplinas/biologia/origemdavida/escolha.html">Origem da vida</a></li>
-				<li><a href="disciplinas/biologia/teoriasevolutivas/escolha.html">Teorias evolutivas</a></li>
-				<li><a href="disciplinas/biologia/caracteristicasdosseresvivos/escolha.html">Características dos seres vivos</a></li>
-				<li><a href="disciplinas/biologia/anatomia-morfologia-fisiologia/escolha.html">Anatomia, morfologia e fisiologia</a></li>
-				<li><a href="disciplinas/biologia/niveisdeorganizacaodosseresvivos/escolha.html">Níveis de organização dos seres vivos</a></li>
-				<li><a href="disciplinas/biologia/citologia/escolha.html">Citologia</a></li>
-				<li><a href="disciplinas/biologia/histologia/escolha.html">Histologia</a></li>
-				<li><a href="disciplinas/fisica/introducaoaoestudodafisica/escolha.html">Introdução ao estudo da física</a></li>
-				<li><a href="disciplinas/fisica/gravitacao/escolha.html">Gravitação</a></li>
-				<li><a href="disciplinas/fisica/estatica/escolha.html">Estática</a></li>
-				<li><a href="disciplinas/fisica/conceitosdeforca/escolha.html">Conceitos de força</a></li>
-				<li><a href="disciplinas/fisica/leisdenewton/escolha.html">Leis de Newton</a></li>
-				<li><a href="disciplinas/fisica/atrito/escolha.html">Atrito</a></li>
-				<li><a href="disciplinas/fisica/cinematica/escolha.html">Cinemática</a></li>
-				<li><a href="disciplinas/quimica/conceitosgerais/escolha.html">Conceitos gerais</a></li>
-				<li><a href="disciplinas/quimica/materia/escolha.html">Matéria</a></li>
-				<li><a href="disciplinas/quimica/atomo/escolha.html">Átomo</a></li>
-				<li><a href="disciplinas/quimica/tabelaperiodica/escolha.html">Tabela periódica</a></li>
-				<li><a href="disciplinas/quimica/ligacoesquimicas/escolha.html">Ligações químicas</a></li>
-				<li><a href="disciplinas/quimica/quimicaorganica/escolha.html">Química orgânica</a></li>
-				<li><a href="disciplinas/quimica/estequiometria/escolha.html">Estequiometria</a></li>
+				<!-- biologia -->
+				<li><a href="../../biologia/origemdavida/escolha.html">Origem da vida</a></li>
+				<li><a href="../../biologia/teoriasevolutivas/escolha.html">Teorias evolutivas</a></li>
+				<li><a href="../../biologia/divisaocelular/escolha.html">Divisão celular</a></li>
+				<li><a href="../../biologia/teoriacelular/escolha.html">Teoria celular</a></li>
+				<li><a href="../../biologia/niveisdeorganizacaodosseresvivos/escolha.html">Níveis de organização dos seres vivos</a></li>
+				<li><a href="../../biologia/citologia/escolha.html">Citologia</a></li>
+				<li><a href="../../biologia/histologia/escolha.html">Histologia</a></li>
+				<!-- física -->
+				<li><a href="../fisica/introducaoaoestudodafisica/escolha.html">Introdução ao estudo da física</a></li>
+				<li><a href="../fisica/gravitacao/escolha.html">Gravitação</a></li>
+				<li><a href="../fisica/estatica/escolha.html">Estática</a></li>
+				<li><a href="../fisica/conceitosdeforca/escolha.html">Conceitos de força</a></li>
+				<li><a href="../fisica/leisdenewton/escolha.html">Leis de Newton</a></li>
+				<li><a href="../fisica/atrito/escolha.html">Atrito</a></li>
+				<li><a href="../fisica/cinematica/escolha.html">Cinemática</a></li>
+				<!-- química -->
+				<li><a href="../../conceitosgerais/escolha.html">Conceitos gerais</a></li>
+				<li><a href="../../materia/escolha.html">Matéria</a></li>
+				<li><a href="../../atomo/escolha.html">Átomo</a></li>
+				<li><a href="../../tabelaperiodica/escolha.html">Tabela periódica</a></li>
+				<li><a href="../../ligacoesquimicas/escolha.html">Ligações químicas</a></li>
+				<li><a href="../../quimicaorganica/escolha.html">Química orgânica</a></li>
+				<li><a href="../../estequiometria/escolha.html">Estequiometria</a></li>
 			</ul>
 		</div>	
 		<div class="escolha conteudo conteudo-fis">
@@ -912,6 +915,16 @@ include_once("../../../../conexao.php");
                                     $up = mysqli_query($conexao, "UPDATE desempenho SET qtd_questao_correta = qtd_questao_correta + 1 WHERE id_usuario = $seu_id AND id_questionario = 6");
                                 }
                                 elseif(isset($_POST['questao4x']) && isset($_POST['questao4y']) && isset($_POST['questao4z'])){
+
+                                	echo "Resposta correta:";
+                                    echo "<br>";
+                                    echo $alternativa1q4x;
+                                    echo "<br>";
+                                    echo $alternativa1q4y;
+                                    echo "<br>";
+                                    echo $alternativa1q4z;
+                                    echo "<br>";
+
 								$confirmar = mysqli_query($conexao, "UPDATE controle_resposta SET respondida = 1 WHERE id_questao = $id");
 
                                 	$down = mysqli_query($conexao, "UPDATE desempenho SET qtd_questao_errada = qtd_questao_errada + 1 WHERE id_usuario = $seu_id AND id_questionario = 6");
@@ -1050,6 +1063,12 @@ include_once("../../../../conexao.php");
 									$up = mysqli_query($conexao, "UPDATE desempenho SET qtd_questao_correta = qtd_questao_correta + 1 WHERE id_usuario = $seu_id AND id_questionario = 6");
 								}
 								elseif(isset($_POST['questao5'])){
+
+									echo "Resposta correta:";
+                                    echo "<br>";
+                                    echo $alternativa1q5;
+                                    echo "<br>";
+
 								$confirmar = mysqli_query($conexao, "UPDATE controle_resposta SET respondida = 1 WHERE id_questao = $id");
 
 									$down = mysqli_query($conexao, "UPDATE desempenho SET qtd_questao_errada = qtd_questao_errada + 1 WHERE id_usuario = $seu_id AND id_questionario = 6");
@@ -1187,6 +1206,12 @@ include_once("../../../../conexao.php");
 									$up = mysqli_query($conexao, "UPDATE desempenho SET qtd_questao_correta = qtd_questao_correta + 1 WHERE id_usuario = $seu_id AND id_questionario = 6");
 								}
 								elseif(isset($_POST['questao6'])){
+
+									echo "Resposta correta:";
+                                    echo "<br>";
+                                    echo $alternativa1q6;
+                                    echo "<br>";
+
 								$confirmar = mysqli_query($conexao, "UPDATE controle_resposta SET respondida = 1 WHERE id_questao = $id");
 
 									$down = mysqli_query($conexao, "UPDATE desempenho SET qtd_questao_errada = qtd_questao_errada + 1 WHERE id_usuario = $seu_id AND id_questionario = 6");
@@ -1324,6 +1349,12 @@ include_once("../../../../conexao.php");
 										$up = mysqli_query($conexao, "UPDATE desempenho SET qtd_questao_correta = qtd_questao_correta + 1 WHERE id_usuario = $seu_id AND id_questionario = 6");
 									}
 								elseif(isset($_POST['questao7'])){
+
+									echo "Resposta correta:";
+                                    echo "<br>";
+                                    echo $alternativa1q7;
+                                    echo "<br>";
+
 								$confirmar = mysqli_query($conexao, "UPDATE controle_resposta SET respondida = 1 WHERE id_questao = $id");
 
 									$down = mysqli_query($conexao, "UPDATE desempenho SET qtd_questao_errada = qtd_questao_errada + 1 WHERE id_usuario = $seu_id AND id_questionario = 6");
@@ -2140,6 +2171,12 @@ include_once("../../../../conexao.php");
 									$up = mysqli_query($conexao, "UPDATE desempenho SET qtd_questao_correta = qtd_questao_correta + 1 WHERE id_usuario = $seu_id AND id_questionario = 6");
 								}
 								elseif(isset($_POST['questao12'])){
+
+									echo "Resposta correta:";
+                                    echo "<br>";
+                                    echo $alternativa1q12;
+                                    echo "<br>";
+
 								$confirmar = mysqli_query($conexao, "UPDATE controle_resposta SET respondida = 1 WHERE id_questao = $id");
 
 									$down = mysqli_query($conexao, "UPDATE desempenho SET qtd_questao_errada = qtd_questao_errada + 1 WHERE id_usuario = $seu_id AND id_questionario = 6");
@@ -2276,6 +2313,12 @@ include_once("../../../../conexao.php");
 									$up = mysqli_query($conexao, "UPDATE desempenho SET qtd_questao_correta = qtd_questao_correta + 1 WHERE id_usuario = $seu_id AND id_questionario = 6");
 								}
 								elseif(isset($_POST['questao13'])){
+
+									echo "Resposta correta:";
+                                    echo "<br>";
+                                    echo $alternativa1q13;
+                                    echo "<br>";
+
 								$confirmar = mysqli_query($conexao, "UPDATE controle_resposta SET respondida = 1 WHERE id_questao = $id");
 
 									$down = mysqli_query($conexao, "UPDATE desempenho SET qtd_questao_errada = qtd_questao_errada + 1 WHERE id_usuario = $seu_id AND id_questionario = 6");
@@ -2412,6 +2455,12 @@ include_once("../../../../conexao.php");
 									$up = mysqli_query($conexao, "UPDATE desempenho SET qtd_questao_correta = qtd_questao_correta + 1 WHERE id_usuario = $seu_id AND id_questionario = 6");
 								}
 								elseif(isset($_POST['questao14'])){
+
+									echo "Resposta correta:";
+                                    echo "<br>";
+                                    echo $alternativa1q14;
+                                    echo "<br>";
+                                    
 								$confirmar = mysqli_query($conexao, "UPDATE controle_resposta SET respondida = 1 WHERE id_questao = $id");
 
 									$down = mysqli_query($conexao, "UPDATE desempenho SET qtd_questao_errada = qtd_questao_errada + 1 WHERE id_usuario = $seu_id AND id_questionario = 6");
@@ -2497,7 +2546,7 @@ include_once("../../../../conexao.php");
 					</div>
 					<div class="btn-box">
 						<div class="previous-question-btn">
-							<button type="submit" class="btn btn-bio" id="bt-q15" onclick="reiniciar()">&#128472; Reiniciar questionário</button>
+							<a class="btn btn-bio" href="../../fisica.html">Voltar ao menu</a>
 						</div>
 					</div>
 				</div>

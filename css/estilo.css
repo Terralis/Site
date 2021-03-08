@@ -2322,8 +2322,9 @@ input:-webkit-autofill
 	text-align: right;
 }
 .form-perfil{
-	width: 500px;
+	width: 700px;
 	position: absolute;
+	margin-left: 150px;
 }
 .form-perfil h3{
 	font-weight: 500;
@@ -2348,7 +2349,7 @@ input:-webkit-autofill
 }
 .form-perfil input{
 	padding: 5px 2%;
-	width: 53%;
+	width: 66%;
 	padding: 10px;
 	border: 0.5px solid #346b60;
 	border-radius: 3px;
@@ -2476,3 +2477,4 @@ input:-webkit-autofill
 	display: block;
 	visibility: visible;
 }
+

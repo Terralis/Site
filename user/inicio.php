@@ -25,7 +25,7 @@ include('verifica_login.php');
 								<li><a href="disciplinas/quimica.html">Química</a></li>
 							</ul>
 						</li>
-						<li><a href="desempenho.html">Desempenho</a></li>
+						<li><a href="desempenho.php">Desempenho</a></li>
 						<li><a href="ajuda.html">Ajuda?</a></li>
 					</ul>
 				</nav>
@@ -57,13 +57,15 @@ include('verifica_login.php');
 		</div>
 		<div class="pesquisa-materias" id="pesquisa-materias">
 			<ul id="materias">
+				<!-- biologia -->
 				<li><a href="disciplinas/biologia/origemdavida/escolha.html">Origem da vida</a></li>
 				<li><a href="disciplinas/biologia/teoriasevolutivas/escolha.html">Teorias evolutivas</a></li>
-				<li><a href="disciplinas/biologia/caracteristicasdosseresvivos/escolha.html">Características dos seres vivos</a></li>
-				<li><a href="disciplinas/biologia/anatomia-morfologia-fisiologia/escolha.html">Anatomia, morfologia e fisiologia</a></li>
+				<li><a href="disciplinas/biologia/divisaocelular/escolha.html">Divisão celular</a></li>
+				<li><a href="disciplinas/biologia/teoriacelular/escolha.html">Teoria celular</a></li>
 				<li><a href="disciplinas/biologia/niveisdeorganizacaodosseresvivos/escolha.html">Níveis de organização dos seres vivos</a></li>
 				<li><a href="disciplinas/biologia/citologia/escolha.html">Citologia</a></li>
 				<li><a href="disciplinas/biologia/histologia/escolha.html">Histologia</a></li>
+				<!-- física -->
 				<li><a href="disciplinas/fisica/introducaoaoestudodafisica/escolha.html">Introdução ao estudo da física</a></li>
 				<li><a href="disciplinas/fisica/gravitacao/escolha.html">Gravitação</a></li>
 				<li><a href="disciplinas/fisica/estatica/escolha.html">Estática</a></li>
@@ -71,6 +73,7 @@ include('verifica_login.php');
 				<li><a href="disciplinas/fisica/leisdenewton/escolha.html">Leis de Newton</a></li>
 				<li><a href="disciplinas/fisica/atrito/escolha.html">Atrito</a></li>
 				<li><a href="disciplinas/fisica/cinematica/escolha.html">Cinemática</a></li>
+				<!-- química -->
 				<li><a href="disciplinas/quimica/conceitosgerais/escolha.html">Conceitos gerais</a></li>
 				<li><a href="disciplinas/quimica/materia/escolha.html">Matéria</a></li>
 				<li><a href="disciplinas/quimica/atomo/escolha.html">Átomo</a></li>
@@ -106,7 +109,7 @@ include('verifica_login.php');
 			<div>
 				<figure>
 					<img src="../img/check.png">
-					<figcaption><b><a href="desempenho.html">Desempenho</a></b></figcaption>
+					<figcaption><b><a href="desempenho.php">Desempenho</a></b></figcaption>
 					<figcaption>Acompanhe seu progresso com os gráficos de desempenho</figcaption>
 				</figure>
 			</div>

@@ -156,6 +156,10 @@ function toQuestion20(){
 	document.getElementById("19").classList.remove("active");
 	document.getElementById("20").classList.add("active");
 }
+function toQuestion21(){
+	document.getElementById("20").classList.remove("active");
+	document.getElementById("21").classList.add("active");
+}
 //voltar------------------------------------------------------------------------------------------
 function backQuestion1(){
 	document.getElementById("2").classList.remove("active");
