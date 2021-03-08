@@ -2312,7 +2312,7 @@ include('../../../verifica_login.php');
 									echo "Resposta correta:";
                                     echo "<br>";
                                     echo $alternativa1q13;
-                                    echo "<br>";1q14;
+                                    echo "<br>";
                                     echo "<br>";
                                     
 								$confirmar = mysqli_query($conexao, "UPDATE controle_resposta SET respondida = 1 WHERE id_questao = $id");

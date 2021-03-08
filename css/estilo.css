@@ -180,8 +180,9 @@ body{
 	margin-left: -750px;
 }
 .footer-interno{
-	margin-top: 170px;
+	margin-top: 175px;
 	margin-left: 273px;
+	/*position: relative;*/
 }
 .footer-size footer span{
 	width: 1093px;
@@ -203,7 +204,7 @@ body{
 	margin-left: -30px;
 }
 .footer-questionario{
-	top: 30;
+	/*top: 30;*/
 	margin-top: 160px;
 	margin-left: -25px;
 }
@@ -215,7 +216,7 @@ footer span{
 	text-align: center;
 	display: table;
 	background-color: #262626;
-	position: absolute;
+	/*position: absolute;*/
 	padding: 5px 0;
 }
 
@@ -1109,7 +1110,7 @@ footer span{
 }
 .materia8{
 	position: absolute;
-	margin: 1400px 0 0 0;
+	margin: 1400px 0 150px 0;
 }
 .materia9{
 	position: absolute;
