@@ -2440,8 +2440,9 @@ input:-webkit-autofill
 	color: #fff;
 }
 .form-cadastro div label{
-	float: right;
-	margin-left: -10px;
+	/*float: right;*/
+	display: inline;
+	margin-left: 10px !important;
 }
 .btn-close{
 	color: #346b60 !important;

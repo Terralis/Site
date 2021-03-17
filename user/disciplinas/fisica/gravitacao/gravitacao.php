@@ -1032,7 +1032,7 @@ include_once("../../../../conexao.php");
 						</div>
 					</div>
 					<div class="option-container option-container-fis lacuna">
-						<form method="post">
+						<form method="post" autocomplete="off">
 							<?php
 								while ($row_alternativaQ5 = mysqli_fetch_assoc($opcoes5)) {
 								// $id = (string) trim($row_alternativa['id_questao']);
@@ -1175,7 +1175,7 @@ include_once("../../../../conexao.php");
 						</div>
 					</div>
 					<div class="option-container option-container-fis lacuna">
-						<form method="post">
+						<form method="post" autocomplete="off">
 							<?php
 								while ($row_alternativaQ6 = mysqli_fetch_assoc($opcoes6)) {
 								// $id = (string) trim($row_alternativa['id_questao']);
@@ -1318,7 +1318,7 @@ include_once("../../../../conexao.php");
 						</div>
 					</div>
 					<div class="option-container option-container-fis lacuna">
-						<form method="post">
+						<form method="post" autocomplete="off">
 							<?php
 								while ($row_alternativaQ7 = mysqli_fetch_assoc($opcoes7)) {
 								// $id = (string) trim($row_alternativa['id_questao']);
@@ -2150,7 +2150,7 @@ include_once("../../../../conexao.php");
 						</div>
 					</div>
 					<div class="option-container option-container-fis lacuna">
-						<form method="post">
+						<form method="post" autocomplete="off">
 							<?php
 								while ($row_alternativaQ12 = mysqli_fetch_assoc($opcoes12)) {
 								// $id = (string) trim($row_alternativa['id_questao']);
@@ -2293,7 +2293,7 @@ include_once("../../../../conexao.php");
 						</div>
 					</div>
 					<div class="option-container option-container-fis lacuna">
-						<form method="post">
+						<form method="post" autocomplete="off">
 							<?php
 								while ($row_alternativaQ13 = mysqli_fetch_assoc($opcoes13)) {
 								// $id = (string) trim($row_alternativa['id_questao']);
@@ -2441,7 +2441,7 @@ include_once("../../../../conexao.php");
 						</div>
 					</div>
 					<div class="option-container option-container-fis lacuna">
-						<form method="post">
+						<form method="post" autocomplete="off">
 							<?php
 								while ($row_alternativaQ14 = mysqli_fetch_assoc($opcoes14)) {
 								// $id = (string) trim($row_alternativa['id_questao']);
@@ -2586,7 +2586,7 @@ include_once("../../../../conexao.php");
 						</div>
 					</div>
 					<div class="option-container option-container-fis lacuna">
-						<form method="post">
+						<form method="post" autocomplete="off">
 							<?php
 								while ($row_alternativaQ15 = mysqli_fetch_assoc($opcoes15)) {
 								// $id = (string) trim($row_alternativa['id_questao']);

@@ -99,7 +99,7 @@ include_once("../../../../conexao.php");
 					<div class="wrapper" id="wrapper">
 						<div class="wrapper-child" >
 							<div class="tab" name="resumo" id="resumo">
-								<div class="material-texto">
+								<div class="material-texto" style="overflow-x: hidden;">
 									<p>
 										<?php echo $resumo ?>
 									</p>

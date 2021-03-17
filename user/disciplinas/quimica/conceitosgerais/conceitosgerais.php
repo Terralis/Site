@@ -1327,7 +1327,7 @@ include('../../../verifica_login.php');
 						</div>
 					</div>
 					<div class="option-container option-container-qui lacuna">
-						<form method="post">
+						<form method="post" autocomplete="off">
 							<?php
 								while ($row_alternativaQ6 = mysqli_fetch_assoc($opcoes6)) {
 								// $id = (string) trim($row_alternativa['id_questao']);
@@ -1477,7 +1477,7 @@ include('../../../verifica_login.php');
 						</div>
 					</div>
 					<div class="option-container option-container-qui lacuna">
-						<form method="post">
+						<form method="post" autocomplete="off">
 							<?php
 								while ($row_alternativaQ7 = mysqli_fetch_assoc($opcoes7)) {
 								// $id = (string) trim($row_alternativa['id_questao']);
@@ -1638,7 +1638,7 @@ include('../../../verifica_login.php');
 						</div>
 					</div>
 					<div class="option-container option-container-qui lacuna">
-						<form method="post">
+						<form method="post" autocomplete="off">
 							<?php
 								while ($row_alternativaQ8 = mysqli_fetch_assoc($opcoes8)) {
 								// $id = (string) trim($row_alternativa['id_questao']);
@@ -1788,7 +1788,7 @@ include('../../../verifica_login.php');
 						</div>
 					</div>
 					<div class="option-container option-container-qui lacuna">
-						<form method="post">
+						<form method="post" autocomplete="off">
 							<?php
 								while ($row_alternativaQ9 = mysqli_fetch_assoc($opcoes9)) {
 								// $id = (string) trim($row_alternativa['id_questao']);
@@ -1938,7 +1938,7 @@ include('../../../verifica_login.php');
 						</div>
 					</div>
 					<div class="option-container option-container-qui lacuna">
-						<form method="post">
+						<form method="post" autocomplete="off">
 							<?php
 								while ($row_alternativaQ10 = mysqli_fetch_assoc($opcoes10)) {
 								// $id = (string) trim($row_alternativa['id_questao']);
@@ -3101,7 +3101,7 @@ include('../../../verifica_login.php');
 						</div>
 					</div>
 					<div class="option-container option-container-qui lacuna">
-						<form method="post">
+						<form method="post" autocomplete="off">
 							<?php
 								while ($row_alternativaQ16 = mysqli_fetch_assoc($opcoes16)) {
 								// $id = (string) trim($row_alternativa['id_questao']);
@@ -3250,7 +3250,7 @@ include('../../../verifica_login.php');
 						</div>
 					</div>
 					<div class="option-container option-container-qui lacuna">
-						<form method="post">
+						<form method="post" autocomplete="off">
 							<?php
 								while ($row_alternativaQ17 = mysqli_fetch_assoc($opcoes17)) {
 								// $id = (string) trim($row_alternativa['id_questao']);
@@ -3402,7 +3402,7 @@ include('../../../verifica_login.php');
 						</div>
 					</div>
 					<div class="option-container option-container-qui lacuna">
-						<form method="post">
+						<form method="post" autocomplete="off">
 							<?php
 								while ($row_alternativaQ18 = mysqli_fetch_assoc($opcoes18)) {
 								// $id = (string) trim($row_alternativa['id_questao']);
@@ -3550,7 +3550,7 @@ include('../../../verifica_login.php');
 						</div>
 					</div>
 					<div class="option-container option-container-qui lacuna">
-						<form method="post">
+						<form method="post" autocomplete="off">
 							<?php
 								while ($row_alternativaQ19 = mysqli_fetch_assoc($opcoes19)) {
 								// $id = (string) trim($row_alternativa['id_questao']);
@@ -3698,7 +3698,7 @@ include('../../../verifica_login.php');
 						</div>
 					</div>
 					<div class="option-container option-container-qui lacuna">
-						<form method="post">
+						<form method="post" autocomplete="off">
 							<?php
 								while ($row_alternativaQ20 = mysqli_fetch_assoc($opcoes20)) {
 								// $id = (string) trim($row_alternativa['id_questao']);
